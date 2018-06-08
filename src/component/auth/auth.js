@@ -37,11 +37,10 @@ class AuthPage extends Component {
     var password = this.refs.password.value;
 
     // this.props.updateAuth(true);
-    this.props.history.push("/");
 
     Parse.User.logIn(email, password, {
       success: user => {
-        this.props.history.push("/");
+        this.props.history.push("/movies");
       },
       error: (user, err) => {
         this.setState({
@@ -63,7 +62,7 @@ class AuthPage extends Component {
 
     user.signUp(null, {
       success: user => {
-        this.props.history.replace("/");
+        this.props.history.replace("/movies");
       },
       error: (user, err) => {
         this.setState({

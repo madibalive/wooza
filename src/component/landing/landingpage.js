@@ -131,10 +131,10 @@ class LandingPage extends Component {
             <Container>
               <Row className="align-items-center justified-content-center">
                 <Col xs="12" md={{ size: 10, offset: 2 }} sm="12">
-                  <h2 className="fh text-white">
+                  <h2 className="fh shadow  text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>
-                  <p className="fp text-white">
+                  <p className="fp shadow  text-white">
                     All the shows you to watch &amp; add movies you want to see
                     and Wooza will always have what more for you to watch next
                     queued up!
@@ -165,7 +165,7 @@ class LandingPage extends Component {
                   >
                     <p>7 Days Free Trail</p>
                     <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2">GH 14.99</h1>
+                    <h1 class="mt-2 shadow ">GH 14.99</h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K fadedbutton mt-3"
@@ -181,7 +181,7 @@ class LandingPage extends Component {
                   <Col xm="6" md="4" sm="6" className="text-white">
                     <p>1 Monthly unlimited Access</p>
                     <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2">Free </h1>
+                    <h1 class="mt-2 shadow ">Free </h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K S fq  mt-3"

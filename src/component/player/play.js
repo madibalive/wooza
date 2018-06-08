@@ -62,7 +62,7 @@ class MediaPlayerPage extends Component {
             <Container>
               <Row class="justified-content-center">
                 <div className="embed-responsive embed-responsive-16by9">
-                  <VimeoEmbed videoId={258238541} />
+                <iframe src="https://player.vimeo.com/video/271743868" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
               </Row>
             </Container>

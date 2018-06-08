@@ -130,11 +130,11 @@ class LandingPage extends Component {
           <Jumbotron className="mb-0 landingoverlay">
             <Container>
               <Row className="align-items-center justified-content-center">
-                <Col xs="12" md={{ size: 10, offset: 2 }} sm="12">
-                  <h2 className="fh shadow  text-white">
+                <Col xs="12" md={{ size: 10, offset: 1 }} sm="12">
+                  <h2 className="fh   text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>
-                  <p className="fp shadow  text-white">
+                  <p className="fp   text-white">
                     All the shows you to watch &amp; add movies you want to see
                     and Wooza will always have what more for you to watch next
                     queued up!
@@ -143,7 +143,7 @@ class LandingPage extends Component {
                 {/* <Col xs="0" md="6" sm="0" className="d-none d-sm-block">
                  <img
                   style={{ height: "220px", width: "90%" }}
-                  className="img-fluid rounded shadow-sm"
+                  className="img-fluid rounded -sm"
                   src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg"
                   alt=""
                 />
@@ -165,7 +165,7 @@ class LandingPage extends Component {
                   >
                     <p>7 Days Free Trail</p>
                     <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2 shadow ">GH 14.99</h1>
+                    <h1 class="mt-2  ">GH 14.99</h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K fadedbutton mt-3"
@@ -181,7 +181,7 @@ class LandingPage extends Component {
                   <Col xm="6" md="4" sm="6" className="text-white">
                     <p>1 Monthly unlimited Access</p>
                     <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2 shadow ">Free </h1>
+                    <h1 class="mt-2  ">Free </h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K S fq  mt-3"

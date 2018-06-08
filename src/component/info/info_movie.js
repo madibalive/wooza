@@ -93,8 +93,13 @@ class InfoMoviePage extends Component {
               }}
             />
             <div class="dropdown-divider mt-0" />
-
-            {this.renderEpisodes()}
+            <Container>
+            <Row className="mt-3">
+            <Col sm="12" className="d-flex justify-content-between px-3">
+              <h5 className="titlebar text-white">Recommended Movies</h5>
+            </Col>
+          </Row>
+            {this.renderEpisodes()}</Container>
           </div>
         ) : (
           <p>loading</p>

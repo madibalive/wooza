@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Parse } from "parse";
-import { Link } from "react-router-dom";
+import { Link , withRouter} from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Collapse,
@@ -32,7 +32,9 @@ class HeaderPage extends Component {
   }
 
   onLogout() {
-    this.setState({ auth: false });
+    Parse.User.logOut().then(() => {
+      
+    });
   }
 
   onSearch() {}
@@ -73,7 +75,9 @@ class HeaderPage extends Component {
                   </NavItem>
                 ) : (
                   <NavItem>
-                    <NavLink >{Parse.User.current().get("username")} | Logout</NavLink>
+                    <NavLink>
+                      {Parse.User.current().get("username")} | Logout
+                    </NavLink>
                   </NavItem>
                 )}
               </Nav>
@@ -113,13 +117,5 @@ class HeaderPage extends Component {
   }
 }
 
-const mapStateToProps = ({ home }) => ({
-  data: home
-});
 
-const mapDispatchToProps = {};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HeaderPage);
+export default withRouter(HeaderPage);

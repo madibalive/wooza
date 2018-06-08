@@ -4,11 +4,7 @@ import MovieItem from "../item/movie_item";
 import TvItem from "../item/tv_item";
 import { Parse } from "parse";
 import "./style.css";
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom'
-
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import {
   Container,
@@ -37,9 +33,7 @@ class LandingPage extends Component {
   renderMovies = () => {
     if (this.state.movies) {
       const list = this.state.movies.map(movie => {
-        return (
-          <MovieItem video={movie} onVideoSelect={video => null} />
-        );
+        return <MovieItem video={movie} onVideoSelect={video => null} />;
       });
       return <Row className="justified-content-around">{list}</Row>;
     }
@@ -66,7 +60,7 @@ class LandingPage extends Component {
       .then(data => {
         movies = data;
         const query = new Parse.Query("Tvshows");
-        query.limit(8)
+        query.limit(8);
         return query.find();
       })
       .then(
@@ -113,39 +107,87 @@ class LandingPage extends Component {
           </Row>
         )}
         <div className="banner d-flex flex-column justify-content-center">
-          <div className="container ">
-            <p className="lead text-center">
+          <div className="container text-white ">
+            <p className="lead text-center text-white">
               Are you a creator ?
               <span>
-                <Button className="btn-sm">Access Creator</Button>
+                <Button className="btn-sm ml-3 text-white">
+                  Access Creator
+                </Button>
               </span>
             </p>
           </div>
         </div>
 
         {/* <div class="dropdown-divider mt-0" /> */}
-
-        <Jumbotron className="banner-subtle">
-          <Container>
+        <div
+          style={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af630c2717bf02408f58d51685dacb73&auto=format&fit=crop&w=751&q=80)",
+              backgroundSize:"cover"
+          }}
+        >
+          <Jumbotron
+            className="mb-0"
+            style={{
+              backgroundColor: "#0e16217a"
+            }}
+          >
+            <Container>
+              <Row className="align-items-center justified-content-center">
+                <Col xs="12" md="12" sm="12">
+                  <h2 className="fh text-white">
+                    The Best In Movie &amp; TV Shows
+                  </h2>
+                  <p className="fp text-white">
+                    All the shows you to watch &amp; add movies you want to see
+                    and Wooza will always have what more for you to watch next
+                    queued up!
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </Jumbotron>
+        </div>
+        <Jumbotron style={{ padding: "1rem" }} className="banner-large">
+          <Container className="">
             <Row className="align-items-center justified-content-center">
-              <Col sm="6">
-                <h2 className="fh text-white">
-                  The Best In Movie &amp; TV Shows
-                </h2>
-                <p className="fp text-white">
-                  All the shows you to watch &amp; add movies you want to see
-                  and Wooza will always have what more for you to watch next
-                  queued up!
-                </p>
-                <button onClick={()=>this.history.push("/auth")} class="K S fq">CREATE FREE ACCOUNT</button>
-              </Col>
-              <Col md="6" className="d-none d-md-block">
-                <img
+              <Col md="12" className="">
+                {/* <img
                   style={{ height: "220px", width: "90%" }}
                   className="img-fluid rounded shadow-sm"
                   src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg"
                   alt=""
-                />
+                /> */}
+                <Row>
+                  <Col xm="6" md="6" sm="6" className="text-white">
+                    <h6>7 Days Free Trail</h6>
+                    <h6>Thousands of Tv show,movies &amp; more </h6>
+                    <h2 class="mt-1">GH 14.99</h2>
+                    <button
+                      onClick={() => this.props.history.push("/auth")}
+                      class="K fadedbutton mt-3"
+                      style={{
+                        width: "219px",
+                        ackgroundColor: "hsla(0, 0%, 100%, 0.12)",
+                        height: "44px"
+                      }}
+                    >
+                      Choose Plan
+                    </button>
+                  </Col>
+                  <Col xm="6" md="6" sm="6" className="text-white">
+                    <h6>1 Monthly unlimited Access</h6>
+                    <h6>Thousands of Tv show,movies &amp; more </h6>
+                    <h3 class="mt-1">Free </h3>
+                    <button
+                      onClick={() => this.props.history.push("/auth")}
+                      class="K S fq  mt-3"
+                    >
+                      Choose Plan
+                    </button>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Container>
@@ -158,8 +200,31 @@ class LandingPage extends Component {
             </Col>
           </Row>
           {this.renderMovies()}
+        </Container>
 
-         
+        <Jumbotron style={{ padding: "1rem" }} className="banner-large-subtle">
+          <Container>
+            <Row className="align-items-center justified-content-center">
+              <Col sm="6">
+                <h2 className="fh text-white">Watch Movies & TV On the GO!</h2>
+                <p className="fp text-white">
+                  Watch your favorite tv shows, movies from anywhere at any
+                  time.... WOOZA App provides contens from hundreds of Show to
+                  make sure you for more stuff to watch.
+                </p>
+              </Col>
+              <Col md="6" className="d-none d-md-block">
+                <button
+                  onClick={() =>null}
+                  class="K S fq"
+                >
+                  GET ON PLAYSTORE
+                </button>
+              </Col>
+            </Row>
+          </Container>
+        </Jumbotron>
+        <Container>
           <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
               <h5 className="titlebar text-white">Top Tvshows</h5>

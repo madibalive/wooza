@@ -15,8 +15,7 @@ import {
   TabPane,
   Nav,
   NavItem,
-  NavLink
-, 
+  NavLink,
   FormFeedback
 } from "reactstrap";
 import "./style.css";
@@ -142,11 +141,14 @@ class AuthPage extends Component {
                           {this.state.error}
                         </small>
                         <FormGroup>
-                          <Label className="text-white" for="exampleEmail">
+                          <Label
+                            className="text-white d-block"
+                            for="exampleEmail"
+                          >
                             Email
                           </Label>
                           <input
-                            bsSize="sm"
+                            className="d-block"
                             type="email"
                             name="email"
                             ref="email"
@@ -158,11 +160,11 @@ class AuthPage extends Component {
                           </small>
                         </FormGroup>
                         <FormGroup>
-                          <Label className="text-white" for="password">
+                          <Label className="text-white d-block" for="password">
                             Password
                           </Label>
                           <input
-                            bsSize="sm"
+                            className="d-block"
                             type="password"
                             name="password"
                             ref="password"
@@ -180,11 +182,11 @@ class AuthPage extends Component {
                           {this.state.error}
                         </small>
                         <FormGroup>
-                          <Label className="text-white" for="exampleEmail">
+                          <Label className="text-white d-block" for="exampleEmail">
                             Email
                           </Label>
                           <input
-                            bsSize="sm"
+                           className="d-block"
                             type="email"
                             name="email"
                             ref="email"
@@ -196,11 +198,11 @@ class AuthPage extends Component {
                           </small>
                         </FormGroup>
                         <FormGroup>
-                          <Label className="text-white" for="password">
+                          <Label className="text-white d-block" for="password">
                             Password
                           </Label>
                           <input
-                            bsSize="sm"
+                           className="d-block"
                             type="password"
                             name="password"
                             ref="password"
@@ -209,11 +211,11 @@ class AuthPage extends Component {
                           />
                         </FormGroup>
                         <FormGroup>
-                          <Label className="text-white" for="phone">
+                          <Label className="text-white d-block" for="phone">
                             Phone
                           </Label>
                           <input
-                            bsSize="sm"
+                           className="d-block"
                             type="phone"
                             ref="phone"
                             name="phone"

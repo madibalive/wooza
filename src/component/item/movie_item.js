@@ -53,11 +53,11 @@ export default class MovieItem extends Component {
             </div> */}
           </div>
           <div className="title">
-            <h5 size="sm" className=" mt-1 ">
+            <h5 size="sm" className=" mt-1 text-white ">
               {this.props.video.get("title")}
             </h5>
             <p className="" text-muted>
-              2014
+            {this.props.video.get("year")}
             </p>
           </div>
         </div>

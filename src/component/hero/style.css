@@ -36,15 +36,15 @@
   background: -webkit-linear-gradient(
     top,
     #0e1621 20%,
-    #141e30e8 60%,
-    rgba(10, 16, 22, 0.7) 100%
+    #141e30e8 50%,
+    rgba(10, 16, 22, 0.7) 80%
   );
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to top,
     #0e1621 20%,
-    #141e30e8 60%,
-    rgba(10, 16, 22, 0.7) 100%
+    #141e30e8 50%,
+    rgba(10, 16, 22, 0.7) 80%
   );
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );

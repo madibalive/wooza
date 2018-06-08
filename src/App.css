@@ -1,0 +1,93 @@
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+a.nav-link plzero {
+  padding-left: 0px !important;
+}
+
+div#root {
+  padding-left: 0;
+}
+
+.fadedbutton {
+  border: 1px solid transparent;
+  background-color: hsla(0, 0%, 100%, 0.12);
+}
+
+.active-button {
+  border: 1px solid transparent;
+  background-image: linear-gradient(
+    106deg,
+    rgba(147, 2, 14, 0.96),
+    rgba(159, 4, 69, 0.96)
+  );
+}
+
+.banner {
+  position: relative;
+  height: 88px;
+  background-image: linear-gradient(
+    93deg,
+    rgba(136, 123, 248, 0.4),
+    rgba(113, 255, 151, 0.4)
+  );
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+.error_banner {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    106deg,
+    rgba(147, 2, 14, 0.96),
+    rgba(159, 4, 69, 0.96)
+  );
+  z-index: 90;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+.banner-subtle {
+  background-image: linear-gradient(
+    104deg,
+    rgba(134, 121, 249, 0.1),
+    rgba(113, 255, 151, 0.1)
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",endColorstr="#1a71ff97",GradientType=1);
+}
+.error_snippet {
+  position: relative;
+  min-height: 88px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    106deg,
+    rgba(147, 2, 14, 0.96),
+    rgba(159, 4, 69, 0.96)
+  );
+  z-index: 90;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+.titlebar {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 1em;
+}
+
+.nav-tabs .nav-link.active {
+  color: white;
+  background-color: transparent;
+}
+
+.back-trans {
+  background: transparent;
+}

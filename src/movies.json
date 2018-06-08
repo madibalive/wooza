@@ -1,0 +1,258 @@
+[
+  {
+    "Title": "Jumanji",
+    "Year": "1995",
+    "Rated": "PG",
+    "Released": "15 Dec 1995",
+    "Runtime": "104 min",
+    "Genre": "Adventure, Family, Fantasy",
+    "Director": "Joe Johnston",
+    "Writer":
+      "Jonathan Hensleigh (screenplay), Greg Taylor (screenplay), Jim Strain (screenplay), Greg Taylor (screen story), Jim Strain (screen story), Chris Van Allsburg (screen story), Chris Van Allsburg (book)",
+    "Actors": "Robin Williams, Jonathan Hyde, Kirsten Dunst, Bradley Pierce",
+    "Plot":
+      "After being trapped in a jungle board game for 26 years, a Man-Child wins his release from the game. But, no sooner has he arrived that he is forced to play again, and this time sets the creatures of the jungle loose on the city. Now it is up to him to stop them.",
+    "Language": "English, French",
+    "Country": "USA",
+    "Awards": "4 wins & 9 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BZTk2ZmUwYmEtNTcwZS00YmMyLWFkYjMtNTRmZDA3YWExMjc2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX600.jpg",
+    "Metascore": "39",
+    "imdbRating": "6.9",
+    "imdbVotes": "252,245",
+    "imdbID": "tt0113497",
+    "Type": "movie",
+    "Production": "Sony Pictures Home Entertainment"
+  },
+  {
+    "Title": "Black Panther",
+    "Year": "2018",
+    "Rated": "PG-13",
+    "Released": "16 Feb 2018",
+    "Runtime": "134 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Ryan Coogler",
+    "Writer":
+      "Ryan Coogler, Joe Robert Cole, Stan Lee (based on the Marvel Comics by), Jack Kirby (based on the Marvel Comics by)",
+    "Actors":
+      "Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira",
+    "Plot":
+      "After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakanadan special forces, to prevent Wakanda from being dragged into a world war.",
+    "Language": "Swahili, Nama, English, Xhosa, Korean",
+    "Country": "USA",
+    "Awards": "14 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg",
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX600.jpg",
+
+    "Metascore": "88",
+    "imdbRating": "7.7",
+    "imdbVotes": "247,680",
+    "imdbID": "tt1825683",
+    "Type": "movie",
+    "DVD": "15 May 2018",
+    "BoxOffice": "$501,105,037",
+    "Production": "Marvel Studios"
+  },
+  {
+    "Title": "The Avengers",
+    "Year": "2012",
+    "Rated": "PG-13",
+    "Released": "04 May 2012",
+    "Runtime": "143 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Joss Whedon",
+    "Writer": "Joss Whedon (screenplay), Zak Penn (story), Joss Whedon (story)",
+    "Actors": "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth",
+    "Plot":
+      "Nick Fury is the director of S.H.I.E.L.D., an international peace-keeping agency. The agency is a who's who of Marvel Super Heroes, with Iron Man, The Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. When global security is threatened by Loki and his cohorts, Nick Fury and his team will need all their powers to save the world from disaster.",
+    "Language": "English, Russian, Hindi",
+    "Country": "USA",
+    "Awards": "Nominated for 1 Oscar. Another 38 wins & 79 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg",
+
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX600.jpg",
+
+    "Metascore": "69",
+    "imdbRating": "8.1",
+    "imdbVotes": "1,100,592",
+    "imdbID": "tt0848228",
+    "Type": "movie",
+    "DVD": "25 Sep 2012",
+    "BoxOffice": "$623,279,547",
+    "Production": "Walt Disney Pictures",
+    "Website": "http://marvel.com/avengers_movie",
+    "Response": "True"
+  },
+  {
+    "Title": "Fantastic Four",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "08 Jul 2005",
+    "Runtime": "106 min",
+    "Genre": "Action, Adventure, Family",
+    "Director": "Tim Story",
+    "Writer":
+      "Mark Frost, Michael France, Stan Lee (Marvel comic book), Jack Kirby (Marvel comic book)",
+    "Actors": "Ioan Gruffudd, Jessica Alba, Chris Evans, Michael Chiklis",
+    "Plot":
+      "Reed Richards, a brilliant but timid and bankrupt scientist, is convinced that evolution can be triggered by clouds of cosmic energy, and has calculated that Earth is going to pass one of these clouds soon. Together with his friend and partner, the gruff yet gentle astronaut muscle-man Ben Grimm, Reed convinces his conceited MIT classmate Dr. Victor Von Doom, now CEO of his own enterprise, to allow him access to his privately-owned space station. Von Doom agrees in exchange for control over the experiment and a majority of the profits from whatever benefits it brings. He thus brings aboard Susan Storm, his shy, though assertive chief genetics researcher and a former lover of Reed's with whom she had an acrimonious break-up, and her diametrically opposed brother Johnny, the maverick and hot-headed playboy pilot. The astronauts make it home intact; however, before long they begin to mutate, developing strange and amazing powers as a result of their exposure to the cloud! Reed is able to stretch like rubber; Sue can turn invisible and create force fields, especially when angered; Johnny can produce fire at supernova temperatures, and is able to fly; and Ben is transformed into \"The Thing\", a large, rock-like creature with super strength. After Ben, brooding about his situation on the Brooklyn Bridge, inadvertently causes a major traffic pile-up whilst attempting to stop a man about to commit suicide, the four manage to use their powers to prevent any loss of life and to rescue a fire truck and its crew from falling off the bridge in a resulting explosion. The media dubs the team the 'Fantastic Four', and whilst Johnny eagerly embraces his powers and new life, Ben - the most heavily disfigured - particularly suffers from his transformation; his disfigurement has caused his fiancée to abandon him and has seen him shunned and feared by much of New York. Blaming himself, Reed vows to return Ben to his human form, and he, Sue and Ben work on a cure, constructing a healing chamber in Reed's high tech Baxter Building loft-turned-laboratory. During this time, Reed and Susan begin to grow close once again, and Susan admits that she is not interested in Victor, but ended their relationship because Reed feared to commit, thinking only in terms of variables. Unknown to the others, however, Victor's body is also mutating; he is turning into organic metal capable of absorbing and manipulating electrical energy known as Doctor Doom. As a result of the disastrous expedition, his company is going bankrupt and he is losing public stature; blaming Reed for his misfortunes, Victor swears revenge. And Reed, Ben, Susan, and Johnny must defeat Victor Von Doom and foil his evil plans once and for all.",
+    "Language": "English",
+    "Country": "USA, Germany",
+    "Awards": "3 wins & 12 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BNWU1ZjFjMTctYjA5ZC00YTBkLTkzZjUtZWEyMjgxY2MxYWM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BNWU1ZjFjMTctYjA5ZC00YTBkLTkzZjUtZWEyMjgxY2MxYWM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX600.jpg",
+
+    "Metascore": "40",
+    "imdbRating": "5.7",
+    "imdbVotes": "286,459",
+    "imdbID": "tt0120667",
+    "Type": "movie",
+    "DVD": "06 Dec 2005",
+    "BoxOffice": "$154,485,963",
+    "Production": "20th Century Fox",
+    "Website": "http://www.fantasticfourmovie.com/",
+    "Response": "True"
+  },
+  {
+    "Title": "Freedom",
+    "Year": "2014",
+    "Rated": "R",
+    "Released": "05 Apr 2015",
+    "Runtime": "94 min",
+    "Genre": "Drama, Music",
+    "Director": "Peter Cousens",
+    "Writer": "Timothy A. Chey, John Senczuk (story editor)",
+    "Actors": "Cuba Gooding Jr., Sharon Leal, David Rasche, Kimberly Nichole",
+    "Plot":
+      "Two men separated by 100 years are united in their search for freedom. In 1856 a slave, Samuel Woodward and his family, escape from the Monroe Plantation near Richmond, Virginia. A secret network of ordinary people known as the Underground Railroad guide the family on their journey north to Canada. They are relentlessly pursued by the notorious slave hunter Plimpton. Hunted like a dog and haunted by the unthinkable suffering he and his forbears have endured, Samuel is forced to decide between revenge or freedom. 100 years earlier in 1748, John Newton the Captain of a slave trader sails from Africa with a cargo of slaves, bound for America. On board is Samuel's great grandfather whose survival is tied to the fate of Captain Newton. The voyage changes Newton's life forever and he creates a legacy that will inspire Samuel and the lives of millions for generations to come.",
+    "Language": "English",
+    "Country": "USA",
+    "Awards": "N/A",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BMjExNDgzNzM2Ml5BMl5BanBnXkFtZTgwMTIwNzM3NTE@._V1_SX300.jpg",
+   
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BMjExNDgzNzM2Ml5BMl5BanBnXkFtZTgwMTIwNzM3NTE@._V1_SX600.jpg",
+   
+    "Metascore": "30",
+    "imdbRating": "6.2",
+    "imdbVotes": "1,266",
+    "imdbID": "tt2584018",
+    "Type": "movie",
+    "DVD": "14 Jul 2015",
+    "BoxOffice": "$124,356",
+    "Production": "Arc Entertainment",
+    "Website": "http://themoviefreedom.com/",
+    "Response": "True"
+  },
+  {
+    "Title": "Doctor Strange",
+    "Year": "2016",
+    "Rated": "PG-13",
+    "Released": "04 Nov 2016",
+    "Runtime": "115 min",
+    "Genre": "Action, Adventure, Fantasy",
+    "Director": "Scott Derrickson",
+    "Writer":
+      "Jon Spaihts, Scott Derrickson, C. Robert Cargill, Stan Lee (based on the Marvel comics by), Steve Ditko (based on the Marvel comics by)",
+    "Actors":
+      "Benedict Cumberbatch, Chiwetel Ejiofor, Rachel McAdams, Benedict Wong",
+    "Plot":
+      "Marvel's \"Doctor Strange\" follows the story of the talented neurosurgeon Doctor Stephen Strange who, after a tragic car accident, must put ego aside and learn the secrets of a hidden world of mysticism and alternate dimensions. Based in New York City's Greenwich Village, Doctor Strange must act as an intermediary between the real world and what lies beyond, utilising a vast array of metaphysical abilities and artifacts to protect the Marvel Cinematic Universe.",
+    "Language": "English",
+    "Country": "USA",
+    "Awards": "Nominated for 1 Oscar. Another 20 wins & 64 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
+  
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg",
+  
+    "Metascore": "72",
+    "imdbRating": "7.5",
+    "imdbVotes": "409,496",
+    "imdbID": "tt1211837",
+    "Type": "movie",
+    "DVD": "28 Feb 2017",
+    "BoxOffice": "$232,630,718",
+    "Production": "Walt Disney Pictures",
+    "Website": "http://marvel.com/doctorstrange",
+    "Response": "True"
+  },
+  {
+    "Title": "Iron Man 2",
+    "Year": "2010",
+    "Rated": "PG-13",
+    "Released": "07 May 2010",
+    "Runtime": "124 min",
+    "Genre": "Action, Adventure, Sci-Fi",
+    "Director": "Jon Favreau",
+    "Writer":
+      "Justin Theroux (screenplay), Stan Lee (Marvel comic book), Don Heck (Marvel comic book), Larry Lieber (Marvel comic book), Jack Kirby (Marvel comic book)",
+    "Actors":
+      "Robert Downey Jr., Gwyneth Paltrow, Don Cheadle, Scarlett Johansson",
+    "Plot":
+      "With the world now aware of his dual life as the armored superhero Iron Man, billionaire inventor Tony Stark faces pressure from the government, the press, and the public to share his technology with the military. Unwilling to let go of his invention, Stark, along with Pepper Potts, and James \"Rhodey\" Rhodes at his side, must forge new alliances - and confront powerful enemies.",
+    "Language": "English, French, Russian",
+    "Country": "USA",
+    "Awards": "Nominated for 1 Oscar. Another 7 wins & 42 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_SX300.jpg",
+    
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_SX600.jpg",
+    
+    "Metascore": "57",
+    "imdbRating": "7.0",
+    "imdbVotes": "600,814",
+    "imdbID": "tt1228705",
+    "Type": "movie",
+    "DVD": "28 Sep 2010",
+    "BoxOffice": "$312,057,433",
+    "Production": "Paramount Studios",
+    "Website": "http://www.ironmanmovie.com/",
+    "Response": "True"
+  },
+  {
+    "Title": "World War Z",
+    "Year": "2013",
+    "Rated": "PG-13",
+    "Released": "21 Jun 2013",
+    "Runtime": "116 min",
+    "Genre": "Action, Adventure, Horror",
+    "Director": "Marc Forster",
+    "Writer":
+      "Matthew Michael Carnahan (screenplay), Drew Goddard (screenplay), Damon Lindelof (screenplay), Matthew Michael Carnahan (screen story), J. Michael Straczynski (screen story), Max Brooks (based on the novel by)",
+    "Actors": "Brad Pitt, Mireille Enos, Daniella Kertesz, James Badge Dale",
+    "Plot":
+      "Life for former United Nations investigator Gerry Lane and his family seems content. Suddenly, the world is plagued by a mysterious infection turning whole human populations into rampaging mindless zombies. After barely escaping the chaos, Lane is persuaded to go on a mission to investigate this disease. What follows is a perilous trek around the world where Lane must brave horrific dangers and long odds to find answers before human civilization falls.",
+    "Language": "English, Spanish, Hebrew, Arabic",
+    "Country": "USA",
+    "Awards": "3 wins & 24 nominations.",
+    "Poster300":
+      "https://ia.media-imdb.com/images/M/MV5BMTg0NTgxMjIxOF5BMl5BanBnXkFtZTcwMDM0MDY1OQ@@._V1_SX300.jpg",
+   
+    "Poster600":
+      "https://ia.media-imdb.com/images/M/MV5BMTg0NTgxMjIxOF5BMl5BanBnXkFtZTcwMDM0MDY1OQ@@._V1_SX600.jpg",
+   
+    "Metascore": "63",
+    "imdbRating": "7.0",
+    "imdbVotes": "524,646",
+    "imdbID": "tt0816711",
+    "Type": "movie",
+    "DVD": "17 Sep 2013",
+    "BoxOffice": "$202,351,611",
+    "Production": "Paramount Pictures",
+    "Website": "http://tinyurl.com/oo4f7jj",
+    "Response": "True"
+  }
+]

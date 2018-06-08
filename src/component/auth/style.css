@@ -1,0 +1,41 @@
+.auth {
+  position: relative;
+  background-size: cover;
+}
+
+.auth .content {
+  position: relative;
+  z-index: 4;
+  width: 500px;
+  left: 10vw;
+  top: 10vw;
+}
+
+.auth .content p {
+  width: 100%;
+}
+
+.auth .content .Button:first-child {
+  margin-right: 10px;
+}
+.authoverlay {
+  /* FF3.6-15 */
+  /* FF3.6-15 */
+  min-height: 400px;
+
+  background: -webkit-linear-gradient(
+    top,
+    #0e1621 20%,
+    #141e30e8 60%,
+    rgba(10, 16, 22, 0.7) 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to top,
+    #0e1621 20%,
+    #141e30e8 60%,
+    rgba(10, 16, 22, 0.7) 100%
+  );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+}

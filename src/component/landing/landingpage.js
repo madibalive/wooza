@@ -106,7 +106,7 @@ class LandingPage extends Component {
             </Col>
           </Row>
         )}
-        <div className="banner d-flex flex-column justify-content-center">
+        {/* <div className="banner d-flex flex-column justify-content-center">
           <div className="container text-white ">
             <p className="lead text-center text-white">
               Are you a creator ?
@@ -117,25 +117,20 @@ class LandingPage extends Component {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* <div class="dropdown-divider mt-0" /> */}
         <div
           style={{
             backgroundImage:
-              "url(https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=af630c2717bf02408f58d51685dacb73&auto=format&fit=crop&w=751&q=80)",
-              backgroundSize:"cover"
+              "url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg)",
+            backgroundSize: "cover"
           }}
         >
-          <Jumbotron
-            className="mb-0"
-            style={{
-              backgroundColor: "#0e16217a"
-            }}
-          >
+          <Jumbotron className="mb-0 landingoverlay">
             <Container>
               <Row className="align-items-center justified-content-center">
-                <Col xs="12" md="12" sm="12">
+                <Col xs="12" md={{ size: 10, offset: 2 }} sm="12">
                   <h2 className="fh text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>
@@ -145,6 +140,14 @@ class LandingPage extends Component {
                     queued up!
                   </p>
                 </Col>
+                {/* <Col xs="0" md="6" sm="0" className="d-none d-sm-block">
+                 <img
+                  style={{ height: "220px", width: "90%" }}
+                  className="img-fluid rounded shadow-sm"
+                  src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg"
+                  alt=""
+                />
+                </Col> */}
               </Row>
             </Container>
           </Jumbotron>
@@ -153,17 +156,16 @@ class LandingPage extends Component {
           <Container className="">
             <Row className="align-items-center justified-content-center">
               <Col md="12" className="">
-                {/* <img
-                  style={{ height: "220px", width: "90%" }}
-                  className="img-fluid rounded shadow-sm"
-                  src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg"
-                  alt=""
-                /> */}
                 <Row>
-                  <Col xm="6" md="6" sm="6" className="text-white">
-                    <h6>7 Days Free Trail</h6>
-                    <h6>Thousands of Tv show,movies &amp; more </h6>
-                    <h2 class="mt-1">GH 14.99</h2>
+                  <Col
+                    xm="6"
+                    md={{ size: 4, offset: 2 }}
+                    sm="6"
+                    className="text-white"
+                  >
+                    <p>7 Days Free Trail</p>
+                    <p>Thousands of Tv show,movies &amp; more </p>
+                    <h1 class="mt-2">GH 14.99</h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K fadedbutton mt-3"
@@ -176,10 +178,10 @@ class LandingPage extends Component {
                       Choose Plan
                     </button>
                   </Col>
-                  <Col xm="6" md="6" sm="6" className="text-white">
-                    <h6>1 Monthly unlimited Access</h6>
-                    <h6>Thousands of Tv show,movies &amp; more </h6>
-                    <h3 class="mt-1">Free </h3>
+                  <Col xm="6" md="4" sm="6" className="text-white">
+                    <p>1 Monthly unlimited Access</p>
+                    <p>Thousands of Tv show,movies &amp; more </p>
+                    <h1 class="mt-2">Free </h1>
                     <button
                       onClick={() => this.props.history.push("/auth")}
                       class="K S fq  mt-3"
@@ -214,10 +216,7 @@ class LandingPage extends Component {
                 </p>
               </Col>
               <Col md="6" className="d-none d-md-block">
-                <button
-                  onClick={() =>null}
-                  class="K S fq"
-                >
+                <button onClick={() => null} class="K S fq">
                   GET ON PLAYSTORE
                 </button>
               </Col>

@@ -45,7 +45,7 @@ class InfoMoviePage extends Component {
             video={movie}
             onVideoSelect={() =>
               this.props.history.push({
-                pathname: `/movies/${movie.id}`,
+                pathname: `/${movie.id}`,
                 state: { video: movie }
               })
             }

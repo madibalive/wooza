@@ -47,3 +47,25 @@ fm {
     outline: none;
     cursor: pointer;
 }
+.landingoverlay {
+    /* FF3.6-15 */
+    /* FF3.6-15 */
+  
+  
+    background: -webkit-linear-gradient(
+      right,
+      #0e1621e1 10%,
+      #141e30d8 30%
+      rgba(10, 16, 22, 0.7) 60%
+    );
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      #0e1621e1 10%,
+      #141e30d8 30%
+      rgba(10, 16, 22, 0.7) 60%
+    );
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  }
+  

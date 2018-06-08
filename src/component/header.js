@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Parse } from "parse";
-import { Link , withRouter} from "react-router-dom";
+import { withRouter } from "react-router";
+
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Collapse,
@@ -30,10 +32,9 @@ class HeaderPage extends Component {
     this.setState({ term });
     this.props.onSearchTermChange(term);
   }
-
-  onLogout() {
-    Parse.User.logOut().then(() => {
-      
+  onLogout=()=> {
+        Parse.User.logOut().then(() => {
+      this.props.history.replace("/");
     });
   }
 
@@ -75,9 +76,15 @@ class HeaderPage extends Component {
                   </NavItem>
                 ) : (
                   <NavItem>
-                    <NavLink>
+                    <button
+                      onClick={event => 
+                        this.onLogout()
+                      }
+                      class="btn btn-link"
+                      type="button"
+                    >
                       {Parse.User.current().get("username")} | Logout
-                    </NavLink>
+                    </button>
                   </NavItem>
                 )}
               </Nav>
@@ -116,6 +123,5 @@ class HeaderPage extends Component {
     );
   }
 }
-
 
 export default withRouter(HeaderPage);

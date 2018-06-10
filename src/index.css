@@ -11,14 +11,18 @@ body {
   height: 100%;
   margin: 0;
   padding-bottom: 0;
-  background: -webkit-linear-gradient(
-      top,
-      #141e30 20%,
-      #141e30 40%,
-      rgba(10, 16, 22, 4) 100%
-    )
-    fixed !important ;
+
+  background-color: #040212;
+  background-image: linear-gradient(226deg, #040212 0%, #040406 99%, #f6fb7e 100%);
+  
 }
+
+/* background: -webkit-linear-gradient(
+  top,
+  #141e30 20%,
+  #141e30 40%,
+  rgba(10, 16, 22, 4) 100%
+) */
 
 .apppage {
   min-height: 100vh;

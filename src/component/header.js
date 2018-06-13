@@ -81,7 +81,7 @@ class HeaderPage extends Component {
               <Nav className="ml-auto">
                 <NavLink href="/search">search</NavLink>
 
-                {Parse.User.current() ? (
+                {!Parse.User.current() ? (
                   <NavItem>
                     <NavLink href="/auth">Login | Signup</NavLink>
                   </NavItem>

@@ -1,6 +1,6 @@
 .Item {
   contain: strict;
-  background-color: rgba(43,50,57,.8);
+  background-color: rgba(43, 50, 57, 0.8);
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
@@ -9,18 +9,19 @@
   height: 240px;
   background-repeat: no-repeat;
   overflow: hidden;
-  -webkit-transition: box-shadow 0.3s ease-in-out;
-  transition: box-shadow 0.3s ease-in-out;
+  -webkit-transition: background 2s ease-in-out;
+  transition: background 2s ease-in-out;
   width: 100%;
   border-radius: 2px;
 }
 
-.movie-item{
+.movie-item {
   width: 160px;
   margin: 0 auto;
 }
 .tv-item {
-  width: 98%;
+  height: 240px;
+  width: 190px;
   margin: 0 auto;
 }
 
@@ -73,7 +74,7 @@
   transition: margin 0.25s ease 0.125s, opacity 0.25s ease 0.25s;
 }
 .Item:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-size: 150%;
 }
 .Item:hover .overlay {
   opacity: 1;
@@ -87,3 +88,14 @@
 .Item:hover .overlay .rating {
   opacity: 1;
 }
+
+/* On screens that are 600px or less, set the background color to olive
+@media screen and (min-width: 700px) {
+  .tv-item {
+   
+}
+
+@media screen and (min-width: 700px) {
+  .tv-item {
+    width: calc(25% + 2.5px);  }
+} */

@@ -45,19 +45,19 @@ export default class TvItem extends Component {
               backgroundImage: "url(" + this.props.video.get("poster100") + ")"
             }}
           >
-            {/* <div className="">
+            <div className="item overlay">
               <div className="rating">{score} / 10</div>
               <div className="plot ">
                 {this.props.video.get("desc").substring(0, 180) + "..."}
               </div>
-            </div> */}
+            </div>
           </div>
           <div className="title">
-            <h5 size="sm" className=" mt-1 ">
+            <h5 size="sm " className=" mt-1 text-white">
               {this.props.video.get("title")}
             </h5>
             <p className="" text-muted>
-              2014
+            {this.props.video.get("year")}
             </p>
           </div>
         </div>

@@ -20,6 +20,7 @@ import Whoops404 from "./component/whoop404";
 import MediaPlayerPage from "./component/player/play";
 import InfoTvPage from "./component/info/info_tv";
 import InfoMoviePage from "./component/info/info_movie";
+import SearchPage from "./component/search/search";
 
 class App extends Component {
   render() {
@@ -29,10 +30,11 @@ class App extends Component {
           <HeaderPage />
           <div className="apppage">
             <Switch>
-              <Route exact path="/play" component={LandingPage} />
+              <Route path="/play" component={LandingPage} />
               <Route path="/auth" component={AuthPage} />
-              <PrivateRoute exact path="/" component={HomePage} />
-              <PrivateRoute
+              <Route exact path="/" component={HomePage} />
+              <Route path="/search" component={SearchPage} />
+              <Route
                 path="/movies"
                 component={({ match, location }) => (
                   <Switch>
@@ -49,7 +51,7 @@ class App extends Component {
                   </Switch>
                 )}
               />
-              <PrivateRoute
+              <Route
                 path="/tv"
                 component={({ match, location }) => (
                   <Switch>

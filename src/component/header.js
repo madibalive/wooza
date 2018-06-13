@@ -12,7 +12,11 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Container
+  Container,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  ButtonDropdown
 } from "reactstrap";
 
 class HeaderPage extends Component {
@@ -20,9 +24,14 @@ class HeaderPage extends Component {
     auth: true,
     current: "home",
     inputValue: "",
-    isOpen: false
+    isOpen: false,
+    dropdownOpen: false
   };
-
+  toggledrop() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -32,11 +41,11 @@ class HeaderPage extends Component {
     this.setState({ term });
     this.props.onSearchTermChange(term);
   }
-  onLogout=()=> {
-        Parse.User.logOut().then(() => {
+  onLogout = () => {
+    Parse.User.logOut().then(() => {
       this.props.history.replace("/");
     });
-  }
+  };
 
   onSearch() {}
   handleSelect = value => {
@@ -70,21 +79,40 @@ class HeaderPage extends Component {
                 </NavItem>
               </Nav>
               <Nav className="ml-auto">
-                {!Parse.User.current() ? (
+                <NavLink href="/search">search</NavLink>
+
+                {Parse.User.current() ? (
                   <NavItem>
                     <NavLink href="/auth">Login | Signup</NavLink>
                   </NavItem>
                 ) : (
                   <NavItem>
-                    <button
-                      onClick={event => 
-                        this.onLogout()
-                      }
-                      class="btn btn-link"
-                      type="button"
+                    <ButtonDropdown
+                      direction="left"
+                      className="btn-link"
+                      isOpen={this.state.dropdownOpen}
+                      toggle={this.toggledrop.bind(this)}
                     >
-                      {Parse.User.current().get("username")} | Logout
-                    </button>
+                      <DropdownToggle
+                        className="btn-link border-0"
+                        style={{ border: "transparent !important" }}
+                        caret
+                        size="sm"
+                      >
+                        <div class="img-rounded profile-img" />
+                        <span class="caret" />
+                      </DropdownToggle>
+                      <DropdownMenu>
+                        <DropdownItem
+                          onClick={() => this.props.history.push("/account")}
+                        >
+                          Account
+                        </DropdownItem>
+                        <DropdownItem onClick={event => this.onLogout()}>
+                          Logout
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </ButtonDropdown>
                   </NavItem>
                 )}
               </Nav>

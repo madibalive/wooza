@@ -1,23 +1,44 @@
-.play-list {
-  padding: 20px 40px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 4;
+.searchbox {
+  background: transparent;
+  display: inline-block;
+  color: white;
+  font-size: 40px;
+  line-height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 60%;
+  padding: 0 !important;
+}
+.searchbox:focus {
+  border: none;
+  background: transparent;
+  box-shadow: none !important;
+  outline: none;
 }
 
-.play-list .play-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  width: calc(100vw - 80px);
+.searchbar {
+  box-shadow: 0 0 4px rgba(25, 25, 25, 0.1);
   box-sizing: border-box;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  height: 90px;
+  width: 100%;
+  z-index: 3;
+  position: relative;
+}
+
+.searchbar ul li {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.searchbar ul li.active {
+  color: #fff;
+  border-bottom: 4px solid #00dc89;
 }

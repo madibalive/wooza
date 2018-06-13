@@ -7,6 +7,7 @@ import { Parse } from "parse";
 import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 import ConfiguredStore from "./store/index";
+import data from "./movies.json";
 
 Parse.initialize(
   "2T1de4QP3qS4HPvVhvdlThaHRFmRejtV64fzOkpY",
@@ -15,57 +16,52 @@ Parse.initialize(
 Parse.serverURL = "https://parseapi.back4app.com/";
 
 // data.map(data => {
-//   data.episodes.map(episode => {
-//     if (episode.season == 1) {
-//       var Receive = Parse.Object.extend("Episodes");
-//       var receive = new Receive();
-//       receive.set(
-//         "tvshow",
-//         Parse.Object.extend("tvshow").createWithoutData(data.parseid)
-//       );
-//       receive.set("poster50", data.image_thumbnail_path);
-//       receive.set("title", episode.name);
-//       receive.set("date", episode.air_date.substring(0, 4));
-//       receive.save();
-//     }
+//   var Tvshow = Parse.Object.extend("Movies");
+//   var tvshow = new Tvshow();
+//   tvshow.set("title", data.Title );
+//   tvshow.set("year", data.Year);
+//   tvshow.set("runtime", data.Runtime);
+//   tvshow.set("director", data.Director);
+//   tvshow.set("actors", data.Actors);
+//   // tvshow.set("trailer", data.youtube_link);
+//   tvshow.set("desc", data.Plot);
+//   tvshow.set("language", data.Language);
+//   tvshow.set("poster50", data.Poster50);
+//   tvshow.set("poster100", data.Poster100);
+//   tvshow.set("production", data.Production);
+//   tvshow.set("type", 0);
+
+//   let genreArray = [];
+
+//   var namesplit = data.Title.split(/\b/);
+//   var genresplit = data.Genre.split(",");
+//   namesplit = namesplit.map(n => {
+//     return n.toLowerCase();
 //   });
+//   genresplit.map(n => {
+//     genreArray.push(n.toLowerCase());
+//   });
+//   // alert(data.Title)
 
-// var Receive = Parse.Object.extend("Tvshows");
-// var receive = new Receive();
-// receive.set(
-//   "tvshow",
-//   Parse.Object.extend("Image").createWithoutData(data.parseid)
-// );
-// receive.set("title", data.name + "season 1");
-// receive.set("date", data.name + "season 1");
-
-// receive.set("title", data.name + "season 1");
-// receive.set("year", data.start_date.substring(0, 4));
-// receive.set("runtime", data.runtime);
-// // receive.set("director", data.Director);
-// // receive.set("actors", data.Actors);
-// receive.set("trailer", data.youtube_link);
-// receive.set("desc", data.description);
-// // receive.set("language", data.Language);
-// receive.set("poster50", data.image_thumbnail_path);
-// receive.set("poster100", data.image_path);
-// receive.set("production", data.network);
-// receive.set("type", 0);
-
-// let genreArray = [];
-
-// var namesplit = data.name.split(/\b/);
-// // var genresplit ;
-// namesplit = namesplit.map(n => {
-//   return n.toLowerCase();
-// });
-// data.genres.map(n => {
-//   genreArray.push(n.toLowerCase());
-// });
-
-// receive.set("genre", genreArray);
-// receive.set("searchOn", namesplit);
-// saves.push(receive);
+//   tvshow.set("genre", genreArray);
+//   tvshow.set("searchOn", namesplit);
+//   // tvshow.save();
+//   // tvshow.save().then(tv => {
+//   //   data.episodes.map(episode => {
+//   //     if (episode.season == 1) {
+//   //       var Episode = Parse.Object.extend("Episode");
+//   //       var episode = new Episode();
+//   //       episode.set(
+//   //         "parent",
+//   //         tv
+//   //       );
+//   //       episode.set("poster50", data.image_thumbnail_path);
+//   //       episode.set("title", episode.name);
+//   //       episode.set("date", episode.air_date.substring(0, 4));
+//   //       episode.save();
+//   //     }
+//   //   });
+//   // });
 // });
 // Parse.Object.saveAll(saves);
 

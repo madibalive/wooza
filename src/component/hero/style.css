@@ -2,9 +2,10 @@
 
 .imagesize {
   width: 232px;
-  height: 320px;
   background-color: rgba(43, 50, 57, 0.8);
   background-size: cover;
+  min-height: 400px;
+
 }
 
 .Hero {

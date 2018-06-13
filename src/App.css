@@ -101,3 +101,25 @@ div#root {
 .back-trans {
   background: transparent;
 }
+
+.jw {
+  max-width: 100vw;
+  height: 474px;
+  background-image: linear-gradient(
+    110deg,
+    rgba(96, 79, 255, 0.4),
+    rgba(62, 255, 114, 0.4)
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66604fff",endColorstr="#663eff72",GradientType=1);
+}
+
+.profile-img {
+  margin-right: 5px;
+  float: left;
+  background: url(http://via.placeholder.com/30x30) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  background-size: auto 100%; /* Interchange this value depending on prefering width vs. height */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 999;
+}

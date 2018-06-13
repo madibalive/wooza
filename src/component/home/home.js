@@ -33,15 +33,17 @@ class HomePage extends Component {
   renderMovies = () => {
     if (this.state.movies) {
       const list = this.state.movies.map(movie => {
-        return <MovieItem
-        video={movie}
-        onVideoSelect={() => {
-          this.props.history.push({
-            pathname: `/movies/${movie.id}`,
-            state: { video: movie }
-          });
-        }}
-      />
+        return (
+          <MovieItem
+            video={movie}
+            onVideoSelect={() => {
+              this.props.history.push({
+                pathname: `/movies/${movie.id}`,
+                state: { video: movie }
+              });
+            }}
+          />
+        );
       });
       return <Row className="justified-content-around">{list}</Row>;
     }
@@ -50,15 +52,17 @@ class HomePage extends Component {
   renderTvshow = () => {
     if (this.state.tv) {
       const list = this.state.tv.map(movie => {
-        <TvItem
+        return (
+          <TvItem
             video={movie}
-            onVideoSelect={() =>
+            onVideoSelect={() => {
               this.props.history.push({
                 pathname: `/tv/${movie.id}`,
                 state: { video: movie }
-              })
-            }
+              });
+            }}
           />
+        );
       });
       return <Row className="justified-content-around">{list}</Row>;
     }
@@ -68,22 +72,24 @@ class HomePage extends Component {
       return;
     }
     this.setState({ isFetching: true });
-    const query = new Parse.Query("Movies");
+    const mquery = new Parse.Query("Movies");
+    const tquery = new Parse.Query("Tvshows");
+    tquery.limit(8);
+    mquery.limit(12);
     let movies;
     let tvhows;
-    query
+    mquery
       .find()
       .then(data => {
         movies = data;
-        const query = new Parse.Query("Tvshows");
-        query.limit(8);
-        return query.find();
+        return tquery.find();
       })
       .then(
         data => {
+          tvhows=data;
           this.setState({
             movies: movies,
-            tv: data,
+            tv: tvhows,
             isFetching: false
           });
         },
@@ -142,12 +148,24 @@ class HomePage extends Component {
             </Col>
           </Row>
           {this.renderMovies()}
-
           <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
               <h5 className="titlebar text-white">Top Tvshows</h5>
             </Col>
           </Row>
+          {this.renderTvshow()}
+          <Row className="mt-3">
+            <Col sm="12" className="d-flex justify-content-between px-3">
+              <h5 className="titlebar text-white">Top Movies</h5>
+            </Col>
+          </Row>
+          {this.renderMovies()}
+          <Row className="mt-3">
+            <Col sm="12" className="d-flex justify-content-between px-3">
+              <h5 className="titlebar text-white">Top Tvshows</h5>
+            </Col>
+          </Row>
+
           {this.renderTvshow()}
         </Container>
       </div>

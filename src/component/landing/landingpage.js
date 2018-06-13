@@ -60,7 +60,7 @@ class LandingPage extends Component {
       .then(data => {
         movies = data;
         const query = new Parse.Query("Tvshows");
-        query.limit(8);
+        // query.limit(8);
         return query.find();
       })
       .then(

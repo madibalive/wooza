@@ -1,41 +1,47 @@
-.auth {
-  position: relative;
-  background-size: cover;
-}
-
-.auth .content {
-  position: relative;
-  z-index: 4;
-  width: 500px;
-  left: 10vw;
-  top: 10vw;
-}
-
-.auth .content p {
+.authbackground {
   width: 100%;
+  opacity: 0.2;
+  height: 100vh;
+  height: 700px;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-image: linear-gradient(transparent 60%, #081118),
+    linear-gradient(114deg, #8679f9, #71ff97);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#ff081118",GradientType=0);
 }
 
-.auth .content .Button:first-child {
-  margin-right: 10px;
+.half50 {
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  opacity: 0.2;
+  background-image: linear-gradient(transparent 60%, rgb(8, 17, 24)),
+    linear-gradient(114deg, rgb(134, 121, 249), rgb(113, 255, 151));
 }
-.authoverlay {
-  /* FF3.6-15 */
-  /* FF3.6-15 */
-  min-height: 400px;
 
-  background: -webkit-linear-gradient(
-    top,
-    #0e1621 20%,
-    #141e30e8 60%,
-    rgba(10, 16, 22, 0.7) 100%
-  );
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to top,
-    #0e1621 20%,
-    #141e30e8 60%,
-    rgba(10, 16, 22, 0.7) 100%
-  );
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+.froze50 {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 30px 26px;
+}
+
+.authbutton {
+  transition: box-shadow 0.1s, transform 0.1s;
+  transition-timing-function: ease-in-out;
+  color: #081118;
+  background: linear-gradient(139deg, #00e18c, #00e36a);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff00e18c",endColorstr="#ff00e36a",GradientType=0);
+  box-shadow: 7px 11px 29px 0 rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 60px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.price-box {
+  overflow: auto;
 }

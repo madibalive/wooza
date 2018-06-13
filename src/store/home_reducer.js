@@ -4,15 +4,27 @@ import {
   FETCH_HOME_FAILURE
 } from "./actions";
 
-import movies  from "../movies.json";
-import  tvshows  from "../tvshows.json";
-
-
+import movies from "../movies.json";
+import tvshows from "../tvshows.json";
 
 const initialState = {
   items: [],
   movies: movies,
   tvshows: tvshows,
+  genres: [
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Crime",
+    "Drama",
+    "Family",
+    "Fantasy",
+    "History",
+    "Mystery",
+    "Romance",
+    "Sport",
+    "Thriller"
+  ],
   loading: false,
   error: null
 };

@@ -140,7 +140,7 @@ class LandingPage extends Component {
                     queued up!
                   </p>
                   <button
-                      onClick={() => this.props.history.push("/auth")}
+                      onClick={() => this.props.history.replace("/auth")}
                       class="K S fq  mt-3"
                     >
                      Start Your Free Trial

@@ -45,8 +45,8 @@ class InfoMoviePage extends Component {
           <MovieItem
             video={movie}
             onVideoSelect={() =>
-              this.props.history.push({
-                pathname: `/${movie.id}`,
+              this.props.history.replace({
+                pathname: `/movies/${movie.id}`,
                 state: { video: movie }
               })
             }
@@ -100,13 +100,9 @@ class InfoMoviePage extends Component {
                 });
               }}
             />
-            <div class="dropdown-divider mt-0" />
+            {/* <div class="dropdown-divider mt-0" /> */}
             <Container>
-              <Row className="mt-3">
-                <Col sm="12" className="d-flex justify-content-between px-3">
-                  <h5 className="titlebar text-white">Recommended Movies</h5>
-                </Col>
-              </Row>
+              <h5 className="my-3">Recommended Movies</h5>
               {this.renderEpisodes()}
             </Container>
           </div>

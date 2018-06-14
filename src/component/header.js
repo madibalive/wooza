@@ -90,7 +90,6 @@ class HeaderPage extends Component {
                 ) : (
                   <NavItem>
                     <ButtonDropdown
-                      direction="left"
                       className="btn-link"
                       isOpen={this.state.dropdownOpen}
                       toggle={this.toggledrop.bind(this)}
@@ -99,7 +98,7 @@ class HeaderPage extends Component {
                         className="btn-link border-0"
                         style={{ border: "transparent !important" }}
                         caret
-                        size="sm"
+                        size="lg"
                       >
                         <div class="img-rounded profile-img" />
                         <span class="caret" />

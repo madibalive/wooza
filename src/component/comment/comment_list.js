@@ -99,24 +99,26 @@ class CommentListPage extends Component {
   };
   render() {
     return (
-      <Row>
-        {this.state.error && (
-          <Col sm="12" className="error_snippet" style={{ height: "88px" }}>
-            <div className="container mx-auto">
-              <h4>Uh-oh... Something in the background crashed.</h4>
-              <button className="btn fadedbutton active" aria-pressed="true">
-                Refresh site
-              </button>
-            </div>
-          </Col>
-        )}
+      <div>
+        <Row>
+          {this.state.error && (
+            <Col sm="12" className="error_snippet" style={{ height: "88px" }}>
+              <div className="container mx-auto">
+                <h4>Uh-oh... Something in the background crashed.</h4>
+                <button className="btn fadedbutton active" aria-pressed="true">
+                  Refresh site
+                </button>
+              </div>
+            </Col>
+          )}
+        </Row>
 
         <form
           style={{ width: "100%" }}
           className="form-group"
           onSubmit={this.addComment.bind(this)}
         >
-          <Jumbotron style={{ padding: "1rem", marginTop: "5px" }}>
+          <Jumbotron style={{ marginTop: "5px" }}>
             <Row>
               <Col className="d-none d-md-block" sm="0" md="1">
                 <img
@@ -125,7 +127,7 @@ class CommentListPage extends Component {
                   alt="Generic placeholder image"
                 />
               </Col>
-              <Col sm="12" md="10">
+              <Col sm="12" md="10" lg="10">
                 <label>James simon</label>
                 <textarea
                   className="form-control commentbox text-white"
@@ -136,21 +138,26 @@ class CommentListPage extends Component {
                 />
               </Col>
               <Col className="align-self-end" sm="12" md="1">
-                <input class="btn btn-sm fadedbutton text-white " type="submit" value="Submit" />
+                <input
+                  class="btn btn-sm fadedbutton text-white "
+                  type="submit"
+                  value="Submit"
+                />
               </Col>
             </Row>
           </Jumbotron>
         </form>
 
-        <Col sm="12">
-          <h4>{this.state.comments.length} comments</h4>
-        </Col>
+        <Row>
+          <Col sm="12">
+            <h4>{this.state.comments.length} comments</h4>
+          </Col>
 
-        <Col sm="12">
-          <ul class="list-unstyled">{this.renderComments()}</ul>
-        </Col>
-       
-      </Row>
+          <Col sm="12">
+            <ul class="list-unstyled">{this.renderComments()}</ul>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }

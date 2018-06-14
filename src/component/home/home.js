@@ -216,6 +216,9 @@ class HomePage extends Component {
 
         {this.state.movies.length>0 && (
           <Container>
+
+
+            {this.renderBanner()}
             <Row className="mt-3">
               <Col sm="12" className="d-flex justify-content-between px-3">
                 <h5 className="text-white">Top Movies</h5>

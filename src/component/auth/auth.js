@@ -41,10 +41,10 @@ class AuthPage extends Component {
 
     Parse.User.logIn(email, password, {
       success: user => {
-        this.setState({
-          index: 1
-        });
-        // this.props.history.push("/movies");
+        // this.setState({
+        //   index: 1
+        // });
+        this.props.history.push("/");
       },
       error: (user, err) => {
         this.setState({

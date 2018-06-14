@@ -1,11 +1,11 @@
 
 
 .imagesize {
-  width: 232px;
-  background-color: rgba(43, 50, 57, 0.8);
+  background-position: 50%;
+  background-repeat: no-repeat;
   background-size: cover;
-  min-height: 400px;
-
+  margin: 0 auto;
+  max-height: 400px;
 }
 
 .Hero {

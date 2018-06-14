@@ -15,7 +15,7 @@ class MediaPlayerPage extends Component {
   };
 
   componentDidMount() {
-    //this.process();
+    this.process();
   }
 
   process = () => {
@@ -58,8 +58,8 @@ class MediaPlayerPage extends Component {
         <div>
           <Container>
             <Row class="justified-content-center">
-              <div className="embed-responsive embed-responsive-16by9">
-                {this.state.video && (
+              {this.state.video ? (
+                <div className="embed-responsive embed-responsive-16by9">
                   <iframe
                     src="https://player.vimeo.com/video/271743868"
                     frameborder="0"
@@ -67,36 +67,40 @@ class MediaPlayerPage extends Component {
                     mozallowfullscreen
                     allowfullscreen
                   />
-                )}
-              </div>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    backgroundColor: "#202020",
+                    height: "600px",
+                    width: "100%"
+                  }}
+                />
+              )}
             </Row>
           </Container>
           <Container className="my-2" style={{ backgroundColor: "#073642" }}>
             <Row className="p-1">
               <Col sm="12">
-                {this.state.video ? (
+                {this.state.video && (
                   <div>
-                    <h2 className=" font-weight-bold  my-2">
+                    <h2 className=" font-weight-bold text-white my-2">
                       {this.state.video.get("title")}
                     </h2>
 
-                    <small class="text-muted">
+                    <p class="text-muted">
                       {this.state.video.get("runtime")}
-                    </small>
-                    <h5>12321 views</h5>
+                    </p>
+                    <h5 className=" text-white">12321 views</h5>
                     <h5>share like </h5>
                   </div>
-                ) : (
-                  <Skeleton />
                 )}
               </Col>
             </Row>
           </Container>
 
-          <Container>
-            <Row>
-              <CommentListPage video={this.state.video} />
-            </Row>
+          <Container style={{ padding: "0 !important" }}>
+            {this.state.video && <CommentListPage video={this.state.video} />}
           </Container>
         </div>
         )

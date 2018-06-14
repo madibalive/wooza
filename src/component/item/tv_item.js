@@ -69,7 +69,6 @@ export default class TvItem extends Component {
             }}
           >
             <div className="Item overlay">
-              <div className="rating">{score} / 10</div>
               <div className="plot ">
                 {this.props.video.get("desc").substring(0, 180) + "..."}
               </div>

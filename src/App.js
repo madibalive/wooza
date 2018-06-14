@@ -32,7 +32,7 @@ class App extends Component {
           <div className="apppage">
             <Switch>
               <Route exact path="/play" component={LandingPage} />
-              <PrivateRoute path="/auth" component={AuthPage} />
+              <Route path="/auth" component={AuthPage} />
               <PrivateRoute exact path="/" component={HomePage} />
               <PrivateRoute path="/search" component={SearchPage} />
               <PrivateRoute path="/account" component={AccountPag} />

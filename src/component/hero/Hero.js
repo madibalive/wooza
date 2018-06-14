@@ -34,25 +34,24 @@ const Hero = props => (
     <div class="jumbotron jumbotron-fluid  herooverlay mb-0 d-flex flex-column justify-content-center">
       <Container>
         <Row className="align-items-center">
-          <Col sm="12" md="4">
-            <div className=" text-center">
-              <img
-                src={props.video.get("poster100")}
-                class="rounded imagesize shadow "
-                alt=""
-              />
-            </div>
+          <Col sm="12" md="8">
+            <img
+              
+              src={props.video.get("poster100")}
+              className="img img-fluid  shadow "
+              alt=""
+            />
           </Col>
-          <Col sm="12" md="8" className="align-self-center">
+          <Col sm="12" md="4" className="align-self-center">
             <div className="">
               <h2 className="text-white">{props.video.get("title")}</h2>
-              <p>{props.video.get("genre")}</p>
+              <h5  className="text-white">tags : {props.video.get("genre")}</h5>
               <p>{props.video.get("desc")}</p>
-              <p>{props.video.get("year")}     {props.video.get("runtime")}</p>
-              <Button
-                className="fadedbutton"
-                onClick={() => props.onWatch()}
-              >
+              <h5 className="text-white">
+              year 
+                {props.video.get("year")}  runtime  {props.video.get("runtime")}
+              </h5>
+              <Button className="btn-lg fadedbutton" onClick={() => props.onWatch()}>
                 Play Now
               </Button>
             </div>

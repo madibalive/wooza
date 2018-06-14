@@ -50,8 +50,8 @@ class AccountPag extends Component {
         </Jumbotron>
         <Row>
           <Col sm="12" md="6" lg="4">
-            <h4 className=" font-weight-bold  mt-3">Profile Photo</h4>
-            <h4>Ama Adjie k</h4>
+            <h4 className=" font-weight-bold border-bottom  mt-3">Profile Photo</h4>
+            <h4 className="text-white">Ama Adjie k</h4>
             <p>joined 3 auguest,2015</p>
             <img src="" className="img img-fluid rounded-circular" alt="" />
 
@@ -60,51 +60,51 @@ class AccountPag extends Component {
             <input type="file" id="profilePhotoFileUpload" />
           </Col>
           <Col sm="12" md="6" lg="4">
-            <h4 className=" font-weight-bold  mt-3">Payment Details</h4>
+            <h4 className=" font-weight-bold border-bottom mt-3">Payment Details</h4>
             <h5>Account Id </h5>
-            <h5>Beasadasdadsa123124</h5>
+            <h5 className="text-white">Beasadasdadsa123124</h5>
 
             <p>current plan</p>
 
-            <h4 className=" font-weight-bold  mt-3">
+            <h4 className=" font-weight-bold text-white  mt-3">
               GH 14.99
               <small class="text-muted">/ mo</small>
             </h4>
-            <h4 className=" font-weight-bold  mt-3">
-              <small class="text-muted">status</small>
+            <h4 className=" font-weight-bold text-white mt-3">
+              <small class="text-muted">status </small>
               Active
             </h4>
-            <h4 className=" font-weight-bold  mt-3">
-              <small class="text-muted">day remaining</small>
+            <h4 className=" font-weight-bold text-white mt-3">
+              <small class="text-muted">day remaining </small>
               7 days *
             </h4>
 
             <button className="btn btn-outline">Upgrade Plan</button>
           </Col>
           <Col sm="12" md="6" lg="4">
-            <h4 className=" font-weight-bold  mt-3">Account Details</h4>
+            <h4 className="border-bottom font-weight-bold  mt-3">Account Details</h4>
 
             <div className="d-flex flex-row justify-content-between">
               <p className="">full name </p>
               <button className="btn btn-small btn-link">edit</button>
             </div>
-            <h5 className="border my-1 p-1 ">madiba </h5>
+            <h5 className="border-bottom mb-2 p-1  text-white">madiba </h5>
             <div className="d-flex flex-row justify-content-between">
               <p className="">Email </p>
               <button className="btn btn-small btn-link">edit</button>
             </div>
-            <h5 className="border my-1 p-1 ">madibafeed@outlook.com </h5>
+            <h5 className="border-bottom mb-2 p-1  text-white">madibafeed@outlook.com </h5>
             <div className="d-flex flex-row justify-content-between">
               <p className="">Passwood</p>
               <button className="btn btn-small btn-link">edit</button>
             </div>
-            <h5 className="border my-1 p-1 ">******* </h5>
+            <h5 className="border-bottom mb-2 p-1  text-white">******* </h5>
 
-            <h4 className=" font-weight-bold  mt-3">Account Preference</h4>
+            <h4 className="border-bottom font-weight-bold  mt-3">Account Preference</h4>
             <p>language</p>
-            <h5>english</h5>
+            <h5 className="text-white">english</h5>
 
-            <button className="btn btn-link">Delete Account</button>
+            <button className="btn btn-link text-white">Delete Account</button>
           </Col>
         </Row>
       </Container>

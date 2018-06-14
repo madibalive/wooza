@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
 import PropTypes from "prop-types";
+import Skeleton from "../../skeleton/index";
+
 import "./style.css";
 import {
   Container,
@@ -35,17 +37,38 @@ export default class TvItem extends Component {
 
   render() {
     const { backdrop, title, score, overview } = this.props;
+    const url = this.props.video ? this.props.video.get("poster100") : "";
+
     return (
-      <Col  xs="6" sm="6" md="4" lg="3">
+      <Col xs="6" sm="6" md="4">
+        {/* <div className="block-m d-flex flex-column ">
+          <div className="mimg-wrapper">
+            <img src="" alt="" />
+            <div className="moverlay">
+              <p className="plot mgold-text">
+                {this.props.video.get("desc").substring(0, 180) + "..."}
+              </p>
+            </div>
+          </div>
+          <div className="mheader">
+            <h6 size="sm " className=" mt-1 text-white">
+              {this.props.video ? this.props.video.get("title") : <Skeleton />}{" "}
+            </h6>
+            <p className="" text-muted>
+              {this.props.video ? this.props.video.get("year") : <Skeleton />}
+            </p>
+          </div>
+        </div> */}
+
         <div className="tv-item">
           <div
-            className="Item shadow-sm"
+            className="Item extra shadow-sm"
             onClick={() => this.props.onVideoSelect()}
             style={{
-              backgroundImage: "url(" + this.props.video.get("poster100") + ")"
+              backgroundImage: "url(" + url + ")"
             }}
           >
-            <div className="item overlay">
+            <div className="Item overlay">
               <div className="rating">{score} / 10</div>
               <div className="plot ">
                 {this.props.video.get("desc").substring(0, 180) + "..."}
@@ -54,10 +77,10 @@ export default class TvItem extends Component {
           </div>
           <div className="title">
             <h5 size="sm " className=" mt-1 text-white">
-              {this.props.video.get("title")}
+              {this.props.video ? this.props.video.get("title") : <Skeleton />}{" "}
             </h5>
             <p className="" text-muted>
-            {this.props.video.get("year")}
+              {this.props.video ? this.props.video.get("year") : <Skeleton />}
             </p>
           </div>
         </div>

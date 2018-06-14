@@ -43,13 +43,13 @@ class SearchPage extends Component {
 
     const className = this.state.index == 0 ? "Movies" : "Tvshows";
 
-    let query = new Parse.Query(className);
+    const query = new Parse.Query(className);
     if (!this.state.selectedGenre == "all") {
       query.equalTo("genre", this.state.selectedGenre);
     }
 
     if (this.state.term.length > 4) {
-      query.startsWith("title", this.state.term.length);
+      query.startsWith("title", this.state.term);
     }
     query.skip(this.state.items.length);
     query.limit(25);
@@ -73,9 +73,8 @@ class SearchPage extends Component {
     this.setState({ index: position, items: [] });
   };
 
-  onChangeListener = term => {
-    this.setState({ term: term });
-    alert(term);
+  onChangeListener = data => {
+    this.setState({ term: data });
   };
 
   onGenreChange = event => {
@@ -112,7 +111,7 @@ class SearchPage extends Component {
         }
       });
       return <Row className="justified-content-around">{list}</Row>;
-    } else {
+    } else if (this.state.isSearching) {
       return <p>loadin</p>;
     }
   };
@@ -122,6 +121,7 @@ class SearchPage extends Component {
       <div>
         <Container>
           <div
+            style={{ height: "90px" }}
             className="d-flex flex-row align-items-center
            justify-content-between"
           >
@@ -143,7 +143,9 @@ class SearchPage extends Component {
               />
             </button>
           </div>
+        </Container>
 
+        <Container>
           <div
             className="d-flex flex-row align-items-center
            justify-content-between searchbar"
@@ -204,9 +206,9 @@ class SearchPage extends Component {
               </ButtonDropdown>
             </div>
           </div>
-
-          {this.renderItem()}
         </Container>
+        <div class="dropdown-divider" />
+        <Container>{this.renderItem()}</Container>
       </div>
     );
   }

@@ -99,7 +99,7 @@ class LandingPage extends Component {
             <Col sm="12" className="error_snippet" style={{ height: "88px" }}>
               <div className="container mx-auto">
                 <h4>Uh-oh... Something in the background crashed.</h4>
-                <button className="btn fadedbutton active" aria-pressed="true">
+                <button className="btn fadedbutton active text-white" aria-pressed="true">
                   Refresh site
                 </button>
               </div>
@@ -130,7 +130,7 @@ class LandingPage extends Component {
           <Jumbotron className="mb-0 landingoverlay">
             <Container>
               <Row className="align-items-center justified-content-center">
-                <Col xs="12" md={{ size: 10, offset: 1 }} sm="12">
+                <Col xs="12" md={{ size: 12, offset: 0 }} sm="12">
                   <h2 className="fh   text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>
@@ -139,6 +139,12 @@ class LandingPage extends Component {
                     and Wooza will always have what more for you to watch next
                     queued up!
                   </p>
+                  <button
+                      onClick={() => this.props.history.push("/auth")}
+                      class="K S fq  mt-3"
+                    >
+                     Start Your Free Trial
+                    </button>
                 </Col>
                 {/* <Col xs="0" md="6" sm="0" className="d-none d-sm-block">
                  <img
@@ -152,7 +158,9 @@ class LandingPage extends Component {
             </Container>
           </Jumbotron>
         </div>
-        <Jumbotron style={{ padding: "1rem" }} className="banner-large">
+
+
+        {/* <Jumbotron style={{ padding: "1rem" }} className="banner-large">
           <Container className="">
             <Row className="align-items-center justified-content-center">
               <Col md="12" className="">
@@ -193,12 +201,12 @@ class LandingPage extends Component {
               </Col>
             </Row>
           </Container>
-        </Jumbotron>
+        </Jumbotron> */}
 
         <Container>
           <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Movies</h5>
+              <h5 className=" text-white">Top Movies</h5>
             </Col>
           </Row>
           {this.renderMovies()}
@@ -226,7 +234,7 @@ class LandingPage extends Component {
         <Container>
           <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Tvshows</h5>
+              <h5 className=" text-white">Top Tvshows</h5>
             </Col>
           </Row>
           {this.renderTvshow()}

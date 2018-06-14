@@ -159,13 +159,7 @@ class TvShowPage extends Component {
           </div>
         </Container>
 
-        <Jumbotron className="jumbotron-fluid  " style={{ padding: "1rem" }}>
-          <Container style={{ maxHeight: "100vh" }}>
-            <div className="d-flex d-flex-row d-flex-wrap ">
-              {this.renderGenres()}
-            </div>
-          </Container>
-        </Jumbotron>
+     
         <Container>{this.renderTvshow()}</Container>
         <Container style={{ padding: "2rem" }}>
           {this.state.items.lenght > 0 && (

@@ -64,7 +64,7 @@ class HeaderPage extends Component {
       <div>
         <Navbar color="dark" dark expand="md">
           <Container>
-            <NavbarBrand href="/">WOOZA</NavbarBrand>
+            <NavbarBrand href="/">INKAYE</NavbarBrand>
             <NavbarToggler onClick={this.toggle.bind(this)} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
@@ -75,11 +75,13 @@ class HeaderPage extends Component {
                   <NavLink href="/movies">Movies</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/videos">Videos</NavLink>
+                  <NavLink href="/videos">Music </NavLink>
                 </NavItem>
               </Nav>
               <Nav className="ml-auto">
-                <NavLink href="/search">search</NavLink>
+                <NavLink href="/search">
+                  <i class="fa fa-search" />
+                </NavLink>
 
                 {!Parse.User.current() ? (
                   <NavItem>

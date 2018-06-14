@@ -26,16 +26,15 @@ class AuthPage extends Component {
   state = {
     index: 0,
     error: null,
-    stage: 0,
+   
     isloading: false
   };
 
   onLogin(e) {
     e.preventDefault();
     // this.props.authcheck(true);
-
-    var email = this.refs.email.value;
-    var password = this.refs.password.value;
+    var email = this.loginemail.value;
+    var password = this.loginpass.value;
 
     // this.props.updateAuth(true);
     this.setState({ isloading: true });
@@ -43,14 +42,13 @@ class AuthPage extends Component {
     Parse.User.logIn(email, password, {
       success: user => {
         this.setState({
-          stage: 2
+          index: 1
         });
         // this.props.history.push("/movies");
       },
       error: (user, err) => {
         this.setState({
           error: err.message,
-          index: 1,
           isloading: false
         });
       }
@@ -60,30 +58,30 @@ class AuthPage extends Component {
   onPaymentComplete = index => {
     Parse.user.put("payment", 0);
     Parse.user.put("renewDate", new Date());
-    this.props.history.push("/movies");
+    this.props.history.push("/");
   };
 
   onRegister(e) {
     e.preventDefault();
-    var email = this.refs.email.value;
-    var password = this.refs.password.value;
+    var email = this.regemail.value;
+    var username =this.regusername.value;
+    var password =this.regpass.value;
 
     var user = new Parse.User();
-    user.set("username", email);
+    user.set("username", username);
     user.set("password", password);
     user.set("email", email);
     this.setState({ isloading: true });
     user.signUp(null, {
       success: user => {
         this.state({
-          stage: 2
+          index: 1
         });
-        // this.props.history.replace("/movies");
+        // this.props.history.replace("/");
       },
       error: (user, err) => {
         this.setState({
           error: err.message,
-          index: 0,
           isloading: false
         });
       }
@@ -230,7 +228,7 @@ class AuthPage extends Component {
                 </label>
               </div>
               <button
-                onClick={event => this.onLogin()}
+                onClick={event => this.onLogin(event)}
                 type="submit"
                 class="btn btn-primary"
               >
@@ -251,6 +249,20 @@ class AuthPage extends Component {
             </form>
           ) : (
             <form class="auth_box">
+              <div class="form-group">
+                <label for="exampleInputUsername1">Username </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputUsername1"
+                  aria-describedby="emailHelp"
+                  ref={ref => {
+                    this.regusername = ref;
+                  }}
+                  placeholder="Username"
+                />
+                
+              </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input
@@ -302,7 +314,7 @@ class AuthPage extends Component {
                 </label>
               </div>
               <button
-                onClick={event => this.onRegister()}
+                onClick={event => this.onRegister(event)}
                 type="submit"
                 class="btn btn-primary"
               >

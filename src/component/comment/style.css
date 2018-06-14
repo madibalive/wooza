@@ -1,0 +1,21 @@
+.commentbox:focus {
+  border: none;
+  background: transparent;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.commentbox {
+  background: transparent;
+  display: inline-block;
+  color: white;  
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 0 !important;
+}

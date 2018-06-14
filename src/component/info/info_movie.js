@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import MovieItem from "../item/movie_item";
 import { fetchInfoError } from "../../store/actions";
 import Hero from "../hero/Hero";
+import Skeleton from "../../skeleton/index";
 
 class InfoMoviePage extends Component {
   state = {
@@ -38,7 +39,7 @@ class InfoMoviePage extends Component {
   };
 
   renderEpisodes = () => {
-    if (this.state.items) {
+    if (this.state.items.length) {
       const list = this.state.items.map(movie => {
         return (
           <MovieItem
@@ -52,6 +53,13 @@ class InfoMoviePage extends Component {
           />
         );
       });
+      return <Row className="justified-content-around">{list}</Row>;
+    } else {
+      let list = [];
+      for (let index = 0; index < 6; index++) {
+        list.push(<MovieItem />);
+      }
+
       return <Row className="justified-content-around">{list}</Row>;
     }
   };
@@ -94,12 +102,13 @@ class InfoMoviePage extends Component {
             />
             <div class="dropdown-divider mt-0" />
             <Container>
-            <Row className="mt-3">
-            <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Recommended Movies</h5>
-            </Col>
-          </Row>
-            {this.renderEpisodes()}</Container>
+              <Row className="mt-3">
+                <Col sm="12" className="d-flex justify-content-between px-3">
+                  <h5 className="titlebar text-white">Recommended Movies</h5>
+                </Col>
+              </Row>
+              {this.renderEpisodes()}
+            </Container>
           </div>
         ) : (
           <p>loading</p>

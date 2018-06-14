@@ -7,6 +7,7 @@ import { Container, Row, Col, Button, Jumbotron } from "reactstrap";
 import { VimeoEmbed } from "../../library/customvimeo";
 import { SSL_OP_PKCS1_CHECK_2 } from "constants";
 import { Parse } from "parse";
+import Skeleton from "../../skeleton/index";
 
 class MediaPlayerPage extends Component {
   state = {
@@ -14,16 +15,13 @@ class MediaPlayerPage extends Component {
   };
 
   componentDidMount() {
-    this.process();
+    //this.process();
   }
 
   process = () => {
-
-    
-
-    let datao = Parse.Object.extend(this.props.location.state.video.className).createWithoutData(
-      this.props.match.params.id
-    );
+    let datao = Parse.Object.extend(
+      this.props.location.state.video.className
+    ).createWithoutData(this.props.match.params.id);
     datao.fetch().then(data => {
       this.setState({
         video: data
@@ -57,39 +55,51 @@ class MediaPlayerPage extends Component {
   render() {
     return (
       <div>
-        {this.state.video ? (
-          <div>
-            <Container>
-              <Row class="justified-content-center">
-                <div className="embed-responsive embed-responsive-16by9">
-                <iframe src="https://player.vimeo.com/video/271743868" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-              </Row>
-            </Container>
-            <Container style={{ padding: "1rem", backgroundColor: "#073642" }}>
-              <Row>
-                <Col sm="12"><h3 className="text-white">{this.state.video.get("title")}</h3></Col>
-                <Col sm="12">12321 views</Col>
+        <div>
+          <Container>
+            <Row class="justified-content-center">
+              <div className="embed-responsive embed-responsive-16by9">
+                {this.state.video && (
+                  <iframe
+                    src="https://player.vimeo.com/video/271743868"
+                    frameborder="0"
+                    webkitallowfullscreen
+                    mozallowfullscreen
+                    allowfullscreen
+                  />
+                )}
+              </div>
+            </Row>
+          </Container>
+          <Container className="my-2" style={{ backgroundColor: "#073642" }}>
+            <Row className="p-1">
+              <Col sm="12">
+                {this.state.video ? (
+                  <div>
+                    <h2 className=" font-weight-bold  my-2">
+                      {this.state.video.get("title")}
+                    </h2>
 
-                <Col sm="12">
-                 
-                  {this.state.video.get("runtime")}{" "}
-                </Col>
-                <Col sm="12">share like </Col>
-              </Row>
-            </Container>
+                    <small class="text-muted">
+                      {this.state.video.get("runtime")}
+                    </small>
+                    <h5>12321 views</h5>
+                    <h5>share like </h5>
+                  </div>
+                ) : (
+                  <Skeleton />
+                )}
+              </Col>
+            </Row>
+          </Container>
 
-            <Container>
-              <Row>
-                <Col sm="12">
-                  <CommentListPage video={this.state.video} />
-                </Col>
-              </Row>
-            </Container>
-          </div>
-        ) : (
-          <p> loading</p>
-        )}
+          <Container>
+            <Row>
+              <CommentListPage video={this.state.video} />
+            </Row>
+          </Container>
+        </div>
+        )
       </div>
     );
   }

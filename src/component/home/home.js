@@ -30,6 +30,17 @@ class HomePage extends Component {
     this.getdata();
   }
 
+  renderLoading = () => {
+    if (this.state.isFetching) {
+      let list = [];
+      for (let index = 0; index < 6; index++) {
+        list.push(<MovieItem />);
+      }
+
+      return <Row className="my-3 justified-content-around">{list}</Row>;
+    }
+  };
+
   renderMovies = () => {
     if (this.state.movies) {
       const list = this.state.movies.map(movie => {
@@ -45,9 +56,72 @@ class HomePage extends Component {
           />
         );
       });
-      return <Row className="justified-content-around">{list}</Row>;
+      return <Row className="my-3 justified-content-around">{list}</Row>;
     }
   };
+
+  renderBanner(item) {
+    return (
+      <Jumbotron className="back-trans my-3">
+        <Row>
+          <Col sm="6" md="8" className="error-banner justify-content-center">
+            <h2 className=" font-weight-bold  mt-3">GH 14.99</h2>
+
+            <p>Description </p>
+
+            <button className="btn">watch now</button>
+          </Col>
+          <Col sm="6" md="4">
+            <img src="" className="img img-fluid" alt="" />
+          </Col>
+        </Row>
+      </Jumbotron>
+    );
+  }
+
+  render4Tv(data) {
+    return (
+      <Row className="my-3">
+        <Col sm="12" md="6">
+          <TvItem />
+        </Col>
+        <Col sm="12" md="6">
+          <Row>
+            <Col sm="6">
+              <TvItem />
+            </Col>
+            <Col sm="6">
+              <TvItem />
+            </Col>
+            <Col sm="6">
+              <TvItem />
+            </Col>
+            <Col sm="6">
+              <TvItem />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    );
+  }
+  render4Movie(data) {
+    return (
+      <Row className="largeMovieBar my-3">
+        <Col sm="6">
+          <TvItem />
+        </Col>
+        <Col sm="6">
+          <TvItem />
+        </Col>
+        <Col sm="6">
+          <TvItem />
+        </Col>
+        <Col sm="6">
+          <TvItem />
+        </Col>
+      </Row>
+    );
+  }
 
   renderTvshow = () => {
     if (this.state.tv) {
@@ -64,7 +138,7 @@ class HomePage extends Component {
           />
         );
       });
-      return <Row className="justified-content-around">{list}</Row>;
+      return <Row className="my-3 justified-content-around">{list}</Row>;
     }
   };
   getdata = () => {
@@ -86,7 +160,7 @@ class HomePage extends Component {
       })
       .then(
         data => {
-          tvhows=data;
+          tvhows = data;
           this.setState({
             movies: movies,
             tv: tvhows,
@@ -106,7 +180,7 @@ class HomePage extends Component {
         return <MovieItem video={movie} onVideoSelect={video => null} />;
       });
       return (
-        <Row className="justified-content-around align-items-center">
+        <Row className="my-3 justified-content-around align-items-center">
           {list}
         </Row>
       );
@@ -128,46 +202,49 @@ class HomePage extends Component {
             </Col>
           </Row>
         )}
-        <div className="banner d-flex flex-column justify-content-center">
+        <div style={{height:"88px"}} className="p-2 banner-large d-flex flex-column justify-content-center">
           <div className="container ">
             <p className="lead text-center">
               Are you a creator ?
               <span>
-                <Button className="btn-sm">Access Creator</Button>
+                <Button className="btn-sm ml-2">Access Creator</Button>
               </span>
             </p>
           </div>
         </div>
+        {this.state.isFetching && <Container>{this.renderLoading()}</Container>}
+
+        {this.state.movies.length>0 && (
+          <Container>
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Movies</h5>
+              </Col>
+            </Row>
+            {this.renderMovies()}
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Tvshows</h5>
+              </Col>
+            </Row>
+            {this.renderTvshow()}
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Movies</h5>
+              </Col>
+            </Row>
+            {this.renderMovies()}
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Tvshows</h5>
+              </Col>
+            </Row>
+
+            {this.renderTvshow()}
+          </Container>
+        )}
 
         {/* <div class="dropdown-divider mt-0" /> */}
-
-        <Container>
-          <Row className="mt-3">
-            <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Movies</h5>
-            </Col>
-          </Row>
-          {this.renderMovies()}
-          <Row className="mt-3">
-            <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Tvshows</h5>
-            </Col>
-          </Row>
-          {this.renderTvshow()}
-          <Row className="mt-3">
-            <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Movies</h5>
-            </Col>
-          </Row>
-          {this.renderMovies()}
-          <Row className="mt-3">
-            <Col sm="12" className="d-flex justify-content-between px-3">
-              <h5 className="titlebar text-white">Top Tvshows</h5>
-            </Col>
-          </Row>
-
-          {this.renderTvshow()}
-        </Container>
       </div>
     );
   }

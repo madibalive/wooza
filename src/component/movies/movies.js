@@ -15,7 +15,7 @@ class MoviesPage extends Component {
     super(props);
 
     this.state = {
-      isFetching: false,
+      isFetching: true,
       currentPage: 0,
       items: [],
       pages: [],
@@ -27,7 +27,18 @@ class MoviesPage extends Component {
   }
 
   componentDidMount() {
-    this.getdata();
+    // this.getdata();
+  }
+
+  renderLoading() {
+    if (this.state.isFetching) {
+      let list = [];
+      for (let index = 0; index < 6; index++) {
+        list.push(<MovieItem />);
+      }
+
+      return <Row className="justified-content-around">{list}</Row>;
+    }
   }
 
   renderTvshow = () => {
@@ -46,8 +57,6 @@ class MoviesPage extends Component {
         );
       });
       return <Row className="justified-content-around">{list}</Row>;
-    } else {
-      return <p>loadin</p>;
     }
   };
 
@@ -159,12 +168,12 @@ class MoviesPage extends Component {
           </div>
         </Container>
 
-        <Jumbotron className="jumbotron-fluid  " style={{ padding: "1rem" }}>
-          <Container>
-            <div>{this.renderGenres()}</div>
-          </Container>
-        </Jumbotron>
-        <Container>{this.renderTvshow()}</Container>
+        
+        <Container>
+          {this.renderTvshow()}
+          {this.renderLoading()}
+        </Container>
+
         <Container style={{ padding: "2rem" }}>
           {this.state.items.lenght > 0 && (
             <Button className="fadedbutton" onClick={event => this.getdata()}>

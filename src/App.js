@@ -21,6 +21,7 @@ import MediaPlayerPage from "./component/player/play";
 import InfoTvPage from "./component/info/info_tv";
 import InfoMoviePage from "./component/info/info_movie";
 import SearchPage from "./component/search/search";
+import AccountPag from './component/account/account'
 
 class App extends Component {
   render() {
@@ -30,11 +31,12 @@ class App extends Component {
           <HeaderPage />
           <div className="apppage">
             <Switch>
-              <Route path="/play" component={LandingPage} />
-              <Route path="/auth" component={AuthPage} />
-              <Route exact path="/" component={HomePage} />
-              <Route path="/search" component={SearchPage} />
-              <Route
+              <Route exact path="/play" component={LandingPage} />
+              <PrivateRoute path="/auth" component={AuthPage} />
+              <PrivateRoute exact path="/" component={HomePage} />
+              <PrivateRoute path="/search" component={SearchPage} />
+              <PrivateRoute path="/account" component={AccountPag} />
+              <PrivateRoute
                 path="/movies"
                 component={({ match, location }) => (
                   <Switch>
@@ -51,7 +53,7 @@ class App extends Component {
                   </Switch>
                 )}
               />
-              <Route
+              <PrivateRoute
                 path="/tv"
                 component={({ match, location }) => (
                   <Switch>
@@ -66,7 +68,7 @@ class App extends Component {
                 )}
               />
               <PrivateRoute path="/videos" component={VideosPage} />
-              <Route path="/play/:id" component={MediaPlayerPage} />
+              <PrivateRoute path="/play/:id" component={MediaPlayerPage} />
 
               <Route component={Whoops404} />
             </Switch>

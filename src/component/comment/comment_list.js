@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import CommentItem from "./comment_item";
 import { Parse } from "parse";
+import "./style.css";
 
 import { Media, Jumbotron, Container, Col, Button, Row } from "reactstrap";
 
 class CommentListPage extends Component {
   state = {
-    comments:[],
+    comments: [],
     comment: "",
     isFetching: false,
     isPosting: false,
@@ -124,18 +125,18 @@ class CommentListPage extends Component {
                   alt="Generic placeholder image"
                 />
               </Col>
-              <Col sm="12" md="9">
+              <Col sm="12" md="10">
                 <label>James simon</label>
                 <textarea
-                  className="form-control back-trans"
+                  className="form-control commentbox text-white"
                   id="exampleTextarea"
                   rows="2"
                   placeholder="add a comment..."
                   onChange={event => this.onInputChange(event.target.value)}
                 />
               </Col>
-              <Col className="align-self-end" sm="12" md="2">
-                <input class="btn btn-sm" type="submit" value="Submit" />
+              <Col className="align-self-end" sm="12" md="1">
+                <input class="btn btn-sm fadedbutton text-white " type="submit" value="Submit" />
               </Col>
             </Row>
           </Jumbotron>
@@ -148,22 +149,7 @@ class CommentListPage extends Component {
         <Col sm="12">
           <ul class="list-unstyled">{this.renderComments()}</ul>
         </Col>
-        {this.state.posting && (
-          <Col sm="12">
-            <Media className="mt-1">
-              <Media left middle href="#">
-                <Media object data-src="http://via.placeholder.com/64x64" />
-              </Media>
-              <Media body>
-                <Media>
-                  <h6>Media heading</h6>
-                </Media>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                scelerisque ante sollicitudin commodo.
-              </Media>
-            </Media>
-          </Col>
-        )}
+       
       </Row>
     );
   }

@@ -138,8 +138,8 @@ class SearchPage extends Component {
               style={{ background: "transparent" }}
             >
               <i
-                style={{ color: "white" }}
-                className="fa fa-search fa-2x"
+                
+                className="fa fa-search text-muted fa-1x"
               />
             </button>
           </div>

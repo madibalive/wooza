@@ -97,7 +97,7 @@ class HomePage extends Component {
           </div>
           <div className="w-75">
             <img
-              style={{ backgroundSize: "cover" }}
+              style={{ objectFit: "cover" }}
               src={movie.get("poster100")}
               className="img  w-100 h-100"
               alt=""
@@ -137,7 +137,7 @@ class HomePage extends Component {
           >
             <div className="himg-wrapper" style={{height:"80%"}}>
               <img
-                style={{ backgroundSize: "cover" }}
+                style={{ objectFit: "cover" }}
                 className="img img-fluid w-100 h-100"
                 src={movie.get("poster100")}
                 alt=""
@@ -162,7 +162,7 @@ class HomePage extends Component {
             <div className="block-m d-flex flex-column banner-large-subtle  ">
               <div className="himg-wrapper h-75 w-100 " >
                 <img
-                  style={{ backgroundSize: "cover" }}
+                  style={{ objectFit: "cover" }}
                   className="img w-100 h-100 img-fluid "
                    src={movie.get("poster100")}
                   alt=""

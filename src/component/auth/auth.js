@@ -75,7 +75,7 @@ class AuthPage extends Component {
     user.signUp(null, {
       success: user => {
         this.setState({
-          index: 1
+          index: 1 
         });
         // this.props.history.replace("/");
       },

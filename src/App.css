@@ -91,6 +91,20 @@ div#root {
   padding: 0px 20px;
 }
 
+.error_nosize {
+  position: relative;
+ 
+  background-image: linear-gradient(
+    106deg,
+    rgba(147, 2, 14, 0.96),
+    rgba(159, 4, 69, 0.96)
+  );
+  z-index: 90;
+  width: 100%;
+  box-sizing: border-box;
+ 
+}
+
 .titlebar {
   font-size: 24px;
   font-weight: 600;
@@ -128,3 +142,4 @@ div#root {
   border-radius: 50%;
   z-index: 999;
 }
+

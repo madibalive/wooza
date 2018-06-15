@@ -72,11 +72,14 @@ class HomePage extends Component {
     if (this.state.movies[1]) {
       const movie = this.state.movies[1];
       return (
-        <div
-          className="banner-large-subtle d-flex flex-row w-100 my-4"
-          style={{ height: "260px" }}
-        >
-          <div className="w-25 p-4">
+        <Row noGutters="true">
+          <Col
+            xs="12"
+            sm="12"
+            md="4"
+            className="p-4 banner-large-subtle"
+            style={{ height: "260px" }}
+          >
             <h2 className=" font-weight-bold text-white mt-3">
               {movie ? movie.get("title") : <Skeleton />}
             </h2>
@@ -94,16 +97,16 @@ class HomePage extends Component {
             >
               watch now
             </button>
-          </div>
-          <div className="w-75">
+          </Col>
+          <Col xs="12" sm="12" md="8" style={{ height: "260px" }}>
             <img
               style={{ objectFit: "cover" }}
               src={movie.get("poster100")}
               className="img  w-100 h-100"
               alt=""
             />
-          </div>
-        </div>
+          </Col>
+        </Row>
       );
     }
   }
@@ -135,7 +138,7 @@ class HomePage extends Component {
             className="block-m d-flex flex-column banner-large-subtle  "
             style={{ height: "400px" }}
           >
-            <div className="himg-wrapper" style={{height:"80%"}}>
+            <div className="himg-wrapper" style={{ height: "80%" }}>
               <img
                 style={{ objectFit: "cover" }}
                 className="img img-fluid w-100 h-100"
@@ -160,11 +163,11 @@ class HomePage extends Component {
         return (
           <Col xs="6" sm="6">
             <div className="block-m d-flex flex-column banner-large-subtle  ">
-              <div className="himg-wrapper h-75 w-100 " >
+              <div className="himg-wrapper h-75 w-100 ">
                 <img
                   style={{ objectFit: "cover" }}
                   className="img w-100 h-100 img-fluid "
-                   src={movie.get("poster100")}
+                  src={movie.get("poster100")}
                   alt=""
                 />
               </div>
@@ -184,8 +187,10 @@ class HomePage extends Component {
       return (
         <Row className="mb-3">
           {top}
-          <Col sm="12" md="6"  >
-            <Row className="align-items-center" style={{ height: "400px" }}>{list}</Row>
+          <Col sm="12" md="6">
+            <Row className="align-items-center" style={{ height: "400px" }}>
+              {list}
+            </Row>
           </Col>
         </Row>
       );

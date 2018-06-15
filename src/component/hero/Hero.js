@@ -2,6 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./style.css";
 import { Link } from "react-router-dom";
+import Skeleton from "../../skeleton/index";
 
 import {
   Container,
@@ -25,41 +26,88 @@ import parse from "parse";
  * />
  */
 const Hero = props => (
-  <div
-    className="Hero"
-    style={{
-      backgroundImage: `url(${props.video.get("poster100")})`
-    }}
-  >
-    <div class="jumbotron jumbotron-fluid  herooverlay mb-0 d-flex flex-column justify-content-center">
-      <Container>
-        <Row className="align-items-center">
-          <Col sm="12" md="8">
-            <img
-              
-              src={props.video.get("poster100")}
-              className="img img-fluid  shadow "
-              alt=""
-            />
-          </Col>
-          <Col sm="12" md="4" className="align-self-center">
-            <div className="">
-              <h2 className="text-white">{props.video.get("title")}</h2>
-              <h5  className="text-white">tags : {props.video.get("genre")}</h5>
-              <p>{props.video.get("desc")}</p>
-              <h5 className="text-white">
-              year 
-                {props.video.get("year")}  runtime  {props.video.get("runtime")}
-              </h5>
-              <Button className="btn-lg fadedbutton" onClick={() => props.onWatch()}>
-                Play Now
-              </Button>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  </div>
+  <Row noGutters="true">
+    <Col xs="12" sm="12" md="8" style={{ height: "460px" }}>
+      <img
+        style={{ objectFit: "cover" }}
+        src={props.video.get("poster100")}
+        className="img  w-100 h-100"
+        alt=""
+      />
+    </Col>
+    <Col
+      xs="12"
+      sm="12"
+      md="4"
+      className="p-4 banner-large-subtle"
+      style={{ height: "460px" }}
+    >
+      <h2 className=" font-weight-bold text-white">
+        {props.video ? props.video.get("title") : <Skeleton />}
+      </h2>
+
+      <small className="text-white">
+        {props.video.get("production")}
+      </small>
+      <p className="text-white">
+        {props.video.get("year")} | runtime {props.video.get("runtime")}
+      </p>
+      <p> {props.video && props.video.get("desc").substring(0, 350)}</p>
+      <p className="text-white">Genre | {props.video.get("genre")}</p>
+      <button
+        onClick={() => {
+          this.props.history.push({
+            pathname: `/movies/${props.video.id}`,
+            state: { video: props.video }
+          });
+        }}
+        className="btn btn-primary btn-large text-white"
+      >
+        watch now
+      </button>
+    </Col>
+  </Row>
+
+  // <div>
+  //   {/* //   className="Hero"
+  // //   // style={{
+  // //   //   backgroundImage: `url(${props.video.get("poster100")})`
+  // //   // }}
+  // // > */}
+  //   <div className=" herooverlay">
+  //     <Container>
+  //       <Row noGutters="true">
+  //         <Col sm="12" md="8">
+  //           <div style={{ height: "400px" }}>
+  //             <img
+  //               style={{ objectFit: "cover" }}
+  //               src={props.video.get("poster100")}
+  //               className="img  w-00 h-100  "
+  //               alt=""
+  //             />
+  //           </div>
+  //         </Col>
+  //         <Col sm="12" md="4" className="align-self-center">
+  //           <div className="">
+  //             <h2 className="text-white">{props.video.get("title")}</h2>
+  //             <h5 className="text-white">tags : {props.video.get("genre")}</h5>
+  //             <p>{props.video.get("desc")}</p>
+  //             <h5 className="text-white">
+  //               year
+  //               {props.video.get("year")} runtime {props.video.get("runtime")}
+  //             </h5>
+  //             <Button
+  //               className="btn-lg fadedbutton"
+  //               onClick={() => props.onWatch()}
+  //             >
+  //               Play Now
+  //             </Button>
+  //           </div>
+  //         </Col>
+  //       </Row>
+  //     </Container>
+  //   </div>
+  // </div>
 );
 
 Hero.defaultProps = {

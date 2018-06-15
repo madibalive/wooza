@@ -64,7 +64,7 @@ class HeaderPage extends Component {
       <div>
         <Navbar
           fixed="top"
-          style={{ backgroundColor: "#0a101685" }}
+          style={{ backgroundColor: "#0a101696" }}
           expand="md"
         >
           <Container>

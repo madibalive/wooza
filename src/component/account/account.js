@@ -60,14 +60,16 @@ class AccountPag extends Component {
             <h4 className="  border-bottom  mt-3">Profile Photo</h4>
             <h4 className="text-white">Ama Adjie k</h4>
             <p>joined 3 auguest,2015</p>
-            <img
-              src={Parse.User.current()
-                .get("avatar")
-                .url()}
-              className="img img-fluid rounded-circle"
-              style={{}}
-              alt=""
-            />
+            {Parse.User.current().get("avatar") && (
+              <img
+                src={Parse.User.current()
+                  .get("avatar")
+                  .url()}
+                className="img img-fluid rounded-circle"
+                style={{}}
+                alt=""
+              />
+            )}
 
             <p>Uploud a profile picture or choose one from your gallery</p>
 

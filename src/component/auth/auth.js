@@ -186,6 +186,17 @@ class AuthPage extends Component {
   renderStageOne = () => {
     return (
       <Row>
+         {this.state.error && (
+          <Col >
+            <div className="error_snippet">
+              <div className="container mx-auto">
+                <p className="text white">{this.state.error}</p >
+              
+              </div>
+            </div>
+          </Col>
+        )}
+      
         <Col xm="6" md={{ size: 8, offset: 2 }} sm="6" className="froze50  ">
           {this.state.login ? (
             <form class="auth_box">

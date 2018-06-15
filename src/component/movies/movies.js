@@ -27,7 +27,7 @@ class MoviesPage extends Component {
   }
 
   componentDidMount() {
-    // this.getdata();
+     this.getdata();
   }
 
   renderLoading() {
@@ -157,21 +157,17 @@ class MoviesPage extends Component {
             </div>
           </Row>
         )}
-        <Container className="">
-          <div>
-            <h4
-              style={{ padding: "2rem" }}
-              className="text-white font-weight-bold"
-            >
+        <Container>
+          <div style={{ height: "72px" }} className="d-flex align-items-center">
+            <h4 className="text-white font-weight-bold">
               All Streaming Movies
             </h4>
           </div>
         </Container>
+        <div class="dropdown-divider mb-3" />
 
-        
         <Container>
           {this.renderTvshow()}
-          {this.renderLoading()}
         </Container>
 
         <Container style={{ padding: "2rem" }}>

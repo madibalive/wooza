@@ -1,21 +1,25 @@
 .authbackground {
   width: 100%;
-  opacity: 0.2;
+  opacity: 0.6;
   height: 100vh;
-  height: 700px;
   position: absolute;
   top: 0;
   z-index: -1;
-  background-image: linear-gradient(transparent 60%, #081118),
+  background-image: url("https://images.unsplash.com/photo-1492462543947-040389c4a66c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93c013676fe7a55668861c6efbe1d19&auto=format&fit=crop&w=1050&q=80") ;
+  /* background-image: linear-gradient(transparent 60%, #081118),
     linear-gradient(114deg, #8679f9, #71ff97);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#ff081118",GradientType=0);
+} */
+
+background-size: cover;
+
 }
 
 .half50 {
   position: absolute;
   top: 0px;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0;
   background-image: linear-gradient(transparent 60%, rgb(8, 17, 24)),
     linear-gradient(114deg, rgb(134, 121, 249), rgb(113, 255, 151));
 }
@@ -23,7 +27,7 @@
 .froze50 {
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   padding: 30px 26px;
 }
@@ -45,3 +49,14 @@
 .price-box {
   overflow: auto;
 }
+
+/* On screens that are 600px or less, set the background color to olive
+@media screen and (min-width: 700px) {
+  .tv-item {
+   
+}
+
+@media screen and (min-width: 700px) {
+  .tv-item {
+    width: calc(25% + 2.5px);  }
+} */

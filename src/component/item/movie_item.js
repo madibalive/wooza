@@ -14,7 +14,7 @@ import {
   Button,
   CardImgOverlay
 } from "reactstrap";
-import Skeleton from '../../skeleton/index'
+import Skeleton from "../../skeleton/index";
 
 export default class MovieItem extends Component {
   static defaultProps = {
@@ -39,12 +39,10 @@ export default class MovieItem extends Component {
     const url = this.props.video ? this.props.video.get("poster100") : "";
 
     return (
-      <Col xs="6" sm="6" md="3" lg="2">
-
+      <Col xs="6" sm="6" md="3" lg="2" className="my-2">
         {/* div.block-m>(div.mimg-wrapper>img+(div.moverlay>p.mtext-gold))+div.mheader */}
 
-
-        <div className="movie-item">
+        <div className="movie-item banner-large-subtle rounded-bottom">
           <div
             onClick={() => this.props.onVideoSelect()}
             className="Item  shadow-sm"
@@ -54,18 +52,22 @@ export default class MovieItem extends Component {
           >
             <div className="overlay">
               <div className="plot text-small ">
-                <small>
+                <small className="font-weight-bold ">
                   {this.props.video &&
                     this.props.video.get("desc").substring(0, 120) + "..."}
                 </small>
               </div>
             </div>
           </div>
-          <div className="title">
-            <h5 size="sm" className=" mt-1 text-white ">
-              {this.props.video ? this.props.video.get("title") : <Skeleton />}
-            </h5>
-            <p className="" text-muted>
+          <div className="title  p-2  mt-1">
+            <p size="sm" className=" mb-0 text-white ">
+              {this.props.video ? (
+                this.props.video.get("title").substring(0, 20) + "..."
+              ) : (
+                <Skeleton />
+              )}
+            </p>
+            <p className="m-0" text-muted>
               {this.props.video ? this.props.video.get("year") : <Skeleton />}
             </p>
           </div>

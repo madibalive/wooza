@@ -40,7 +40,7 @@ export default class TvItem extends Component {
     const url = this.props.video ? this.props.video.get("poster100") : "";
 
     return (
-      <Col xs="6" sm="6" md="4">
+      <Col xs="6" sm="6" md="3" className="my-2">
         {/* <div className="block-m d-flex flex-column ">
           <div className="mimg-wrapper">
             <img src="" alt="" />
@@ -60,9 +60,9 @@ export default class TvItem extends Component {
           </div>
         </div> */}
 
-        <div className="tv-item">
+        <div className="tv-item  banner-large-subtle rounded-bottom">
           <div
-            className="Item extra shadow-sm"
+            className="Item extra shadow"
             onClick={() => this.props.onVideoSelect()}
             style={{
               backgroundImage: "url(" + url + ")"
@@ -70,15 +70,22 @@ export default class TvItem extends Component {
           >
             <div className="Item overlay">
               <div className="plot ">
-                {this.props.video.get("desc").substring(0, 180) + "..."}
+                <small className="font-weight-bold ">
+                  {this.props.video &&
+                    this.props.video.get("desc").substring(0, 180) + "..."}
+                </small>
               </div>
             </div>
           </div>
-          <div className="title">
-            <h5 size="sm " className=" mt-1 text-white">
-              {this.props.video ? this.props.video.get("title") : <Skeleton />}{" "}
-            </h5>
-            <p className="" text-muted>
+          <div className="title p-2  mt-1">
+            <p size="sm " className=" mb-0 text-white">
+              {this.props.video ? (
+                this.props.video.get("title").substring(0, 20) + "..."
+              ) : (
+                <Skeleton />
+              )}{" "}
+            </p>
+            <p className="m-0" text-muted>
               {this.props.video ? this.props.video.get("year") : <Skeleton />}
             </p>
           </div>

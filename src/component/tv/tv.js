@@ -24,7 +24,7 @@ class TvShowPage extends Component {
       genres: ["All", "Drama ", "Entertainment", "Action", "Crime"],
       selectedGenre: 0,
       error: null
-  };
+    };
   }
 
   componentDidMount() {
@@ -148,18 +148,16 @@ class TvShowPage extends Component {
             </div>
           </Row>
         )}
-        <Container className="">
-          <div>
-            <h4
-              style={{ padding: "2rem" }}
-              className="text-white font-weight-bold"
-            >
-              All Streaming TV Shows
+
+        <Container>
+          <div style={{ height: "72px" }} className="d-flex align-items-center">
+            <h4 className="text-white font-weight-bold">
+              All Streaming TV Shows{" "}
             </h4>
           </div>
         </Container>
+        <div class="dropdown-divider mb-3" />
 
-     
         <Container>{this.renderTvshow()}</Container>
         <Container style={{ padding: "2rem" }}>
           {this.state.items.lenght > 0 && (

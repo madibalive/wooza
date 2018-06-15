@@ -71,6 +71,11 @@ div#root {
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66604fff",endColorstr="#663eff72",GradientType=1);
 }
+
+.addlftbrdr {
+  border-left: 4px solid rgba(62, 255, 114, 0.8);
+  padding-left: .5rem;
+}
 .error_snippet {
   position: relative;
   min-height: 88px;

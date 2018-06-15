@@ -1,32 +1,34 @@
-.largeMovieBar{
-    height: 376px;
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
-
-@media only screen and (min-width : 320px) {
-
+.cardroll {
+  flex: 0 0 auto;
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-    .largeMovieBar{
-        height: 319;
-    }
-    
+@media only screen and (min-width: 320px) {
+}
 
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  .largeMovieBar {
+    height: 319px;
+  }
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
+@media only screen and (min-width: 768px) {
+  .largeMovieBar {
+    height: 425px;
+  }
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-  
+@media only screen and (min-width: 992px) {
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
+@media only screen and (min-width: 1200px) {
 }

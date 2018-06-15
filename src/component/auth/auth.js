@@ -190,7 +190,7 @@ class AuthPage extends Component {
           {this.state.login ? (
             <form class="auth_box">
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label className="text-white" for="exampleInputEmail1">Email address</label>
                 <input
                   type="email"
                   class="form-control"
@@ -206,7 +206,7 @@ class AuthPage extends Component {
                 </small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label className="text-white" for="exampleInputPassword1">Password</label>
                 <input
                   type="password"
                   ref={ref => {
@@ -223,7 +223,7 @@ class AuthPage extends Component {
                   class="form-check-input"
                   id="exampleCheck1"
                 />
-                <label class="form-check-label" for="exampleCheck1">
+                <label className="text-white" class="form-check-label" for="exampleCheck1">
                   Check me out
                 </label>
               </div>
@@ -250,7 +250,7 @@ class AuthPage extends Component {
           ) : (
             <form class="auth_box">
               <div class="form-group">
-                <label for="exampleInputUsername1">Username </label>
+                <label className="text-white" for="exampleInputUsername1">Username </label>
                 <input
                   type="text"
                   class="form-control"
@@ -264,7 +264,7 @@ class AuthPage extends Component {
                 
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label className="text-white" for="exampleInputEmail1">Email address</label>
                 <input
                   type="email"
                   class="form-control"
@@ -280,7 +280,7 @@ class AuthPage extends Component {
                 </small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label className="text-white" for="exampleInputPassword1">Password</label>
                 <input
                   type="password"
                   ref={ref => {
@@ -292,7 +292,7 @@ class AuthPage extends Component {
                 />
               </div>
               <div class="form-group">
-                <label for="exampleInputPhone">Phone</label>
+                <label className="text-white" for="exampleInputPhone">Phone</label>
                 <input
                   type="tel"
                   ref={ref => {
@@ -309,7 +309,7 @@ class AuthPage extends Component {
                   class="form-check-input"
                   id="exampleCheck1"
                 />
-                <label class="form-check-label" for="exampleCheck1">
+                <label className="text-white form-check-label" for="exampleCheck1">
                   Check me out
                 </label>
               </div>

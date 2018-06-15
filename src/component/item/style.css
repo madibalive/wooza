@@ -1,6 +1,5 @@
 .Item {
   contain: strict;
-  background-color:#202020;
   -webkit-flex: 1 0 auto;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
@@ -15,20 +14,28 @@
   border-radius: 2px;
 }
 
-
+.extra {
+  height: 149px !important;
+}
 
 .movie-item {
   width: 160px;
   margin: 0 auto;
 }
 .tv-item {
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .Item .title {
   font-size: 22px;
-  font-weight: 200;
+  padding: 1rem;
+}
+.singline {
+  width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .Item .overlay {
   /* FF3.6-15 */
@@ -82,7 +89,7 @@
   pointer-events: all;
 }
 .Item:hover .overlay .plot {
-  margin-top: 10px;
+  margin-top: 0px;
   opacity: 1;
 }
 
@@ -90,28 +97,21 @@
   opacity: 1;
 }
 
-
-
-@media only screen and (min-width : 320px) {
-
+@media only screen and (min-width: 320px) {
 }
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
+@media only screen and (min-width: 768px) {
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-  
+@media only screen and (min-width: 992px) {
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
+@media only screen and (min-width: 1200px) {
 }

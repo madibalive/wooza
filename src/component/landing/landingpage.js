@@ -123,14 +123,15 @@ class LandingPage extends Component {
         <div
           style={{
             backgroundImage:
-              "url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fscottmendelson%2Ffiles%2F2018%2F02%2Fau_rich_hero_blackpanther_1_3c317c85-1200x526.jpg)",
+              "url(https://images.unsplash.com/photo-1497271679421-ce9c3d6a31da?ixlib=rb-0.3.5&s=fb2bf45324ffdbe8780fc90bb813a35e&auto=format&fit=crop&w=1051&q=80)",
             backgroundSize: "cover"
           }}
         >
-          <Jumbotron className="mb-0 landingoverlay">
+          <Jumbotron className="mb-0 landingoverlay" style={{minHeight:"800px"}}>
             <Container>
               <Row className="align-items-center justified-content-center">
                 <Col xs="12" md={{ size: 12, offset: 0 }} sm="12">
+                
                   <h2 className="fh   text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>

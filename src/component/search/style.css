@@ -31,11 +31,13 @@
   position: relative;
 }
 
+
 .searchbar ul li {
   background: transparent;
   border: 0;
   cursor: pointer;
   font-size: 18px;
+  
 }
 
 .searchbar ul li.active {

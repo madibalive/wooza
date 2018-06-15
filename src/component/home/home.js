@@ -5,6 +5,7 @@ import TvItem from "../item/tv_item";
 import { Parse } from "parse";
 import "./style.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Skeleton from "../../skeleton/index";
 
 import {
   Container,
@@ -22,6 +23,13 @@ class HomePage extends Component {
   state = {
     movies: [],
     tv: [],
+    channles: [
+      "Music Stories",
+      "Celebrity Interviews",
+      "Dance Fever",
+      "Exercise Life",
+      "Artist Corner"
+    ],
     isFetching: false,
     error: false
   };
@@ -61,66 +69,235 @@ class HomePage extends Component {
   };
 
   renderBanner(item) {
-    return (
-      <Jumbotron className="back-trans my-3">
-        <Row>
-          <Col sm="6" md="8" className="error-banner justify-content-center">
-            <h2 className=" font-weight-bold  mt-3">GH 14.99</h2>
+    if (this.state.movies[0]) {
+      return (
+        <div
+          className="banner-large-subtle d-flex flex-row w-100 my-2"
+          style={{ height: "260px" }}
+        >
+          <div className="w-75 p-4">
+            <h2 className=" font-weight-bold text-white mt-3">Sample Ttile</h2>
 
             <p>Description </p>
 
-            <button className="btn">watch now</button>
-          </Col>
-          <Col sm="6" md="4">
-            <img src="" className="img img-fluid" alt="" />
-          </Col>
-        </Row>
-      </Jumbotron>
-    );
+            <button className="btn fadedbutton text-white">watch now</button>
+          </div>
+          <img
+            src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+            className="img img-fluid"
+            alt=""
+            style={{
+              width: "40%"
+            }}
+          />
+        </div>
+      );
+    }
+  }
+
+  renderChannels() {
+    <Container>
+      <Row>
+        <Col sm="12">
+          <div className="scrolling-wrapper">
+            {this.state.channles.map(item => {
+              return (
+                <div className="cardroll">
+                  <h4>{item}</h4>
+                </div>
+              );
+            })}
+          </div>
+        </Col>
+      </Row>
+    </Container>;
   }
 
   render4Tv(data) {
     return (
-      <Row className="my-3">
+      <Row className="mb-3">
         <Col sm="12" md="6">
-          <TvItem />
+          <div
+            className="block-m d-flex flex-column banner-large-subtle  "
+            style={{ height: "400px" }}
+          >
+            <div className="himg-wrapper h-75" style={{}}>
+              <img
+                style={{ backgroundSize: "cover" }}
+                className="img w-100 "
+                src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                alt=""
+              />
+            </div>
+            <div className="mheader">
+              <h6 size="sm " className=" mt-1 text-white">
+                {this.props.video ? (
+                  this.props.video.get("title")
+                ) : (
+                  <Skeleton />
+                )}{" "}
+              </h6>
+              <p className="" text-muted>
+                {this.props.video ? this.props.video.get("year") : <Skeleton />}
+              </p>
+            </div>
+          </div>
         </Col>
         <Col sm="12" md="6">
-          <Row>
-            <Col sm="6">
-              <TvItem />
+          <Row className="align-items-center">
+            <Col xs="6" sm="6">
+              <div className="block-m d-flex flex-column banner-large-subtle  ">
+                <div className="himg-wrapper h-75" style={{}}>
+                  <img
+                    style={{ backgroundSize: "cover" }}
+                    className="img w-100 h-100 img-fluid "
+                    src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                    alt=""
+                  />
+                </div>
+                <div className="mheader">
+                  <h6 size="sm " className=" mt-1 text-white">
+                    {this.props.video ? (
+                      this.props.video.get("title")
+                    ) : (
+                      <Skeleton />
+                    )}{" "}
+                  </h6>
+                  <p className="" text-muted>
+                    {this.props.video ? (
+                      this.props.video.get("year")
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                </div>
+              </div>
             </Col>
-            <Col sm="6">
-              <TvItem />
+            <Col xs="6" sm="6">
+              <div className="block-m d-flex mb-2 flex-column banner-large-subtle  ">
+                <div className="himg-wrapper h-75" style={{}}>
+                  <img
+                    style={{ backgroundSize: "cover" }}
+                    className="img w-100 h-100 img-fluid "
+                    src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                    alt=""
+                  />
+                </div>
+                <div className="mheader">
+                  <h6 size="sm " className=" mt-1 text-white">
+                    {this.props.video ? (
+                      this.props.video.get("title")
+                    ) : (
+                      <Skeleton />
+                    )}{" "}
+                  </h6>
+                  <p className="" text-muted>
+                    {this.props.video ? (
+                      this.props.video.get("year")
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                </div>
+              </div>
             </Col>
-            <Col sm="6">
-              <TvItem />
+            <Col xs="6" sm="6">
+              <div className="block-m d-flex  mb-2  flex-column banner-large-subtle  ">
+                <div className="himg-wrapper h-75" style={{}}>
+                  <img
+                    style={{ backgroundSize: "cover" }}
+                    className="img w-100 h-100 img-fluid "
+                    src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                    alt=""
+                  />
+                </div>
+                <div className="mheader">
+                  <h6 size="sm " className=" mt-1 text-white">
+                    {this.props.video ? (
+                      this.props.video.get("title")
+                    ) : (
+                      <Skeleton />
+                    )}{" "}
+                  </h6>
+                  <p className="" text-muted>
+                    {this.props.video ? (
+                      this.props.video.get("year")
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                </div>
+              </div>
             </Col>
-            <Col sm="6">
-              <TvItem />
+            <Col xs="6" sm="6">
+              <div className="block-m d-flex flex-column banner-large-subtle  ">
+                <div className="himg-wrapper h-75" style={{}}>
+                  <img
+                    className="img w-100 h-100 img-fluid "
+                    src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                    alt=""
+                  />
+                </div>
+                <div className="mheader">
+                  <h6 size="sm " className=" mt-1 text-white">
+                    {this.props.video ? (
+                      this.props.video.get("title")
+                    ) : (
+                      <Skeleton />
+                    )}{" "}
+                  </h6>
+                  <p className="" text-muted>
+                    {this.props.video ? (
+                      this.props.video.get("year")
+                    ) : (
+                      <Skeleton />
+                    )}
+                  </p>
+                </div>
+              </div>
             </Col>
           </Row>
         </Col>
       </Row>
     );
   }
-  render4Movie(data) {
-    return (
-      <Row className="largeMovieBar my-3">
-        <Col sm="6">
-          <TvItem />
-        </Col>
-        <Col sm="6">
-          <TvItem />
-        </Col>
-        <Col sm="6">
-          <TvItem />
-        </Col>
-        <Col sm="6">
-          <TvItem />
-        </Col>
-      </Row>
-    );
+  render4Movie() {
+    if (this.state.tv) {
+      const list = this.state.tv.map((movie, i) => {
+        if (i > 3) return;
+        return (
+          <Col xs="6" sm="6" md="3" className="pr-1">
+            <div className="block-m d-flex flex-column h-100 banner-large-subtle  ">
+              <div className="himg-wrapper h-75 w-100">
+                <img
+                  style={{ backgroundSize: "cover" }}
+                  className="img h-100 w-100 "
+                  src="https://ic.c4assets.com/bips/c4-homepage-web/homepage/af408bc7-c866-4111-806f-2a9a6d17af8e.jpg?interpolation=progressive-bicubic&output-quality=90&resize=850px:*"
+                  alt=""
+                />
+              </div>
+              <div className="mheader">
+                <h6 size="sm " className=" mt-1 text-white">
+                  {this.props.video ? (
+                    this.props.video.get("title")
+                  ) : (
+                    <Skeleton />
+                  )}{" "}
+                </h6>
+                <p className="" text-muted>
+                  {this.props.video ? (
+                    this.props.video.get("year")
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
+              </div>
+            </div>
+          </Col>
+        );
+      });
+      return <Row className="largeMovieBar mb-3">{list}</Row>;
+    }
   }
 
   renderTvshow = () => {
@@ -166,6 +343,7 @@ class HomePage extends Component {
             tv: tvhows,
             isFetching: false
           });
+        
         },
         error => {
           this.setState({ isFetching: false });
@@ -174,7 +352,7 @@ class HomePage extends Component {
       );
   };
 
-  renderChannels = () => {
+  renderChann = () => {
     if (this.props.movies) {
       const list = this.props.movies.map(movie => {
         return <MovieItem video={movie} onVideoSelect={video => null} />;
@@ -202,7 +380,10 @@ class HomePage extends Component {
             </Col>
           </Row>
         )}
-        <div style={{height:"88px"}} className="p-2 banner-large d-flex flex-column justify-content-center">
+        <div
+          style={{ height: "88px" }}
+          className="p-2 banner-large d-flex flex-column justify-content-center"
+        >
           <div className="container ">
             <p className="lead text-center">
               Are you a creator ?
@@ -212,37 +393,48 @@ class HomePage extends Component {
             </p>
           </div>
         </div>
+
+        <Container>
+          <div style={{ height: "72px" }} className="d-flex align-items-center">
+            <h4 className="text-white font-weight-bold">
+              Movies and tv Selections
+            </h4>
+          </div>
+        </Container>
+        <div class="dropdown-divider mb-3" />
         {this.state.isFetching && <Container>{this.renderLoading()}</Container>}
+        {this.renderchannels}
 
-        {this.state.movies.length>0 && (
+        {this.state.movies.length > 0 && (
           <Container>
-
-
             {this.renderBanner()}
-            <Row className="mt-3">
-              <Col sm="12" className="d-flex justify-content-between px-3">
-                <h5 className="text-white">Top Movies</h5>
-              </Col>
-            </Row>
-            {this.renderMovies()}
-            <Row className="mt-3">
-              <Col sm="12" className="d-flex justify-content-between px-3">
-                <h5 className="text-white">Top Tvshows</h5>
-              </Col>
-            </Row>
-            {this.renderTvshow()}
-            <Row className="mt-3">
-              <Col sm="12" className="d-flex justify-content-between px-3">
-                <h5 className="text-white">Top Movies</h5>
-              </Col>
-            </Row>
-            {this.renderMovies()}
-            <Row className="mt-3">
-              <Col sm="12" className="d-flex justify-content-between px-3">
-                <h5 className="text-white">Top Tvshows</h5>
+            <Row className="mt-2 container">
+              <Col sm="12">
+                <h5 className="text-white addlftbrdr">Trending Movies </h5>
+                <p>lose your self in binge worthy drama</p>
               </Col>
             </Row>
 
+            {this.render4Movie()}
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Movies</h5>
+              </Col>
+            </Row>
+            {this.renderMovies()}
+
+            <Row className="mt-2 container">
+              <Col sm="12">
+                <h5 className="text-white addlftbrdr">Romance Shows Drama</h5>
+                <p>lose your self in binge worthy drama</p>
+              </Col>
+            </Row>
+            {this.render4Tv()}
+            <Row className="mt-3">
+              <Col sm="12" className="d-flex justify-content-between px-3">
+                <h5 className="text-white">Top Tvshows</h5>
+              </Col>
+            </Row>
             {this.renderTvshow()}
           </Container>
         )}

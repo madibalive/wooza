@@ -138,8 +138,8 @@ class SearchPage extends Component {
               style={{ background: "transparent" }}
             >
               <i
-                style={{ background: "transparent" }}
-                className="fa fa-search"
+                style={{ color: "white" }}
+                className="fa fa-search fa-2x"
               />
             </button>
           </div>
@@ -148,7 +148,7 @@ class SearchPage extends Component {
         <Container>
           <div
             className="d-flex flex-row align-items-center
-           justify-content-between searchbar"
+           justify-content-between searchbar "
           >
             <ul className="list-inline">
               <li

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Parse } from "parse";
 import { withRouter } from "react-router";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   Collapse,
@@ -11,12 +11,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   Container,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  ButtonDropdown
+  ButtonDropdown,
+  CardImg
 } from "reactstrap";
 
 class HeaderPage extends Component {
@@ -62,30 +62,74 @@ class HeaderPage extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md">
+        <Navbar
+          fixed="top"
+          style={{ backgroundColor: "#0a101685" }}
+          expand="md"
+        >
           <Container>
-            <NavbarBrand href="/">INKAYE</NavbarBrand>
+            <NavbarBrand href="/">INKAYI</NavbarBrand>
             <NavbarToggler onClick={this.toggle.bind(this)} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav navbar>
                 <NavItem>
-                  <NavLink href="/tv/">Tv</NavLink>
+                  <NavLink
+                    style={{ fontSize: "16px" }}
+                    className="mx-2 "
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#00e36a"
+                    }}
+                    to="/tv"
+                  >
+                    Tvshows
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/movies">Movies</NavLink>
+                  <NavLink
+                    style={{ fontSize: "16px" }}
+                    className="mx-2 "
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#00e36a"
+                    }}
+                    to="/movies"
+                  >
+                    Movies
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/videos">Music </NavLink>
+                  <NavLink
+                    style={{ fontSize: "16px" }}
+                    className="mx-2 "
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#00e36a"
+                    }}
+                    to="/videos"
+                  >
+                    Music
+                  </NavLink>
                 </NavItem>
               </Nav>
               <Nav className="ml-auto">
-                <NavLink href="/search">
-                  <i class="fa fa-search" />
+                <NavLink
+                                      style={{ fontSize: "16px" }}
+
+                  className="mx-2 "
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#00e36a"
+                  }}
+                  to="/search"
+                >
+               
+                  <i className="fa fa-search mt-3" /> 
                 </NavLink>
 
                 {!Parse.User.current() ? (
                   <NavItem>
-                    <NavLink href="/auth">Login | Signup</NavLink>
+                    <NavLink to="/auth">Login | Signup</NavLink>
                   </NavItem>
                 ) : (
                   <NavItem>
@@ -100,7 +144,17 @@ class HeaderPage extends Component {
                         caret
                         size="lg"
                       >
-                        <div class="img-rounded profile-img" />
+                        <div class="img-rounded profile-img">
+                          {Parse.User.current().get("avatar") && (
+                            <img
+                              className="w-100 h-100 img img-fluid rounded-circle"
+                              src={Parse.User.current()
+                                .get("avatar")
+                                .url()}
+                              alt=""
+                            />
+                          )}
+                        </div>
                         <span class="caret" />
                       </DropdownToggle>
                       <DropdownMenu>

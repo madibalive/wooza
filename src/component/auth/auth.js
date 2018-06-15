@@ -101,7 +101,7 @@ class AuthPage extends Component {
         <Col xm="6" md={{ size: 8, offset: 2 }} sm="6" className="froze50  ">
           <Row className="align-items-center pt-2 justified-content-center">
             <Col sm="12">
-              <div className="d-flex flex-column justify-content-center">
+              <div className="d-flex flex-column text-white justify-content-center">
                 <h6>STEP 2 OF 2</h6>
 
                 <p>Choose a Payment plan and your Done</p>
@@ -114,7 +114,7 @@ class AuthPage extends Component {
               className="text-center text-white py-3 justified-content-center"
             >
               <div style={{ width: "80%" }} className=" m-2">
-                <h2 class=" font-weight-bold   ">
+                <h2 class=" font-weight-bold  text-white    ">
                   FREE
                   <small class="text-muted">/ 7day</small>
                 </h2>
@@ -131,7 +131,7 @@ class AuthPage extends Component {
                 <br />
                 <button
                   onClick={() => this.props.history.push("/")}
-                  class="K fadedbutton"
+                  class="K fadedbutton "
                   style={{
                     width: "98%",
                     maxWidth: "160px",
@@ -150,7 +150,7 @@ class AuthPage extends Component {
               className="text-center text-white py-3 "
             >
               <div className="shadow-lg mx-auto  " style={{ width: "90%" }}>
-                <h2 className=" font-weight-bold  mt-3">
+                <h2 className=" font-weight-bold  text-white   mt-3">
                   GH 14.99
                   <small class="text-muted">/ mo</small>
                 </h2>

@@ -15,7 +15,7 @@ class MoviesPage extends Component {
     super(props);
 
     this.state = {
-      isFetching: true,
+      isFetching: false,
       currentPage: 0,
       items: [],
       pages: [],
@@ -97,13 +97,13 @@ class MoviesPage extends Component {
     this.setState({ isFetching: true });
     const query = new Parse.Query("Movies");
     // query.limitTo(25);
-    if (this.state.selectedGenre > 0) {
-      alert(this.state.genres[this.state.selectedGenre].toLowerCase());
-      query.equalTo(
-        "genre",
-        this.state.genres[this.state.selectedGenre].toLowerCase()
-      );
-    }
+    // if (this.state.selectedGenre > 0) {
+    //   alert(this.state.genres[this.state.selectedGenre].toLowerCase());
+    //   query.equalTo(
+    //     "genre",
+    //     this.state.genres[this.state.selectedGenre].toLowerCase()
+    //   );
+    // }
     // query.skip(this.state.currentPage * 25);
     query.find().then(
       data => {

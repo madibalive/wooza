@@ -124,7 +124,7 @@ class HeaderPage extends Component {
                   to="/search"
                 >
                
-                  <i className="fa fa-search mt-3" /> 
+                  <i className="fa fa-search mt-1" /> 
                 </NavLink>
 
                 {!Parse.User.current() ? (

@@ -64,7 +64,7 @@ class HeaderPage extends Component {
       <div>
         <Navbar
           fixed="top"
-          style={{ backgroundColor: "#0a101696" }}
+          style={{ backgroundColor: "#000000ce" }}
           expand="md"
         >
           <Container>
@@ -75,7 +75,7 @@ class HeaderPage extends Component {
                 <NavItem>
                   <NavLink
                     style={{ fontSize: "16px" }}
-                    className="mx-2 "
+                    className="mx-2 text-white"
                     activeStyle={{
                       fontWeight: "bold",
                       color: "#00e36a"
@@ -88,7 +88,7 @@ class HeaderPage extends Component {
                 <NavItem>
                   <NavLink
                     style={{ fontSize: "16px" }}
-                    className="mx-2 "
+                    className="mx-2 text-white "
                     activeStyle={{
                       fontWeight: "bold",
                       color: "#00e36a"
@@ -101,7 +101,7 @@ class HeaderPage extends Component {
                 <NavItem>
                   <NavLink
                     style={{ fontSize: "16px" }}
-                    className="mx-2 "
+                    className="mx-2 text-white "
                     activeStyle={{
                       fontWeight: "bold",
                       color: "#00e36a"
@@ -116,7 +116,7 @@ class HeaderPage extends Component {
                 <NavLink
                                       style={{ fontSize: "16px" }}
 
-                  className="mx-2 "
+                  className="mx-2 text-white "
                   activeStyle={{
                     fontWeight: "bold",
                     color: "#00e36a"

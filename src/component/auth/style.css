@@ -26,7 +26,7 @@ background-size: cover;
 .froze50 {
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   padding: 30px 26px;
 }

@@ -101,8 +101,8 @@ class InfoMoviePage extends Component {
               }}
             />
             {/* <div class="dropdown-divider mt-0" /> */}
-            <Container>
-              <h5 className="my-3">Recommended Movies</h5>
+            <Container className="mt-4">
+              <h5 className="my-4 text-white">Recommended Movies</h5>
               {this.renderEpisodes()}
             </Container>
           </div>

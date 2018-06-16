@@ -6,6 +6,9 @@ import { Parse } from "parse";
 import "./style.css";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Skeleton from "../../skeleton/index";
+import Carousel from "../../library/carousel";
+import Dots from "../../library/indicator-dots";
+import Buttons from "../../library/buttons";
 
 import {
   Container,
@@ -69,44 +72,63 @@ class HomePage extends Component {
   };
 
   renderBanner(item) {
-    if (this.state.movies[1]) {
-      const movie = this.state.movies[1];
-      return (
-        <Row noGutters="true">
-          <Col
-            xs="12"
-            sm="12"
-            md="4"
-            className="p-4 banner-large-subtle"
-            style={{ height: "260px" }}
-          >
-            <h2 className=" font-weight-bold text-white mt-3">
-              {movie ? movie.get("title") : <Skeleton />}
-            </h2>
-
-            <p> {movie && movie.get("desc").substring(0, 120)}</p>
-
-            <button
-              onClick={() => {
-                this.props.history.push({
-                  pathname: `/movies/${movie.id}`,
-                  state: { video: movie }
-                });
-              }}
-              className="btn fadedbutton text-white"
+    if (this.state.movies) {
+      const list = this.state.movies.map(movie => {
+        return (
+          <Row noGutters="true">
+            <Col xs="12" sm="12" style={{ height: "260px" }}>
+              <img
+                style={{ objectFit: "cover" }}
+                src={movie.get("poster100")}
+                className="img w-100 h-100"
+                alt=""
+              />
+            </Col>
+            <Col
+              xs="12"
+              sm="12"
+              md="12"
+              className="p-4 banner-large-subtle"
+              style={{ height: "260px" }}
             >
-              watch now
-            </button>
-          </Col>
-          <Col xs="12" sm="12" md="8" style={{ height: "260px" }}>
-            <img
-              style={{ objectFit: "cover" }}
-              src={movie.get("poster100")}
-              className="img  w-100 h-100"
-              alt=""
-            />
-          </Col>
-        </Row>
+              <Row>
+                <Col xs="12" sm="12" md="4">
+                  <h2 className=" font-weight-bold text-white mt-3">
+                    {movie ? movie.get("title") : <Skeleton />}
+                  </h2>
+
+                  <button
+                    onClick={() => {
+                      this.props.history.push({
+                        pathname: `/movies/${movie.id}`,
+                        state: { video: movie }
+                      });
+                    }}
+                    className="btn btn-primary text-white"
+                  >
+                    watch now
+                  </button>
+                </Col>
+                <Col
+                  md="8"
+                  className="d-none d-sm-block text-white addlftbrdrwhite"
+                >
+                  <p> {movie && movie.get("desc").substring(0, 420)}</p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        );
+      });
+      return (
+        <Carousel
+          auto
+          loop
+          auto
+          axis="x"
+          widgets={[Dots, Buttons]}
+          frames={list}
+        />
       );
     }
   }
@@ -306,34 +328,21 @@ class HomePage extends Component {
             </Col>
           </Row>
         )}
-        <div
-          style={{ height: "88px" }}
-          className="p-2 banner-large d-flex flex-column justify-content-center"
-        >
-          <div className="container ">
-            <p className="lead text-center">
-              Are you a creator ?
-              <span>
-                <Button className="btn-sm ml-2">Access Creator</Button>
-              </span>
-            </p>
-          </div>
-        </div>
 
         <Container>
           <div style={{ height: "72px" }} className="d-flex align-items-center">
-            <h4 className="text-white font-weight-bold">
-              Movies and tv Selections
-            </h4>
+            <h4 className="text-white ">Movies and tv Selections</h4>
           </div>
         </Container>
-        <div class="dropdown-divider mb-3" />
+        {/* <div class="dropdown-divider mb-3" /> */}
         {this.state.isFetching && <Container>{this.renderLoading()}</Container>}
+
         {this.renderchannels}
 
         {this.state.movies.length > 0 && (
           <Container>
-            {this.renderBanner()}
+            <div style={{ height: "520px" }}>{this.renderBanner()}</div>
+
             <Row className="mt-4 container">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Trending Movies </h5>

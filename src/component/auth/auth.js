@@ -26,7 +26,7 @@ class AuthPage extends Component {
   state = {
     index: 0,
     error: null,
-   
+
     isloading: false
   };
 
@@ -64,8 +64,8 @@ class AuthPage extends Component {
   onRegister(e) {
     e.preventDefault();
     var email = this.regemail.value;
-    var username =this.regusername.value;
-    var password =this.regpass.value;
+    var username = this.regusername.value;
+    var password = this.regpass.value;
 
     var user = new Parse.User();
     user.set("username", username);
@@ -75,7 +75,7 @@ class AuthPage extends Component {
     user.signUp(null, {
       success: user => {
         this.setState({
-          index: 1 
+          index: 1
         });
         // this.props.history.replace("/");
       },
@@ -84,6 +84,7 @@ class AuthPage extends Component {
           error: err.message,
           isloading: false
         });
+        alert(this.state.error);
       }
     });
   }
@@ -98,7 +99,7 @@ class AuthPage extends Component {
   renderstagetwo = () => {
     return (
       <Row>
-        <Col xm="6" md={{ size: 8, offset: 2 }} sm="6" className="froze50  ">
+        <Col xm="12" md={{ size: 4, offset: 8 }} sm="12" className="froze50  ">
           <Row className="align-items-center pt-2 justified-content-center">
             <Col sm="12">
               <div className="d-flex flex-column text-white justify-content-center">
@@ -108,7 +109,7 @@ class AuthPage extends Component {
               </div>
             </Col>
             <Col
-              md="6"
+             
               sm="12"
               xs="12"
               className="text-center text-white py-3 justified-content-center"
@@ -144,7 +145,7 @@ class AuthPage extends Component {
               </div>
             </Col>
             <Col
-              md="6"
+           
               sm="12"
               xs="12"
               className="text-center text-white py-3 "
@@ -186,22 +187,18 @@ class AuthPage extends Component {
   renderStageOne = () => {
     return (
       <Row>
-         {this.state.error && (
-          <Col >
-            <div className="error_snippet">
-              <div className="container mx-auto">
-                <p className="text white">{this.state.error}</p >
-              
-              </div>
-            </div>
-          </Col>
-        )}
-      
-        <Col xm="6" md={{ size: 8, offset: 2 }} sm="6" className="froze50  ">
+        <Col xm="12" md={{ size: 4, offset: 8 }} sm="12" className="froze50  ">
           {this.state.login ? (
             <form class="auth_box">
               <div class="form-group">
-                <label className="text-white" for="exampleInputEmail1">Email address</label>
+                {this.state.error && (
+                  <div className="">
+                    <p className="text-white">Error {this.state.error}</p>
+                  </div>
+                )}
+                <label className="text-white" for="exampleInputEmail1">
+                  Email address
+                </label>
                 <input
                   type="email"
                   class="form-control"
@@ -217,7 +214,9 @@ class AuthPage extends Component {
                 </small>
               </div>
               <div class="form-group">
-                <label className="text-white" for="exampleInputPassword1">Password</label>
+                <label className="text-white" for="exampleInputPassword1">
+                  Password
+                </label>
                 <input
                   type="password"
                   ref={ref => {
@@ -234,7 +233,11 @@ class AuthPage extends Component {
                   class="form-check-input"
                   id="exampleCheck1"
                 />
-                <label className="text-white" class="form-check-label" for="exampleCheck1">
+                <label
+                  className="text-white"
+                  class="form-check-label"
+                  for="exampleCheck1"
+                >
                   Check me out
                 </label>
               </div>
@@ -251,7 +254,7 @@ class AuthPage extends Component {
               <p>
                 dont have a account{" "}
                 <button
-                  className="btn btn-sm btn-link"
+                  className="btn btn-large btn-link"
                   onClick={() => this.setState({ login: false })}
                 >
                   register
@@ -261,7 +264,14 @@ class AuthPage extends Component {
           ) : (
             <form class="auth_box">
               <div class="form-group">
-                <label className="text-white" for="exampleInputUsername1">Username </label>
+                {this.state.error && (
+                  <div className="">
+                    <p className="text-white">Error {this.state.error}</p>
+                  </div>
+                )}
+                <label className="text-white" for="exampleInputUsername1">
+                  Username{" "}
+                </label>
                 <input
                   type="text"
                   class="form-control"
@@ -272,10 +282,11 @@ class AuthPage extends Component {
                   }}
                   placeholder="Username"
                 />
-                
               </div>
               <div class="form-group">
-                <label className="text-white" for="exampleInputEmail1">Email address</label>
+                <label className="text-white" for="exampleInputEmail1">
+                  Email address
+                </label>
                 <input
                   type="email"
                   class="form-control"
@@ -291,7 +302,9 @@ class AuthPage extends Component {
                 </small>
               </div>
               <div class="form-group">
-                <label className="text-white" for="exampleInputPassword1">Password</label>
+                <label className="text-white" for="exampleInputPassword1">
+                  Password
+                </label>
                 <input
                   type="password"
                   ref={ref => {
@@ -303,7 +316,9 @@ class AuthPage extends Component {
                 />
               </div>
               <div class="form-group">
-                <label className="text-white" for="exampleInputPhone">Phone</label>
+                <label className="text-white" for="exampleInputPhone">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   ref={ref => {
@@ -320,7 +335,10 @@ class AuthPage extends Component {
                   class="form-check-input"
                   id="exampleCheck1"
                 />
-                <label className="text-white form-check-label" for="exampleCheck1">
+                <label
+                  className="text-white form-check-label"
+                  for="exampleCheck1"
+                >
                   Check me out
                 </label>
               </div>

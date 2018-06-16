@@ -1,21 +1,33 @@
 
 
 .imagesize {
-  background-position: 50%;
-  background-repeat: no-repeat;
+  width: 232px;
+  background-color: rgba(43, 50, 57, 0.8);
   background-size: cover;
-  margin: 0 auto;
-  max-height: 400px;
+  min-height: 400px;
+
 }
 
 .Hero {
-  
+  position: relative;
   background-size: cover;
-  height: 600px
 }
 
+.Hero .content {
+  position: relative;
+  z-index: 4;
+  width: 500px;
+  left: 10vw;
+  top: 10vw;
+}
 
+.Hero .content p {
+  width: 100%;
+}
 
+.Hero .content .Button:first-child {
+  margin-right: 10px;
+}
 .herooverlay {
   /* FF3.6-15 */
   /* FF3.6-15 */

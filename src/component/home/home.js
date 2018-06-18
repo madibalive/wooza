@@ -28,7 +28,7 @@ class HomePage extends Component {
     tv: [],
     channels: [],
     channles: [
-      { name: "Music Stories", color: "#243e59" },
+      { name: "Music Stories", color: "#B58900" },
       { name: "Celebrity Interviews", color: "#6d2c84" },
       { name: "Dance Fever", color: "#333c41" },
       { name: "Exercise Life", color: "#42949b" },
@@ -119,7 +119,7 @@ class HomePage extends Component {
             }
             onClick={event => this.toggleIndex(i)}
           >
-            <h6 className=" m-2 text-white">{movie.get("title")}</h6>
+            <h6 className=" my-2 text-white">{movie.get("title")}</h6>
            
           </div>
         );

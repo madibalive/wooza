@@ -118,7 +118,7 @@ class CommentListPage extends Component {
           className="form-group"
           onSubmit={this.addComment.bind(this)}
         >
-          <Jumbotron style={{ padding: "1rem", marginTop: "5px" }}>
+          <div style={{ padding: "1rem", marginTop: "5px" }}>
             <Row>
               <Col className="d-none d-md-block" sm="0" md="1">
                 <img
@@ -145,7 +145,7 @@ class CommentListPage extends Component {
                 />
               </Col>
             </Row>
-          </Jumbotron>
+          </div>
         </form>
 
         <Row>

@@ -27,19 +27,33 @@ class MoviesPage extends Component {
   }
 
   componentDidMount() {
-     this.getdata();
+    this.getdata();
   }
 
-  renderLoading() {
-    if (this.state.isFetching) {
-      let list = [];
-      for (let index = 0; index < 6; index++) {
-        list.push(<MovieItem />);
-      }
+  renderLoading = () => {
+    let list = [];
+    for (let index = 0; index < 6; index++) {
+      let view = (
+        <Col
+          xs="6"
+          sm="6"
+          md="4"
+          style={{ height: "300px" }}
+          className="w-100 mb-4 react-loading-pulsef react-loading-pulse"
+        >
+          <div className=" w-100 h-100  " />
+        </Col>
+      );
 
-      return <Row className="justified-content-around">{list}</Row>;
+      list.push(view);
     }
-  }
+
+    return (
+      <Row noGutters="true" className=" justified-content-around">
+        {list}
+      </Row>
+    );
+  };
 
   renderTvshow = () => {
     if (this.state.items) {
@@ -56,7 +70,11 @@ class MoviesPage extends Component {
           />
         );
       });
-      return <Row className="justified-content-around">{list}</Row>;
+      return (
+        <Row noGutters="true" className="justified-content-around">
+          {list}
+        </Row>
+      );
     }
   };
 
@@ -157,26 +175,36 @@ class MoviesPage extends Component {
             </div>
           </Row>
         )}
-        <Container>
-          <div style={{ height: "72px" }} className="d-flex align-items-center">
-            <h4 className="text-white font-weight-bold">
-              All Streaming Movies
-            </h4>
+        {this.state.items.length > 0 ? (
+          <div>
+            <Container>
+              <div
+                style={{ height: "72px" }}
+                className="d-flex align-items-center"
+              >
+                <h4 className="text-white font-weight-bold">
+                  All Streaming Movies
+                </h4>
+              </div>
+            </Container>
+            <div class="dropdown-divider mb-3" />
+
+            <Container>{this.renderTvshow()}</Container>
+
+            <Container style={{ padding: "2rem" }}>
+              {this.state.items.lenght > 0 && (
+                <Button
+                  className="fadedbutton"
+                  onClick={event => this.getdata()}
+                >
+                  LoadMore
+                </Button>
+              )}
+            </Container>
           </div>
-        </Container>
-        <div class="dropdown-divider mb-3" />
-
-        <Container>
-          {this.renderTvshow()}
-        </Container>
-
-        <Container style={{ padding: "2rem" }}>
-          {this.state.items.lenght > 0 && (
-            <Button className="fadedbutton" onClick={event => this.getdata()}>
-              LoadMore
-            </Button>
-          )}
-        </Container>
+        ) : (
+          <Container>{this.renderLoading()}</Container>
+        )}
       </div>
     );
   }

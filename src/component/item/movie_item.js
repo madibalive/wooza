@@ -39,13 +39,13 @@ export default class MovieItem extends Component {
     const url = this.props.video ? this.props.video.get("poster100") : "";
 
     return (
-      <Col xs="6" sm="6" md="3" lg="2" className="my-2">
+      <Col xs="6" sm="6" md="3" lg="2" className="">
         {/* div.block-m>(div.mimg-wrapper>img+(div.moverlay>p.mtext-gold))+div.mheader */}
 
-        <div className="movie-item banner-large-subtle rounded-bottom">
+        <div className="movie-item banner-large-subtle ">
           <div
             onClick={() => this.props.onVideoSelect()}
-            className="Item  shadow-sm"
+            className="Item shadow-sm"
             style={{
               backgroundImage: "url(" + url + ")"
             }}
@@ -59,17 +59,14 @@ export default class MovieItem extends Component {
               </div>
             </div>
           </div>
-          <div className="title  p-2  mt-1">
+          <div className="  p-2  mt-1">
             <p size="sm" className=" mb-0 text-white ">
-              {this.props.video ? (
-                this.props.video.get("title").substring(0, 20) + "..."
-              ) : (
-                <Skeleton />
-              )}
+              {this.props.video &&
+                this.props.video.get("title").substring(0, 30)}
             </p>
-            <p className="m-0" text-muted>
-              {this.props.video ? this.props.video.get("year") : <Skeleton />}
-            </p>
+            <small className="m-0" text-muted>
+              {this.props.video && this.props.video.get("year")}
+            </small>
           </div>
         </div>
       </Col>

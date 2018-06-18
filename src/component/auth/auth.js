@@ -98,26 +98,32 @@ class AuthPage extends Component {
 
   renderstagetwo = () => {
     return (
-      <Row>
-        <Col xm="12" md={{ size: 4, offset: 8 }} sm="12" className="froze50  ">
-          <Row className="align-items-center pt-2 justified-content-center">
-            <Col sm="12">
-              <div className="d-flex flex-column text-white justify-content-center">
-                <h6>STEP 2 OF 2</h6>
+      <Row noGutters="true" >
+        <Col
+          style={{ minHeight: "620px" }}
+          xm="12"
+          md={{ size: 6, offset: 6 }}
+          lg={{ size: 4, offset: 8 }}
+          sm="12"
+          className="shadow-lg bdr4  banner-large"
+        >
+          <Row noGutters="true" className="">
+            <Col sm="12" >
+              <div className="text-white text-center pt-4 pl-4 pr-4 ">
+                <h5>STEP 2 OF 2</h5>
 
                 <p>Choose a Payment plan and your Done</p>
               </div>
             </Col>
             <Col
-             
               sm="12"
               xs="12"
-              className="text-center text-white py-3 justified-content-center"
+              className="text-center  text-white w-100 "
             >
-              <div style={{ width: "80%" }} className=" m-2">
-                <h2 class=" font-weight-bold  text-white    ">
-                  FREE
-                  <small class="text-muted">/ 7day</small>
+              <div  className="shadow-lg py-4" style={{ margin: "5%" }}>
+                <h2 class=" font-weight-bold  text-white     ">
+                  Limited
+                  <small class="text-muted">/ free</small>
                 </h2>
 
                 <ul className="list-unstyled">
@@ -129,29 +135,20 @@ class AuthPage extends Component {
                   </li>
                 </ul>
 
-                <br />
                 <button
                   onClick={() => this.props.history.push("/")}
-                  class="K fadedbutton "
-                  style={{
-                    width: "98%",
-                    maxWidth: "160px",
-                    backgroundColor: "hsla(0, 0%, 100%, 0.12)",
-                    height: "38px"
+                  class="btn fadedbutton text-white font-weight-bold"
+                  style={{   width: "60%",                    height: "38px",                   
                   }}
                 >
                   Choose Plan
                 </button>
               </div>
             </Col>
-            <Col
            
-              sm="12"
-              xs="12"
-              className="text-center text-white py-3 "
-            >
-              <div className="shadow-lg mx-auto  " style={{ width: "90%" }}>
-                <h2 className=" font-weight-bold  text-white   mt-3">
+            <Col sm="12" xs="12" className=" text-center text-white w-100 ">
+              <div className="shadow-lg  py-4  " style={{ margin: "5%",backgroundColor:"#00000031"}}>
+                <h2 className=" font-weight-bold  text-white ">
                   GH 14.99
                   <small class="text-muted">/ mo</small>
                 </h2>
@@ -168,7 +165,7 @@ class AuthPage extends Component {
 
                 <button
                   onClick={() => this.props.history.push("/")}
-                  class="authbutton mb-3"
+                  class="authbutton "
                   style={{
                     width: "90%",
                     height: "38px",
@@ -186,8 +183,31 @@ class AuthPage extends Component {
   };
   renderStageOne = () => {
     return (
-      <Row>
-        <Col xm="12" md={{ size: 4, offset: 8 }} sm="12" className="froze50  ">
+      <Row noGutters="true" >
+        <Col
+          style={{ minHeight: "620px" }}
+          xm="12"
+          md={{ size: 6, offset: 6 }}
+          lg={{ size: 4, offset: 8 }}
+          sm="12"
+          className="shadow-lg bdr4  banner-large p-3"
+        >
+          <div className="d-flex flex-row justify-content-around w-100 ">
+            <h5
+              onClick={() => this.setState({ login: true })}
+              className={this.state.login ? "font-weight-bold text-white" : ""}
+            >
+              Login
+            </h5>
+            <h5
+              onClick={() => this.setState({ login: false })}
+              className={!this.state.login ? "font-weight-bold text-white" : ""}
+            >
+              Signup
+            </h5>
+          </div>
+          <div class="dropdown-divider mb-3" />
+
           {this.state.login ? (
             <form class="auth_box">
               <div class="form-group">
@@ -209,9 +229,6 @@ class AuthPage extends Component {
                   }}
                   placeholder="Enter email"
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your email with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <label className="text-white" for="exampleInputPassword1">
@@ -238,7 +255,7 @@ class AuthPage extends Component {
                   class="form-check-label"
                   for="exampleCheck1"
                 >
-                  Check me out
+                  Remember me
                 </label>
               </div>
               <button
@@ -251,15 +268,6 @@ class AuthPage extends Component {
                   <i class="fa-li fa fa-circle-o-notch fa-spin" />
                 )}
               </button>
-              <p>
-                dont have a account{" "}
-                <button
-                  className="btn btn-large btn-link"
-                  onClick={() => this.setState({ login: false })}
-                >
-                  register
-                </button>
-              </p>
             </form>
           ) : (
             <form class="auth_box">
@@ -297,9 +305,6 @@ class AuthPage extends Component {
                   }}
                   placeholder="Enter email"
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your email with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <label className="text-white" for="exampleInputPassword1">
@@ -339,7 +344,7 @@ class AuthPage extends Component {
                   className="text-white form-check-label"
                   for="exampleCheck1"
                 >
-                  Check me out
+                  Remember me
                 </label>
               </div>
               <button
@@ -352,15 +357,6 @@ class AuthPage extends Component {
                   <i class="fa-li fa fa-circle-o-notch fa-spin" />
                 )}
               </button>
-              <p>
-                Already Have an Account Login
-                <button
-                  className="btn btn-sm btn-link font-weight-bold"
-                  onClick={() => this.setState({ login: true })}
-                >
-                  Login
-                </button>
-              </p>
             </form>
           )}
         </Col>
@@ -372,9 +368,10 @@ class AuthPage extends Component {
     const { from } = this.props.location.state || { from: { pathname: "/" } };
     const { redirectToReferrer } = this.state;
     return (
-      <div className="">
-        <div className="banner d-flex flex-column justify-content-center ">
-          <div className="container ">
+      <div className="error_nosize d-flex align-items-center" style={{ minHeight: "100vh" }}>
+        {/* <div className="banner-large d-flex flex-column justify-content-center ">
+        <div className="" />
+          <div className="container ">authbackground
             <p className="lead text-center text-white">
               Are you a creator ?
               <span className="ml-2">
@@ -382,16 +379,13 @@ class AuthPage extends Component {
               </span>
             </p>
           </div>
-        </div>
-        <div className="authbackground jumbotron jumbotron-fluid back-trans" />
+        </div> */}
 
-        <div class="jumbotron jumbotron-fluid back-trans   d-flex flex-column justify-content-center">
-          <Container>
-            {this.state.index == 0
-              ? this.renderStageOne()
-              : this.renderstagetwo()}
-          </Container>
-        </div>
+        <Container className="">
+          {this.state.index == 0
+            ? this.renderStageOne()
+            : this.renderstagetwo()}
+        </Container>
       </div>
     );
   }

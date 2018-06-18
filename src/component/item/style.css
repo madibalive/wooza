@@ -19,11 +19,13 @@
 }
 
 .movie-item {
-  width: 160px;
+  width: 95%;
+  height: 98%;
   margin: 0 auto;
 }
 .tv-item {
-  width: 100%;
+  width: 95%;
+  height: 98%;
   margin: 0 auto;
 }
 

@@ -100,7 +100,7 @@ class InfoTvPage extends Component {
                 });
               }}
             />
-            <div class="dropdown-divider mt-0" />
+            <div class="dropdown-divider mt-4" />
 
            
             {this.renderEpisodes()}

@@ -27,7 +27,7 @@ class LandingPage extends Component {
   };
 
   componentDidMount() {
-    this.getdata();
+    //this.getdata();
   }
 
   renderMovies = () => {
@@ -106,18 +106,7 @@ class LandingPage extends Component {
             </Col>
           </Row>
         )}
-        {/* <div className="banner d-flex flex-column justify-content-center">
-          <div className="container text-white ">
-            <p className="lead text-center text-white">
-              Are you a creator ?
-              <span>
-                <Button className="btn-sm ml-3 text-white">
-                  Access Creator
-                </Button>
-              </span>
-            </p>
-          </div>
-        </div> */}
+      
 
         {/* <div class="dropdown-divider mt-0" /> */}
         <div
@@ -127,22 +116,22 @@ class LandingPage extends Component {
             backgroundSize: "cover"
           }}
         >
-          <Jumbotron className="mb-0 landingoverlay" style={{minHeight:"800px"}}>
-            <Container>
-              <Row className="align-items-center justified-content-center">
+          <div className="mb-0 banner-large " style={{height:"800px"}}>
+            <Container className="w-100 h-75">
+              <Row className="align-items-center justified-content-center h-100 w-100">
                 <Col xs="12" md={{ size: 12, offset: 0 }} sm="12">
                 
-                  <h2 className="fh   text-white">
+                  <h2 className="font-weight-bold   text-white">
                     The Best In Movie &amp; TV Shows
                   </h2>
-                  <p className="fp   text-white">
+                  <p className="font-weight-bold   text-white">
                     All the shows you to watch &amp; add movies you want to see
                     and Wooza will always have what more for you to watch next
                     queued up!
                   </p>
                   <button
                       onClick={() => this.props.history.replace("/auth")}
-                      class="K S fq  mt-3"
+                      class="K S fq font-weight-bold   mt-3"
                     >
                      Start Your Free Trial
                     </button>
@@ -157,75 +146,44 @@ class LandingPage extends Component {
                 </Col> */}
               </Row>
             </Container>
-          </Jumbotron>
+          </div>
         </div>
 
 
-        {/* <Jumbotron style={{ padding: "1rem" }} className="banner-large">
-          <Container className="">
-            <Row className="align-items-center justified-content-center">
-              <Col md="12" className="">
-                <Row>
-                  <Col
-                    xm="6"
-                    md={{ size: 4, offset: 2 }}
-                    sm="6"
-                    className="text-white"
-                  >
-                    <p>7 Days Free Trail</p>
-                    <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2  ">GH 14.99</h1>
-                    <button
-                      onClick={() => this.props.history.push("/auth")}
-                      class="K fadedbutton mt-3"
-                      style={{
-                        width: "219px",
-                        ackgroundColor: "hsla(0, 0%, 100%, 0.12)",
-                        height: "44px"
-                      }}
-                    >
-                      Choose Plan
-                    </button>
-                  </Col>
-                  <Col xm="6" md="4" sm="6" className="text-white">
-                    <p>1 Monthly unlimited Access</p>
-                    <p>Thousands of Tv show,movies &amp; more </p>
-                    <h1 class="mt-2  ">Free </h1>
-                    <button
-                      onClick={() => this.props.history.push("/auth")}
-                      class="K S fq  mt-3"
-                    >
-                      Choose Plan
-                    </button>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </Jumbotron> */}
 
-        <Container>
+        {/* <Container>
           <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
               <h5 className=" text-white">Top Movies</h5>
             </Col>
           </Row>
           {this.renderMovies()}
-        </Container>
-
-        <Jumbotron style={{ padding: "1rem" }} className="banner-large-subtle">
+        </Container> */}
+  <div style={{ height: "88px" }} className="banner-large d-flex flex-column justify-content-center">
+          <div className="container text-white ">
+            <h5 className="  text-center text-white">
+              Are you a creator ?
+              <span>
+                <Button className="btn-sm fadedbutton p-2 ml-4 text-white">
+                  Access Creator
+                </Button>
+              </span>
+            </h5>
+          </div>
+        </div>
+        <Jumbotron style={{ padding: "3rem" }} className="error_nosize mb-0">
           <Container>
             <Row className="align-items-center justified-content-center">
-              <Col sm="6">
-                <h2 className="fh text-white">Watch Movies & TV On the GO!</h2>
-                <p className="fp text-white">
+              <Col md="8"  sm="12" xs="12">
+                <h2 className="font-weight-bold   text-white">Watch Movies & TV On the GO!</h2>
+                <p className="   text-white">
                   Watch your favorite tv shows, movies from anywhere at any
                   time.... WOOZA App provides contens from hundreds of Show to
                   make sure you for more stuff to watch.
                 </p>
               </Col>
-              <Col md="6" className="d-none d-md-block">
-                <button onClick={() => null} class="K S fq">
+              <Col md="4" sm="12" xs="12" className="">
+                <button onClick={() => null} class="K S fq font-weight-bold  align-self-center">
                   GET ON PLAYSTORE
                 </button>
               </Col>
@@ -233,12 +191,12 @@ class LandingPage extends Component {
           </Container>
         </Jumbotron>
         <Container>
-          <Row className="mt-3">
+          {/* <Row className="mt-3">
             <Col sm="12" className="d-flex justify-content-between px-3">
               <h5 className=" text-white">Top Tvshows</h5>
             </Col>
           </Row>
-          {this.renderTvshow()}
+          {this.renderTvshow()} */}
         </Container>
       </div>
     );

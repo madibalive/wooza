@@ -1,0 +1,53 @@
+[
+  {
+    "kind": "youtube#channel",
+    "etag": "\"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/OjUrSmG9ZccMK8AOjVNk97vZGgw\"",
+    "id": "UCK7IIV6Q2junGSdYK3BmZMg",
+    "snippet": {
+      "title": "TMZ",
+      "description":
+        "The LATEST in celebrity gossip and entertainment news from TMZ.com, some of the best pieces from TMZ on TV, interviews from TMZ Live, and up to the minute reporting from the newsroom staff on TMZ Chatter. Reporting on Hollywood stars and online viral sensations.",
+      "customUrl": "tmz",
+      "publishedAt": "2006-04-10T16:33:09.000Z",
+      "thumbnails": {
+        "default": {
+          "url":
+            "https://yt3.ggpht.com/-pKxxdeCAn9Y/AAAAAAAAAAI/AAAAAAAAAAA/m42e4FCrq4I/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+          "width": 88,
+          "height": 88
+        },
+        "medium": {
+          "url":
+            "https://yt3.ggpht.com/-pKxxdeCAn9Y/AAAAAAAAAAI/AAAAAAAAAAA/m42e4FCrq4I/s240-c-k-no-mo-rj-c0xffffff/photo.jpg",
+          "width": 240,
+          "height": 240
+        },
+        "high": {
+          "url":
+            "https://yt3.ggpht.com/-pKxxdeCAn9Y/AAAAAAAAAAI/AAAAAAAAAAA/m42e4FCrq4I/s800-c-k-no-mo-rj-c0xffffff/photo.jpg",
+          "width": 800,
+          "height": 800
+        }
+      },
+      "localized": {
+        "title": "TMZ",
+        "description":
+          "The LATEST in celebrity gossip and entertainment news from TMZ.com, some of the best pieces from TMZ on TV, interviews from TMZ Live, and up to the minute reporting from the newsroom staff on TMZ Chatter. Reporting on Hollywood stars and online viral sensations."
+      }
+    },
+    "contentDetails": {
+      "relatedPlaylists": {
+        "uploads": "UUK7IIV6Q2junGSdYK3BmZMg",
+        "watchHistory": "HL",
+        "watchLater": "WL"
+      }
+    },
+    "statistics": {
+      "viewCount": "2792664933",
+      "commentCount": "0",
+      "subscriberCount": "3033572",
+      "hiddenSubscriberCount": false,
+      "videoCount": "27418"
+    }
+  }
+]

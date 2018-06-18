@@ -1,44 +1,86 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { Parse } from "parse";
+import {
+  Container,
+  CarouselCaption,
+  CarouselItem,
+  UncontrolledCarousel,
+  Row,
+  Col,
+  Button,
+  Jumbotron
+} from "reactstrap";
 
-class ChannelPage extends Component {
+class ViewChannelPage extends Component {
+  state = {
+    items: [],
+    isFetching: false,
+    error: false
+  };
 
-    state={
-        canloadmore:true,
-        isLoading:false,
-        items=[],
-        
+  renderLoading = () => {
+    if (this.state.isFetching) {
+      let list = [];
+      for (let index = 0; index < 6; index++) {
+        let view = (
+          <Col
+            xs="6"
+            sm="6"
+            md="4"
+            style={{ height: "300px" }}
+            className="w-100 mb-4 react-loading-pulsef react-loading-pulse"
+          >
+            <div className=" w-100 h-100  " />
+          </Col>
+        );
+
+        list.push(view);
+      }
+
+      return <Row className="my-3 justified-content-around">{list}</Row>;
     }
-    renderItems=()=>{
+  };
 
-    }
-    delete=(index)=>{
+  render() {
+    return (
+      <div className="h-100">
+        <Container>
+          <Row>
+            <Col sm="12" style={{ height: "300px" }}>
+              <img
+                src="http://via.placeholder.com/350x150"
+                className="img img-fluid w-100 h-100"
+                alt=""
+              />
+            </Col>
 
-    }
+            <Col sm="12" md="8" style={{ height: "100px" }}>
+              <div className="w-100 h-100 d-flex flex-row align-items-center">
+                <img
+                  src="http://via.placeholder.com/58x58"
+                  style={{ height: "70px", width: "58px" }}
+                  className="img rounded-circular "
+                  alt=""
+                />
+                <h5>Sample Name</h5>
+              </div>
+            </Col>
 
-    addMedia=()=>{
+            <Col sm="12" md="auto" style={{ height: "100px" }}>
+              <div className="d-flex flex-row align-items-center justify-content-end">
+                <h4>4000\nvideos </h4>
+                <h4>34k /n views</h4>
+                <h4>34k /n followers</h4>
+                <button className="btn btn-outline">subscribe</button>
+              </div>
+            </Col>
 
-    }
-    render () {
-        return (
-            <div>
-                <Row>
-                    <Container>
-                        <Col>
-                    <img src="" alt=""/>
-                    <h2>Page title here</h2>
-                    <h2>12313 views</h2></Col>
-                        <Col>
-                        <h2>12313 subs</h2>
-                        <buttton>Subscribe</buttton>
-                        </Col>
-                        <Col>
-                        {{this.renderMyViews}}
-                        </Col>
-                    </Container>
-                </Row>
-            </div>
-        )
-    }
+            <Col />
+          </Row>
+        </Container>
+      </div>
+    );
+  }
 }
 
-export default ChannelPage
+export default ViewChannelPage;

@@ -2,10 +2,8 @@ import React from "react";
 
 const FooterPage = () => {
   return (
-    <footer id="footer">
-      <div class="dropdown-divider" />
-
-      <div className="container">
+    <footer className="footer">
+      <div className=" pt-4">
         <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12 ">
             <p>
@@ -30,7 +28,7 @@ const FooterPage = () => {
               </a>.
             </p>
           </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 ">
+          <div class="d-none d-md-block col-lg-4 col-md-4 col-sm-12 ">
             <ul class="list-unstyled">
               <li>
                 <a

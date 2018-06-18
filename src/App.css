@@ -1,16 +1,8 @@
-footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 a.nav-link plzero {
   padding-left: 0px !important;
 }
 
-div#root {
-  padding-left: 0;
-}
+
 
 .fadedbutton {
   border: 1px solid transparent;
@@ -41,7 +33,7 @@ div#root {
 }
 
 .banner-large-subtle {
-  background-color: #2a2a2e;
+  background-color: #000;
 }
 
 /* background-image: linear-gradient(
@@ -51,7 +43,6 @@ div#root {
 );
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",endColorstr="#1a71ff97",GradientType=1);
  */
-
 
 .error_banner {
   position: relative;
@@ -78,7 +69,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
 
 .addlftbrdr {
   border-left: 4px solid rgba(62, 255, 114, 0.8);
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 .addlftbrdrwhite {
@@ -101,7 +92,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
 }
 
 .error_nosize {
-  position: relative; 
+  position: relative;
   background-image: linear-gradient(
     106deg,
     rgba(147, 2, 14, 0.96),
@@ -110,7 +101,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
   z-index: 90;
   width: 100%;
   box-sizing: border-box;
- 
 }
 
 .titlebar {
@@ -151,3 +141,15 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
   z-index: 999;
 }
 
+.bdr4 {
+  border-radius: 4px;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #f00; /* Change border color around this buttons */
+  background: #fff; /* Change background for button itself */
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background: #f00; /* Change color for horizontal lines */
+}

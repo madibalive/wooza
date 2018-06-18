@@ -21,59 +21,70 @@ import MediaPlayerPage from "./component/player/play";
 import InfoTvPage from "./component/info/info_tv";
 import InfoMoviePage from "./component/info/info_movie";
 import SearchPage from "./component/search/search";
-import AccountPag from './component/account/account'
+import AccountPag from "./component/account/account";
+import MusicPage from "./component/music/music";
+import ViewChannelPage from "./component/channel/channel";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <HeaderPage />
-          <div className="apppage">
-            <Switch>
-              <Route exact path="/play" component={LandingPage} />
-              <Route path="/auth" component={AuthPage} />
-              <PrivateRoute exact path="/" component={HomePage} />
-              <PrivateRoute path="/search" component={SearchPage} />
-              <PrivateRoute path="/account" component={AccountPag} />
-              <Route
-                path="/movies"
-                component={({ match, location }) => (
-                  <Switch>
-                    <Route
-                      exact
-                      path={`${match.path}`}
-                      component={MoviesPage}
-                    />
-                    <Route
-                      path={`${match.path}/:id`}
-                      component={InfoMoviePage}
-                    />
-                    <Route component={Whoops404} />
-                  </Switch>
-                )}
-              />
-              <PrivateRoute
-                path="/tv"
-                component={({ match, location }) => (
-                  <Switch>
-                    <Route
-                      exact
-                      path={`${match.path}`}
-                      component={TvShowPage}
-                    />
-                    <Route path={`${match.path}/:id`} component={InfoTvPage} />
-                    <Route component={Whoops404} />
-                  </Switch>
-                )}
-              />
-              <PrivateRoute path="/videos" component={VideosPage} />
-              <PrivateRoute path="/play/:id" component={MediaPlayerPage} />
+        <div className="apppage">
+          <div className="content-area">
+            <HeaderPage />
+            <div>
+              <Switch>
+                <Route exact path="/play" component={LandingPage} />
+                <Route path="/auth" component={AuthPage} />
+                <PrivateRoute exact path="/" component={HomePage} />
+                <PrivateRoute path="/search" component={SearchPage} />
+                <PrivateRoute path="/account" component={AccountPag} />
+                <Route
+                  path="/movies"
+                  component={({ match, location }) => (
+                    <Switch>
+                      <Route
+                        exact
+                        path={`${match.path}`}
+                        component={MoviesPage}
+                      />
+                      <Route
+                        path={`${match.path}/:id`}
+                        component={InfoMoviePage}
+                      />
+                      <Route component={Whoops404} />
+                    </Switch>
+                  )}
+                />
+                <PrivateRoute
+                  path="/tv"
+                  component={({ match, location }) => (
+                    <Switch>
+                      <Route
+                        exact
+                        path={`${match.path}`}
+                        component={TvShowPage}
+                      />
+                      <Route
+                        path={`${match.path}/:id`}
+                        component={InfoTvPage}
+                      />
+                      <Route component={Whoops404} />
+                    </Switch>
+                  )}
+                />
+                <PrivateRoute path="/music" component={MusicPage} />
+                <PrivateRoute
+                  
+                  path="/channel/:id"
+                  component={ViewChannelPage}
+                />
+                <PrivateRoute path="/play/:id" component={MediaPlayerPage} />
 
-              <Route component={Whoops404} />
-            </Switch>
+                <Route component={Whoops404} />
+              </Switch>
+            </div>
           </div>
-
           <FooterPage />
         </div>
       </Router>

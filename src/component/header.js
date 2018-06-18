@@ -64,10 +64,9 @@ class HeaderPage extends Component {
       <div>
         <Navbar
           fixed="top"
-          style={{ backgroundColor: "#000000ce" }}
+          style={{ backgroundColor: "#000000dc" }}
           expand="md"
         >
-          <Container>
             <NavbarBrand href="/">INKAYI</NavbarBrand>
             <NavbarToggler onClick={this.toggle.bind(this)} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -106,7 +105,7 @@ class HeaderPage extends Component {
                       fontWeight: "bold",
                       color: "#00e36a"
                     }}
-                    to="/videos"
+                    to="/music"
                   >
                     Music
                   </NavLink>
@@ -114,22 +113,29 @@ class HeaderPage extends Component {
               </Nav>
               <Nav className="ml-auto">
                 <NavLink
-                                      style={{ fontSize: "16px" }}
-
-                  className="mx-2 text-white "
+                  style={{ fontSize: "16px" }}
+                  className="d-flex align-items-center mr-2 text-center text-white "
                   activeStyle={{
                     fontWeight: "bold",
                     color: "#00e36a"
                   }}
                   to="/search"
                 >
-               
-                  <i className="fa fa-search mt-1" /> 
+                  <i className="  fa fa-search mr-2" />
                 </NavLink>
-
+                {!Parse.User.current() && (
+                  <NavItem>
+                    <NavLink 
+                     className="mr-2 p-2 btn-primary  rounded  text-white "
+                     
+                     to="/auth"><small>Get a Free Plan</small> </NavLink>
+                  </NavItem>
+                )}
                 {!Parse.User.current() ? (
                   <NavItem>
-                    <NavLink to="/auth">Login | Signup</NavLink>
+                    <NavLink
+                    className="mr-2 p-2 rounded  text-white  border-white"
+                     to="/auth">Login</NavLink>
                   </NavItem>
                 ) : (
                   <NavItem>
@@ -139,7 +145,7 @@ class HeaderPage extends Component {
                       toggle={this.toggledrop.bind(this)}
                     >
                       <DropdownToggle
-                        className="btn-link border-0"
+                        className="btn-link border-0  "
                         style={{ border: "transparent !important" }}
                         caret
                         size="lg"
@@ -155,7 +161,8 @@ class HeaderPage extends Component {
                             />
                           )}
                         </div>
-                        <span class="caret" />
+                        <small className="d-inline text-white">James Deen</small>
+                        <span class="caret text-white" />
                       </DropdownToggle>
                       <DropdownMenu>
                         <DropdownItem
@@ -172,7 +179,6 @@ class HeaderPage extends Component {
                 )}
               </Nav>
             </Collapse>
-          </Container>
         </Navbar>
       </div>
 

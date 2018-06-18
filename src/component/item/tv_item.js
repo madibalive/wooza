@@ -79,11 +79,9 @@ export default class TvItem extends Component {
           </div>
           <div className="title p-2  mt-1">
             <p size="sm " className=" mb-0 text-white">
-              {this.props.video ? (
-                this.props.video.get("title").substring(0, 20) + "..."
-              ) : (
-                <Skeleton />
-              )}{" "}
+              {this.props.video && (
+                this.props.video.get("title").substring(0, 30) 
+              )}
             </p>
             <p className="m-0" text-muted>
               {this.props.video ? this.props.video.get("year") : <Skeleton />}

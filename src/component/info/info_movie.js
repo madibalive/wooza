@@ -37,6 +37,26 @@ class InfoMoviePage extends Component {
       });
     });
   };
+  renderLoading = () => {
+    let list = [];
+    for (let index = 0; index < 6; index++) {
+      let view = (
+        <Col
+          xs="6"
+          sm="6"
+          md="4"
+          style={{ height: "300px" }}
+          className="w-100 mb-4 react-loading-pulsef react-loading-pulse"
+        >
+          <div className=" w-100 h-100  " />
+        </Col>
+      );
+
+      list.push(view);
+    }
+
+    return <Row noGutters="true" className=" justified-content-around">{list}</Row>;
+  };
 
   renderEpisodes = () => {
     if (this.state.items.length) {
@@ -53,14 +73,18 @@ class InfoMoviePage extends Component {
           />
         );
       });
-      return <Row className="justified-content-around">{list}</Row>;
+      return  <Row noGutters="true" className="justified-content-around">{list}</Row>;
     } else {
       let list = [];
       for (let index = 0; index < 6; index++) {
         list.push(<MovieItem />);
       }
 
-      return <Row className="justified-content-around">{list}</Row>;
+      return (
+        <Row noGutters="true" className="justified-content-around">
+          {list}
+        </Row>
+      );
     }
   };
   onPlay() {}
@@ -100,14 +124,14 @@ class InfoMoviePage extends Component {
                 });
               }}
             />
-            {/* <div class="dropdown-divider mt-0" /> */}
-            <Container className="mt-4">
-              <h5 className="my-4 text-white">Recommended Movies</h5>
+            {/* <div class="dropdown-divider mt-3" /> */}
+            <Container className="py-4">
+              <h5 className="mb-4 text-white">Recommended Movies</h5>
               {this.renderEpisodes()}
             </Container>
           </div>
         ) : (
-          <p>loading</p>
+          <Container>{this.renderLoading()}</Container>
         )}
       </div>
     );

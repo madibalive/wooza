@@ -32,6 +32,30 @@ class MediaPlayerPage extends Component {
   onInputChange(comment) {
     this.setState({ comment });
   }
+  renderLoading = () => {
+    let list = [];
+    for (let index = 0; index < 6; index++) {
+      let view = (
+        <Col
+          xs="6"
+          sm="6"
+          md="4"
+          style={{ height: "300px" }}
+          className="w-100 mb-4 react-loading-pulsef react-loading-pulse"
+        >
+          <div className=" w-100 h-100  " />
+        </Col>
+      );
+
+      list.push(view);
+    }
+
+    return (
+      <Row noGutters="true" className=" justified-content-around">
+        {list}
+      </Row>
+    );
+  };
 
   renderMovies = () => {
     if (this.state.movies) {
@@ -55,55 +79,60 @@ class MediaPlayerPage extends Component {
   render() {
     return (
       <div>
-        <div>
-          <Container>
-            <Row class="justified-content-center">
-              {this.state.video ? (
-                <div className="embed-responsive embed-responsive-16by9">
-                  <iframe
-                    src="https://player.vimeo.com/video/271743868"
-                    frameborder="0"
-                    webkitallowfullscreen
-                    mozallowfullscreen
-                    allowfullscreen
-                  />
-                </div>
-              ) : (
-                <div
-                  style={{
-                    backgroundColor: "#202020",
-                    height: "600px",
-                    width: "100%"
-                  }}
-                />
-              )}
-            </Row>
-          </Container>
-          <Container className="my-2" style={{ backgroundColor: "#073642" }}>
-            <Row className="p-1">
-              <Col sm="12">
-                {this.state.video && (
-                  <div>
-                    <h2 className=" font-weight-bold text-white my-2">
-                      {this.state.video.get("title")}
-                    </h2>
-
-                    <p class="text-muted">
-                      {this.state.video.get("runtime")}
-                    </p>
-                    <h5 className=" text-white">12321 views</h5>
-                    <h5>share like </h5>
+        {this.state.video ? (
+          <div>
+            <Container>
+              <Row class="justified-content-center">
+                {this.state.video ? (
+                  <div className="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://player.vimeo.com/video/271743868"
+                      frameborder="0"
+                      webkitallowfullscreen
+                      mozallowfullscreen
+                      allowfullscreen
+                    />
                   </div>
+                ) : (
+                  <div
+                    style={{
+                      backgroundColor: "#202020",
+                      height: "600px",
+                      width: "100%"
+                    }}
+                  />
                 )}
-              </Col>
-            </Row>
-          </Container>
+              </Row>
+            </Container>
+            <Container className="mb-2" style={{ backgroundColor: "#1F1C2B" }}>
+              <Row className="p-1">
+                <Col sm="12">
+                  {this.state.video && (
+                    <div>
+                      <h2 className=" font-weight-bold text-white my-2">
+                        {this.state.video.get("title")}
+                      </h2>
 
-          <Container style={{ padding: "0 !important" }}>
-            {this.state.video && <CommentListPage video={this.state.video} />}
-          </Container>
-        </div>
-        )
+                      <p class="text-muted">
+                        {this.state.video.get("runtime")}
+                        <span className="ml-2 text-white">12321 views</span>
+                      </p>
+                      <h5>
+                        <i className="fa fa-like">like </i>
+                      </h5>
+                    </div>
+                  )}
+                </Col>
+              </Row>
+            </Container>
+
+            <Container>
+              {this.state.video && <CommentListPage video={this.state.video} />}
+            </Container>
+          </div>
+        ) : (
+          <Container>{this.renderLoading()}</Container>
+        )}
       </div>
     );
   }

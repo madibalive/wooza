@@ -24,12 +24,13 @@ background-size: cover;
 }
 
 .froze50 {
-  display: flex;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.8);
+ 
+  
   border-radius: 4px;
-  padding: 30px 26px;
+  
 }
+
+
 
 .authbutton {
   transition: box-shadow 0.1s, transform 0.1s;

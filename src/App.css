@@ -33,7 +33,7 @@ a.nav-link plzero {
 }
 
 .banner-large-subtle {
-  background-color: #000;
+  background-color:transparent;
 }
 
 /* background-image: linear-gradient(
@@ -61,8 +61,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
 .banner-large {
   background-image: linear-gradient(
     110deg,
-    rgba(96, 79, 255, 0.4),
-    rgba(62, 255, 114, 0.4)
+    rgba(62, 255, 114, 0.4),
+    rgba(96, 79, 255, 0.4)
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66604fff",endColorstr="#663eff72",GradientType=1);
+}
+
+.music-banner {
+  background-image: linear-gradient(
+    110deg,
+    rgba(96, 79, 255, 1),
+    rgba(62, 255, 114, 1  )
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66604fff",endColorstr="#663eff72",GradientType=1);
 }

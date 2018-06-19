@@ -76,22 +76,14 @@ class HomePage extends Component {
       const list = this.state.episodes.map(movie => {
         return (
           <Col xs="6" sm="6" md="3">
-            <div className="tv-item block-m d-flex flex-column banner-large-subtle  ">
-              <div className="himg-wrapper h-75 w-100 ">
+            <div className="tv-item block-m d-flex flex-column ">
+              <div className="himg-wrapper h-100 w-100 ">
                 <img
                   style={{ objectFit: "cover" }}
                   className="img w-100 h-100 img-fluid "
                   src={movie.get("poster100")}
                   alt=""
                 />
-              </div>
-              <div className="mheader p-2">
-                <h6 size="sm " className=" mt-1 text-white">
-                  {movie ? movie.get("title") : <Skeleton />}{" "}
-                </h6>
-                <p className="" text-muted>
-                  {movie && movie.get("year")}
-                </p>
               </div>
             </div>
           </Col>
@@ -120,18 +112,17 @@ class HomePage extends Component {
             onClick={event => this.toggleIndex(i)}
           >
             <h6 className=" my-2 text-white">{movie.get("title")}</h6>
-           
           </div>
         );
       });
       return (
-        <div>
+        <div style={{ marginBottom: "3rem", marginTop: "1rem" }}>
           <div style={{ height: "75px", overflow: "hidden" }}>
             <div className="scrolling-wrapper ">{list}</div>
           </div>
           <div
-            className="py-2 "
-            style={{ minHeight: "200px", backgroundColor: mainbg }}
+            className="pt-2"
+            style={{ minHeight: "150px", backgroundColor: mainbg }}
             noGutters="true"
           >
             {this.renderepisode()}
@@ -233,7 +224,7 @@ class HomePage extends Component {
         <Col xm="12" sm="12" md="6">
           <div
             className="d-flex flex-column banner-large-subtle  "
-            style={{ height: "400px" }}
+            style={{ height: "440px" }}
           >
             <div className="himg-wrapper" style={{ height: "80%" }}>
               <img
@@ -282,7 +273,7 @@ class HomePage extends Component {
       });
 
       return (
-        <Row className="mb-3">
+        <Row noGutters="true" className="mb-3">
           {top}
           <Col className="d-none d-md-block" sm="12" md="6">
             <Row noGutters="true" style={{ height: "400px" }}>

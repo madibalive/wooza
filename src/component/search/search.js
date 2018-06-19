@@ -41,7 +41,8 @@ class SearchPage extends Component {
     }
     this.setState({ isSearching: true, items: [] });
 
-    const className = this.state.index == 0 ? "Movies" : "Tvshows";
+    let className = this.state.index == 0 ? "Movies" : "Tvshows";
+    if (this.state.index == 2) className = "Music";
 
     const query = new Parse.Query(className);
     if (!this.state.selectedGenre == "all") {
@@ -137,10 +138,7 @@ class SearchPage extends Component {
               className="btn border-0"
               style={{ background: "transparent" }}
             >
-              <i
-                
-                className="fa fa-search text-muted fa-1x"
-              />
+              <i className="fa fa-search text-muted fa-1x" />
             </button>
           </div>
         </Container>
@@ -179,7 +177,7 @@ class SearchPage extends Component {
                 }
                 onClick={event => this.toggleIndex(2)}
               >
-                Videos
+                music videos
               </li>
             </ul>
             <div>

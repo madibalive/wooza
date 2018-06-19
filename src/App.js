@@ -73,7 +73,7 @@ class App extends Component {
                     </Switch>
                   )}
                 />
-                <PrivateRoute path="/music" component={MusicPage} />
+                <Route path="/music" component={MusicPage} />
                 <PrivateRoute
                   
                   path="/channel/:id"

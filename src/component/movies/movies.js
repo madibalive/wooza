@@ -142,7 +142,7 @@ class MoviesPage extends Component {
           <div>
             <div
               style={{ height: "88px" }}
-              className="banner_redblackw-100 d-flex align-items-center"
+              className="banner_redblack w-100 d-flex align-items-center"
             >
               <h4 className="text-white ml-1 font-weight-bold">
                 All Streaming Movies
@@ -152,7 +152,7 @@ class MoviesPage extends Component {
               md="12"
               className="py-2"
               style={{
-                borderBottom: "4px solid red",
+                borderBottom: "4px solid #1a8679f9",
                 marginTop: "2rem",
                 marginBottom: "2rem",
                 paddingBottom: "1rem"

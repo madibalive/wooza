@@ -78,12 +78,12 @@ class MediaPlayerPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ minHeight: "100%" }}>
         {this.state.video ? (
-          <div>
-            <Container>
-              <Row class="justified-content-center">
-                {this.state.video ? (
+          <Row>
+            <Col sm="12" md="8">
+              <Row noGutters="true">
+                <Col sm="12">
                   <div className="embed-responsive embed-responsive-16by9">
                     <iframe
                       src="https://player.vimeo.com/video/271743868"
@@ -93,45 +93,46 @@ class MediaPlayerPage extends Component {
                       allowfullscreen
                     />
                   </div>
-                ) : (
-                  <div
-                    style={{
-                      backgroundColor: "#202020",
-                      height: "600px",
-                      width: "100%"
-                    }}
-                  />
-                )}
-              </Row>
-            </Container>
-            <Container className="mb-2" style={{ backgroundColor: "#1F1C2B" }}>
-              <Row className="p-1">
+                </Col>
                 <Col sm="12">
-                  {this.state.video && (
-                    <div>
-                      <h2 className=" font-weight-bold text-white my-2">
-                        {this.state.video.get("title")}
-                      </h2>
+                  <div className="shadow p-4 subpp">
+                    <h4 className=" font-weight-bold text-white m">
+                      {this.state.video.get("title")}
+                    </h4>
 
-                      <p class="text-muted">
-                        {this.state.video.get("runtime")}
-                        <span className="ml-2 text-white">12321 views</span>
-                      </p>
-                      <h5>
-                        <i className="fa fa-like">like </i>
-                      </h5>
+                    <p class="text-muted">
+                      {this.state.video.get("runtime")}
+                      <span className="ml-2 text-white">12321 views</span>
+                    </p>
+                  </div>
+
+                  <div className="d-flex flex-row align-items-center p-4">
+                    <div style={{ height: "38px", width: "38px" }}>
+                      <img
+                        src="http://via.placeholder.com/38x38"
+                        alt=""
+                        className=" rounded-circle w-100 h-100"
+                      />
                     </div>
-                  )}
+
+                    <div className=" ml-2">Samdivle namere</div>
+
+                    <div className="ml-auto">like share vote</div>
+                  </div>
                 </Col>
               </Row>
-            </Container>
+            </Col>
+            <Col className="m-2">
+              <small>info</small>
+              <p className="  text-white">
+                {this.state.video.get("desc").substring(0, 300)}
+              </p>
 
-            <Container>
-              {this.state.video && <CommentListPage video={this.state.video} />}
-            </Container>
-          </div>
+              <CommentListPage video={this.state.video} />
+            </Col>
+          </Row>
         ) : (
-          <Container>{this.renderLoading()}</Container>
+          <div>{this.renderLoading()}</div>
         )}
       </div>
     );

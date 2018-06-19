@@ -9,13 +9,12 @@ const CommentItem = props => {
         src="http://via.placeholder.com/38x38"
         alt="Generic placeholder image"
       />
-      <div class="media-body text-white">
-        <h5 class="mt-0">Media heading</h5>
-        {props.item.get("content")}
+      <div class="media-body">
+        <small class="mt-0">Media heading</small>
+        <p className="text-white">{props.datas.get("content")}</p>
       </div>
     </li>
   );
 };
 
 export default CommentItem;
-

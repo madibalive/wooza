@@ -213,11 +213,11 @@ class MusicPage extends Component {
             <Row>
               <Col xs="12" sm="12" md="12" lg="8">
                 <Row>
-                  <Col sm="12">{this.renderTrending()}</Col>
+                  <Col sm="12" className="d-none d-sm-block" >{this.renderTrending()}</Col>
                 </Row>
                 {this.renderItems()}
               </Col>
-              <Col className=" " xs="12" sm="12" md="12" lg="4">
+              <Col className="d-none d-sm-block"  xs="12" sm="12" md="12" lg="4">
                 {this.renderTop()}
               </Col>
             </Row>

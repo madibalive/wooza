@@ -39,7 +39,7 @@ export default class MovieItem extends Component {
     const url = this.props.video ? this.props.video.get("poster100") : "";
 
     return (
-      <Col xs="6" sm="6" md="3" lg="2" className="">
+      <Col xs="6" sm="6" md="3" lg="1" className="">
         {/* div.block-m>(div.mimg-wrapper>img+(div.moverlay>p.mtext-gold))+div.mheader */}
 
         <div className="movie-item banner-large-subtle ">

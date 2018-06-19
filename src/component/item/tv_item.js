@@ -40,7 +40,7 @@ export default class TvItem extends Component {
     const url = this.props.video ? this.props.video.get("poster100") : "";
 
     return (
-      <Col xs="6" sm="6" md="3" className="my-2">
+      <Col xs="6" sm="6" md="3" lg="2" className="my-2">
         {/* <div className="block-m d-flex flex-column ">
           <div className="mimg-wrapper">
             <img src="" alt="" />
@@ -62,7 +62,7 @@ export default class TvItem extends Component {
 
         <div className="tv-item  banner-large-subtle rounded-bottom">
           <div
-            className="Item extra shadow"
+            className="Item extra shadow-lg"
             onClick={() => this.props.onVideoSelect()}
             style={{
               backgroundImage: "url(" + url + ")"

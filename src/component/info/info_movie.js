@@ -55,7 +55,11 @@ class InfoMoviePage extends Component {
       list.push(view);
     }
 
-    return <Row noGutters="true" className=" justified-content-around">{list}</Row>;
+    return (
+      <Row noGutters="true" className=" justified-content-around">
+        {list}
+      </Row>
+    );
   };
 
   renderEpisodes = () => {
@@ -73,7 +77,11 @@ class InfoMoviePage extends Component {
           />
         );
       });
-      return  <Row noGutters="true" className="justified-content-around">{list}</Row>;
+      return (
+        <Row noGutters="true" className="justified-content-around">
+          {list}
+        </Row>
+      );
     } else {
       let list = [];
       for (let index = 0; index < 6; index++) {
@@ -125,10 +133,10 @@ class InfoMoviePage extends Component {
               }}
             />
             {/* <div class="dropdown-divider mt-3" /> */}
-            <Container className="py-4">
+            <div className="py-4">
               <h5 className="mb-4 text-white">Recommended Movies</h5>
               {this.renderEpisodes()}
-            </Container>
+            </div>
           </div>
         ) : (
           <Container>{this.renderLoading()}</Container>

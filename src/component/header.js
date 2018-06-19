@@ -67,118 +67,125 @@ class HeaderPage extends Component {
           style={{ backgroundColor: "#000000dc" }}
           expand="md"
         >
-            <NavbarBrand href="/">INKAYI</NavbarBrand>
-            <NavbarToggler onClick={this.toggle.bind(this)} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav navbar>
-                <NavItem>
-                  <NavLink
-                    style={{ fontSize: "16px" }}
-                    className="mx-2 text-white"
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "#00e36a"
-                    }}
-                    to="/tv"
-                  >
-                    Tvshows
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    style={{ fontSize: "16px" }}
-                    className="mx-2 text-white "
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "#00e36a"
-                    }}
-                    to="/movies"
-                  >
-                    Movies
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
-                    style={{ fontSize: "16px" }}
-                    className="mx-2 text-white "
-                    activeStyle={{
-                      fontWeight: "bold",
-                      color: "#00e36a"
-                    }}
-                    to="/music"
-                  >
-                    Music
-                  </NavLink>
-                </NavItem>
-              </Nav>
-              <Nav className="ml-auto">
+          <NavbarBrand href="/">INKAYI</NavbarBrand>
+          <NavbarToggler onClick={this.toggle.bind(this)} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav navbar>
+              <NavItem>
                 <NavLink
                   style={{ fontSize: "16px" }}
-                  className="d-flex align-items-center mr-2 text-center text-white "
+                  className="mx-2 text-white"
                   activeStyle={{
                     fontWeight: "bold",
                     color: "#00e36a"
                   }}
-                  to="/search"
+                  to="/tv"
                 >
-                  <i className="  fa fa-search mr-2" />
+                  Tvshows
                 </NavLink>
-                {!Parse.User.current() && (
-                  <NavItem>
-                    <NavLink 
-                     className="mr-2 p-2 btn-primary  rounded  text-white "
-                     
-                     to="/auth"><small>Get a Free Plan</small> </NavLink>
-                  </NavItem>
-                )}
-                {!Parse.User.current() ? (
-                  <NavItem>
-                    <NavLink
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  style={{ fontSize: "16px" }}
+                  className="mx-2 text-white "
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#00e36a"
+                  }}
+                  to="/movies"
+                >
+                  Movies
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  style={{ fontSize: "16px" }}
+                  className="mx-2 text-white "
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#00e36a"
+                  }}
+                  to="/music"
+                >
+                  Music
+                </NavLink>
+              </NavItem>
+            </Nav>
+            <Nav className="ml-auto">
+              <NavLink
+                style={{ fontSize: "16px" }}
+                className="d-flex align-items-center mr-2 text-center text-white "
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "#00e36a"
+                }}
+                to="/search"
+              >
+                <i className="  fa fa-search mr-2" />
+              </NavLink>
+              {!Parse.User.current() && (
+                <NavItem>
+                  <NavLink
+                    className="mr-2 p-2 btn-primary  rounded  text-white "
+                    to="/auth"
+                  >
+                    <small>Get a Free Plan</small>{" "}
+                  </NavLink>
+                </NavItem>
+              )}
+              {!Parse.User.current() ? (
+                <NavItem>
+                  <NavLink
                     className="mr-2 p-2 rounded  text-white  border-white"
-                     to="/auth">Login</NavLink>
-                  </NavItem>
-                ) : (
-                  <NavItem>
-                    <ButtonDropdown
-                      className="btn-link"
-                      isOpen={this.state.dropdownOpen}
-                      toggle={this.toggledrop.bind(this)}
+                    to="/auth"
+                  >
+                    Login
+                  </NavLink>
+                </NavItem>
+              ) : (
+                <NavItem>
+                  <ButtonDropdown
+                    className="btn-link"
+                    isOpen={this.state.dropdownOpen}
+                    toggle={this.toggledrop.bind(this)}
+                  >
+                    <DropdownToggle
+                      className="btn-link border-0  "
+                      style={{ border: "transparent !important" }}
+                      caret
+                      size="lg"
                     >
-                      <DropdownToggle
-                        className="btn-link border-0  "
-                        style={{ border: "transparent !important" }}
-                        caret
-                        size="lg"
+                      <div class="img-rounded profile-img">
+                        {Parse.User.current().get("avatar") && (
+                          <img
+                            className="w-100 h-100 img img-fluid rounded-circle"
+                            src={Parse.User.current()
+                              .get("avatar")
+                              .url()}
+                            alt=""
+                          />
+                        )}
+                      </div>
+                      <small className="d-inline text-white">
+                        {Parse.User.current() && Parse.User.current().get("username")}
+                      </small>
+                      <span class="caret text-white" />
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem
+                        onClick={() => this.props.history.push("/account")}
                       >
-                        <div class="img-rounded profile-img">
-                          {Parse.User.current().get("avatar") && (
-                            <img
-                              className="w-100 h-100 img img-fluid rounded-circle"
-                              src={Parse.User.current()
-                                .get("avatar")
-                                .url()}
-                              alt=""
-                            />
-                          )}
-                        </div>
-                        <small className="d-inline text-white">James Deen</small>
-                        <span class="caret text-white" />
-                      </DropdownToggle>
-                      <DropdownMenu>
-                        <DropdownItem
-                          onClick={() => this.props.history.push("/account")}
-                        >
-                          Account
-                        </DropdownItem>
-                        <DropdownItem onClick={event => this.onLogout()}>
-                          Logout
-                        </DropdownItem>
-                      </DropdownMenu>
-                    </ButtonDropdown>
-                  </NavItem>
-                )}
-              </Nav>
-            </Collapse>
+                        Account
+                      </DropdownItem>
+                      <DropdownItem onClick={event => this.onLogout()}>
+                        Logout
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </ButtonDropdown>
+                </NavItem>
+              )}
+            </Nav>
+          </Collapse>
         </Navbar>
       </div>
 

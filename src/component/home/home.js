@@ -160,7 +160,7 @@ class HomePage extends Component {
       const list = this.state.movies.map(movie => {
         return (
           <Row noGutters="true">
-            <Col xs="12" sm="12" style={{ height: "260px" }}>
+            <Col xs="12" sm="12" md="8" lg="10" style={{ height: "520px" }}>
               <img
                 style={{ objectFit: "cover" }}
                 src={movie.get("poster100")}
@@ -171,35 +171,26 @@ class HomePage extends Component {
             <Col
               xs="12"
               sm="12"
-              md="12"
+              md="4"
+              lg="2"
               className="p-4 banner-large-subtle"
-              style={{ height: "260px" }}
+              style={{ height: "520px" }}
             >
-              <Row>
-                <Col xs="12" sm="12" md="4">
-                  <h2 className=" font-weight-bold text-white mt-3">
-                    {movie ? movie.get("title") : <Skeleton />}
-                  </h2>
+              <h2 className=" font-weight-bold text-white mt-3">
+                {movie ? movie.get("title") : <Skeleton />}
+              </h2>
 
-                  <button
-                    onClick={() => {
-                      this.props.history.push({
-                        pathname: `/movies/${movie.id}`,
-                        state: { video: movie }
-                      });
-                    }}
-                    className="btn btn-primary text-white"
-                  >
-                    watch now
-                  </button>
-                </Col>
-                <Col
-                  md="8"
-                  className="d-none d-sm-block text-white addlftbrdrwhite"
-                >
-                  <p> {movie && movie.get("desc").substring(0, 420)}</p>
-                </Col>
-              </Row>
+              <button
+                onClick={() => {
+                  this.props.history.push({
+                    pathname: `/movies/${movie.id}`,
+                    state: { video: movie }
+                  });
+                }}
+                className="btn btn-primary text-white"
+              >
+                watch now
+              </button>
             </Col>
           </Row>
         );
@@ -421,11 +412,11 @@ class HomePage extends Component {
         {this.state.isFetching && <Container>{this.renderLoading()}</Container>}
 
         {this.state.movies.length > 0 && (
-          <Container>
-            {this.renderchannels()}
+          <div>
             <div style={{ height: "520px" }}>{this.renderBanner()}</div>
+            {this.renderchannels()}
 
-            <Row className="mt-4 container">
+            <Row className="mt-4 div">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Trending Movies </h5>
                 <p>lose your self in binge worthy drama</p>
@@ -440,7 +431,7 @@ class HomePage extends Component {
             </Row>
             {this.renderMovies()}
 
-            <Row className="mt-4 container">
+            <Row className="mt-4 div">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Romance Shows Drama</h5>
                 <p>lose your self in binge worthy drama</p>
@@ -453,7 +444,7 @@ class HomePage extends Component {
               </Col>
             </Row>
             {this.renderTvshow()}
-          </Container>
+          </div>
         )}
 
         {/* <div class="dropdown-divider mt-0" /> */}

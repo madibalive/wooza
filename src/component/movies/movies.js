@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { Parse } from "parse";
+import { connect } from "react-redux";
+
 import {
   Container,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   ButtonGroup,
+  ButtonDropdown,
   Row,
   Col,
   Button,
@@ -20,9 +26,9 @@ class MoviesPage extends Component {
       items: [],
       pages: [],
       canLoadMore: true,
-      genres: ["All", "Drama ", "Entertainment", "Action"],
-      selectedGenre: 0,
-      error: null
+      selectedGenre: "All",
+      error: null,
+      dropdownOpen: false
     };
   }
 
@@ -54,7 +60,14 @@ class MoviesPage extends Component {
       </Row>
     );
   };
-
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+  onGenreChange = event => {
+    this.setState({ value: event.target.value, items: [] });
+  };
   renderTvshow = () => {
     if (this.state.items) {
       const list = this.state.items.map(movie => {
@@ -78,77 +91,27 @@ class MoviesPage extends Component {
     }
   };
 
-  onRadioBtnClick = rSelected => {
-    this.setState({ selectedGenre: rSelected });
-    // this.getdata();
-  };
-
-  renderGenres() {
-    if (this.state.genres) {
-      const list = this.state.genres.map((genre, n) => {
-        let classname = "fadedbutton";
-
-        if (n == this.state.selectedGenre) {
-          // classname = "btn-primary";
-        }
-        return (
-          <Button
-            outline
-            class="fadedbutton"
-            style={{ marginRight: "1rem" }}
-            size="sm"
-            onClick={() => this.onRadioBtnClick(n)}
-            active={this.state.selectedGenre === n}
-          >
-            {genre}
-          </Button>
-        );
-      });
-      return <ButtonGroup style={{ overflow: "hidden" }}>{list}</ButtonGroup>;
-    }
-  }
-
   getdata = (refresh = true) => {
     if (this.state.isFetching) {
       return;
     }
     this.setState({ isFetching: true });
     const query = new Parse.Query("Movies");
-    // query.limitTo(25);
-    // if (this.state.selectedGenre > 0) {
-    //   alert(this.state.genres[this.state.selectedGenre].toLowerCase());
-    //   query.equalTo(
-    //     "genre",
-    //     this.state.genres[this.state.selectedGenre].toLowerCase()
-    //   );
-    // }
+    if (!this.state.selectedGenre == "all") {
+      query.equalTo("genre", this.state.selectedGenre);
+    }
     // query.skip(this.state.currentPage * 25);
     query.find().then(
       data => {
-        // let pageindex = data.map(item => {
-        //   return item.id;
-        // });v
-        let sdata;
-        if (refresh) {
-          sdata = [];
-        } else {
-          sdata = this.state.items;
-        }
-        data.forEach(i => sdata.push(i));
-        // items[this.state.currentPage] = pageindex;
-        // this.setState({ isFetching: false });
-        // this.setState({ data: this.state.data.Push(...data) });
-        // this.setState({ pages: pages });
-
         if (data.length < 25) {
           this.setState({
             canLoadMore: false,
-            items: sdata,
+            items: data,
             isFetching: false
           });
         } else {
           this.setState({
-            items: sdata,
+            items: data,
             isFetching: false
           });
         }
@@ -177,21 +140,53 @@ class MoviesPage extends Component {
         )}
         {this.state.items.length > 0 ? (
           <div>
-            <Container>
-              <div
-                style={{ height: "72px" }}
-                className="d-flex align-items-center"
+            <div
+              style={{ height: "88px" }}
+              className="banner_redblackw-100 d-flex align-items-center"
+            >
+              <h4 className="text-white ml-1 font-weight-bold">
+                All Streaming Movies
+              </h4>
+            </div>
+            <div
+              md="12"
+              className="py-2"
+              style={{
+                borderBottom: "4px solid red",
+                marginTop: "2rem",
+                marginBottom: "2rem",
+                paddingBottom: "1rem"
+              }}
+              className="text-white "
+            >
+              <ButtonDropdown
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle.bind(this)}
               >
-                <h4 className="text-white font-weight-bold">
-                  All Streaming Movies
-                </h4>
-              </div>
-            </Container>
-            <div class="dropdown-divider mb-3" />
+                <DropdownToggle
+                  className="btn-link text-center text-white border-0"
+                  caret
+                >
+                  <h4 className="d-inline"> {this.state.selectedGenre}</h4>
+                </DropdownToggle>
+                <DropdownMenu>
+                  {this.props.genres.map(element => {
+                    return (
+                      <DropdownItem
+                        onClick={() =>
+                          this.setState({ selectedGenre: element })
+                        }
+                      >
+                        <h4 className="text-white">{element}</h4>
+                      </DropdownItem>
+                    );
+                  })}
+                </DropdownMenu>
+              </ButtonDropdown>
+            </div>
 
-            <Container>{this.renderTvshow()}</Container>
-
-            <Container style={{ padding: "2rem" }}>
+            <div>{this.renderTvshow()}</div>
+            <div style={{ padding: "2rem" }}>
               {this.state.items.lenght > 0 && (
                 <Button
                   className="fadedbutton"
@@ -200,7 +195,7 @@ class MoviesPage extends Component {
                   LoadMore
                 </Button>
               )}
-            </Container>
+            </div>
           </div>
         ) : (
           <Container>{this.renderLoading()}</Container>
@@ -210,4 +205,13 @@ class MoviesPage extends Component {
   }
 }
 
-export default MoviesPage;
+const mapStateToProps = ({ home }) => ({
+  genres: home.genres
+});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MoviesPage);

@@ -1,8 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import { Parse } from "parse";
 import {
   Container,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
   ButtonGroup,
+  ButtonDropdown,
   Row,
   Col,
   Button,
@@ -21,39 +27,11 @@ class TvShowPage extends Component {
       items: [],
       pages: [],
       canLoadMore: true,
-      genres: ["All", "Drama ", "Entertainment", "Action", "Crime"],
-      selectedGenre: 0,
-      error: null
+      selectedGenre: "All",
+      error: null,
+      dropdownOpen: false
     };
   }
-
-  componentDidMount() {
-    this.getdata();
-  }
-  renderTvshow = () => {
-    if (this.state.items) {
-      const list = this.state.items.map(movie => {
-        return (
-          <TvItem
-            video={movie}
-            onVideoSelect={() =>
-              this.props.history.push({
-                pathname: `/tv/${movie.id}`,
-                state: { video: movie }
-              })
-            }
-          />
-        );
-      });
-      return (
-        <Row noGutters="true" className="justified-content-around">
-          {list}
-        </Row>
-      );
-    } else {
-      return <p>loadin</p>;
-    }
-  };
   renderLoading = () => {
     let list = [];
     for (let index = 0; index < 6; index++) {
@@ -78,35 +56,42 @@ class TvShowPage extends Component {
       </Row>
     );
   };
-  onRadioBtnClick = rSelected => {
-    this.setState({ selectedGenre: rSelected });
+
+  componentDidMount() {
     this.getdata();
+  }
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+  onGenreChange = event => {
+    this.setState({ value: event.target.value, items: [] });
   };
-
-  renderGenres() {
-    if (this.state.genres) {
-      const list = this.state.genres.map((genre, n) => {
-        let classname = "fadedbutton";
-
-        if (n === this.state.selectedGenre) {
-          // classname = "btn-primary";
-        }
+  renderTvshow = () => {
+    if (this.state.items) {
+      const list = this.state.items.map(movie => {
         return (
-          <Button
-            outline
-            class="fadedbutton"
-            style={{ marginRight: "1rem" }}
-            size="sm"
-            onClick={() => this.onRadioBtnClick(n)}
-            active={this.state.selectedGenre === n}
-          >
-            {genre}
-          </Button>
+          <TvItem
+            video={movie}
+            onVideoSelect={() =>
+              this.props.history.push({
+                pathname: `/tv/${movie.id}`,
+                state: { video: movie }
+              })
+            }
+          />
         );
       });
-      return <ButtonGroup>{list}</ButtonGroup>;
+      return (
+        <Row noGutters="true" className="justified-content-around">
+          {list}
+        </Row>
+      );
+    } else {
+      return <p>loadin</p>;
     }
-  }
+  };
 
   getdata = (refresh = true) => {
     if (this.state.isFetching) {
@@ -114,41 +99,22 @@ class TvShowPage extends Component {
     }
     this.setState({ isFetching: true });
     const query = new Parse.Query("Tvshows");
-    // query.limitTo(25);
-    if (this.state.selectedGenre > 0) {
-      alert(this.state.genres[this.state.selectedGenre].toLowerCase());
-      query.equalTo(
-        "genre",
-        this.state.genres[this.state.selectedGenre].toLowerCase()
-      );
+    if (!this.state.selectedGenre == "all") {
+      query.equalTo("genre", this.state.selectedGenre);
     }
+    // query.limitTo(25);
     // query.skip(this.state.currentPage * 25);
     query.find().then(
       data => {
-        // let pageindex = data.map(item => {
-        //   return item.id;
-        // });v
-        let sdata;
-        if (refresh) {
-          sdata = [];
-        } else {
-          sdata = this.state.items;
-        }
-        data.forEach(i => sdata.push(i));
-        // items[this.state.currentPage] = pageindex;
-        // this.setState({ isFetching: false });
-        // this.setState({ data: this.state.data.Push(...data) });
-        // this.setState({ pages: pages });
-
         if (data.length < 25) {
           this.setState({
             canLoadMore: false,
-            items: sdata,
+            items: data,
             isFetching: false
           });
         } else {
           this.setState({
-            items: sdata,
+            items: data,
             isFetching: false
           });
         }
@@ -177,20 +143,53 @@ class TvShowPage extends Component {
         )}
         {this.state.items.length > 0 ? (
           <div>
-            <Container>
-              <div
-                style={{ height: "72px" }}
-                className="d-flex align-items-center"
-              >
+            <Row>
+              <div className="error_snippet d-flex align-items-center">
                 <h4 className="text-white font-weight-bold">
-                  All Streaming TV Shows{" "}
+                  All Streaming Tvshows
                 </h4>
               </div>
-            </Container>
-            <div class="dropdown-divider mb-3" />
+            </Row>
+            <div
+              md="12"
+              className="py-2"
+              style={{
+                borderBottom: "4px solid red",
+                marginTop: "2rem",
+                marginBottom: "2rem",
+                paddingBottom: "1rem"
 
-            <Container>{this.renderTvshow()}</Container>
-            <Container style={{ padding: "2rem" }}>
+              }}
+              className="text-white "
+            >
+              <ButtonDropdown
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle.bind(this)}
+              >
+                <DropdownToggle
+                  className="btn-link text-center text-white border-0"
+                  caret
+                >
+                  <h4 className="d-inline"> {this.state.selectedGenre}</h4>
+                </DropdownToggle>
+                <DropdownMenu>
+                  {this.props.genres.map(element => {
+                    return (
+                      <DropdownItem
+                        onClick={() =>
+                          this.setState({ selectedGenre: element })
+                        }
+                      >
+                        <h4 className="text-white">{element}</h4>
+                      </DropdownItem>
+                    );
+                  })}
+                </DropdownMenu>
+              </ButtonDropdown>
+            </div>
+
+            <div>{this.renderTvshow()}</div>
+            <div style={{ padding: "2rem" }}>
               {this.state.items.lenght > 0 && (
                 <Button
                   className="fadedbutton"
@@ -199,7 +198,7 @@ class TvShowPage extends Component {
                   LoadMore
                 </Button>
               )}
-            </Container>
+            </div>
           </div>
         ) : (
           <Container>{this.renderLoading()}</Container>
@@ -209,4 +208,13 @@ class TvShowPage extends Component {
   }
 }
 
-export default TvShowPage;
+const mapStateToProps = ({ home }) => ({
+  genres: home.genres
+});
+
+const mapDispatchToProps = {};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TvShowPage);

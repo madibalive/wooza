@@ -2,21 +2,17 @@ a.nav-link plzero {
   padding-left: 0px !important;
 }
 
-
-
 .fadedbutton {
   border: 1px solid transparent;
   background-color: hsla(0, 0%, 100%, 0.12) !important;
 }
 
-.purplerose{
-  
-  background-color:#212129 !important;
+.purplerose {
+  background-color: #212129 !important;
 }
 
-.subpp{
-  background-color:#323745 !important;
-  
+.subpp {
+  background-color: #323745 !important;
 }
 
 .active-button {
@@ -26,14 +22,14 @@ a.nav-link plzero {
     rgba(147, 2, 14, 0.96),
     rgba(159, 4, 69, 0.96)
   );
-
-  
 }
 
-
-
-.banner_redblack{
-  background-image: linear-gradient(104deg,rgba(134,121,249,.1),rgba(113,255,151,.1));
+.banner_redblack {
+  background-image: linear-gradient(
+    104deg,
+    rgba(134, 121, 249, 0.1),
+    rgba(113, 255, 151, 0.1)
+  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",endColorstr="#1a71ff97",GradientType=1);
 }
 
@@ -52,7 +48,7 @@ a.nav-link plzero {
 }
 
 .banner-large-subtle {
-  background-color:transparent;
+  background-color: transparent;
 }
 
 /* background-image: linear-gradient(
@@ -90,7 +86,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
   background-image: linear-gradient(
     110deg,
     rgba(96, 79, 255, 1),
-    rgba(62, 255, 114, 1  )
+    rgba(62, 255, 114, 1)
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66604fff",endColorstr="#663eff72",GradientType=1);
 }
@@ -138,6 +134,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
   margin-bottom: 1em;
 }
 
+
+.media-item{
+  width: 300px;
+  height: 400xp;
+}
+
 .nav-tabs .nav-link.active {
   color: white;
   background-color: transparent;
@@ -181,3 +183,49 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a8679f9",end
 .navbar-default .navbar-toggle .icon-bar {
   background: #f00; /* Change color for horizontal lines */
 }
+
+::-webkit-scrollbar-track {
+  background-color: #141414;
+}
+
+::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:grey;
+  border-radius: 10px;
+
+ 
+}
+
+
+
+@media only screen and (min-width: 320px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+ 
+.media-item{
+  width: 200px;
+  height: 300xp;
+}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+ 
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+}
+

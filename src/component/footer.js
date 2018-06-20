@@ -5,55 +5,33 @@ const FooterPage = () => {
     <footer className="footer">
       <div className=" p-2">
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12 ">
-            <p>
-              Made by <a href="http://thomaspark.co">Thomas Park</a>
-            </p>
-            <p>
-              Code released under the{" "}
-              <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">
-                MIT License
-              </a>.
-            </p>
-            <p>
-              Based on{" "}
-              <a href="https://getbootstrap.com" rel="nofollow">
-                Bootstrap
-              </a>. Icons from{" "}
-              <a href="http://fontawesome.io/" rel="nofollow">
-                Font Awesome
-              </a>. Web fonts from{" "}
-              <a href="https://fonts.google.com/" rel="nofollow">
-                Google
-              </a>.
-            </p>
-          </div>
-          <div class="d-none d-md-block col-lg-4 col-md-4 col-sm-12 ">
-            <ul class="list-unstyled">
-              <li>
-                <a
-                  href="http://blog.bootswatch.com"
-                  onclick="pageTracker._link(this.href); return false;"
-                >
-                  Blog
+          <div class="col-md-12 col-sm-12 ">
+            <div class="footerUpper">
+              <div class="footerLogo text-center">
+                <h2 className="font-weight-bold">INKAYE</h2>
+              </div>
+              <div class="footerSocialNetwork d-flex flex-row justify-content-center align-items-center">
+                <a title="facebook" target="_blank">
+                  <i className=" fa fa-facebook fa-2x p-4" />
                 </a>
-              </li>
-              <li>
-                <a href="https://feeds.feedburner.com/bootswatch">RSS</a>
-              </li>
-              <li>
-                <a href="https://twitter.com/bootswatch">Twitter</a>
-              </li>
-              <li>
-                <a href="https://github.com/thomaspark/bootswatch/">GitHub</a>
-              </li>
-              <li>
-                <a href="../help/#api">API</a>
-              </li>
-              <li>
-                <a href="../help/#donate">Donate</a>
-              </li>
-            </ul>
+                <a title="twitter" target="_blank" href="">
+                  <i className=" fa fa-twitter fa-2x p-4" />
+                </a>
+                <a title="instagram" target="_blank">
+                  <i className=" fa fa-instagram fa-2x p-4" />
+                </a>
+                <a title="youtube" target="_blank">
+                  <i className=" fa fa-youtube fa-2x p-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-12 col-md-12 p-4 ">
+            <div className="text-center">
+              <a class="footerLinksInner">Terms and Conditions</a>
+              <a class="footerLinksInner">Contact us</a>
+              <a class="footerLinksInner">General Rules</a>
+            </div>
           </div>
         </div>
       </div>

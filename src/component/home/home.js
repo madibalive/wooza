@@ -30,12 +30,12 @@ class HomePage extends Component {
     channels: [],
     music: [],
     channles: [
-      { name: "Music Stories", color: "#B58900" },
+      { name: "Music Stories", color: "#4b30f2" },
       { name: "Celebrity Interviews", color: "#6d2c84" },
       { name: "Dance Fever", color: "#333c41" },
       { name: "Exercise Life", color: "#42949b" },
       { name: "Artist Corner", color: "#eb008b" },
-      { name: "Morning Show", color: "#f0f0f0" },
+      { name: "Morning Show", color: "#B58900" },
       { name: "Space Sample", color: "#243e59" },
       { name: "Space Sample", color: "#243e59" }
     ],
@@ -49,8 +49,12 @@ class HomePage extends Component {
     this.getdata();
   }
   toggleIndex = position => {
-    this.setState({ index: position });
+    this.setState({ indexm: position });
     this.getEpisode(this.state.channels[position].id);
+  };
+
+  toggleIndexm = position => {
+    this.setState({ index: position });
   };
   renderLoading = () => {
     if (this.state.isFetching) {
@@ -92,14 +96,14 @@ class HomePage extends Component {
                 ? "p-4 text-white shadow "
                 : "p-4 text-black"
             }
-            onClick={event => this.toggleIndex(i)}
+            onClick={event => this.toggleIndexm(i)}
           >
             <Media style={{ backgroundColor: color }} body>
               <Media
                 className={
                   this.state.indexm == i ? " text-white" : " text-dark"
                 }
-                onClick={event => this.toggleIndex(i)}
+                onClick={event => this.toggleIndexm(i)}
               >
                 {movie && movie.get("title")}
               </Media>
@@ -225,7 +229,7 @@ class HomePage extends Component {
         return (
           <div className="mcard mx-2">
             <div
-              style={{ height: "600px", width: "400px" }}
+              style={{ height: "400px", width: "300px" }}
               className="d-flex flex-column h-100 "
             >
               <div style={{ height: "80%" }} className="w-100">
@@ -264,7 +268,7 @@ class HomePage extends Component {
         return (
           <div className="mcard mx-2">
             <div
-              style={{ height: "600px", width: "400px" }}
+              style={{ height: "400px", width: "300px" }}
               className="d-flex flex-column h-100 "
             >
               <div style={{ height: "80%" }} className="w-100">
@@ -534,6 +538,8 @@ class HomePage extends Component {
     const equery = new Parse.Query("Music");
     tquery.limit(8);
     mquery.limit(12);
+    cquery.descending("createdAt");
+
     let movies;
     let tvhows;
     let channels;
@@ -603,8 +609,6 @@ class HomePage extends Component {
             {/* <div style={{ height: "520px" }}>{this.renderBanner()}</div>
             
             */}
-
-            {this.renderTrending()}
             <Row className="mt-4 div">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Trending Channels </h5>
@@ -612,6 +616,9 @@ class HomePage extends Component {
               </Col>
             </Row>
             {this.renderchannels()}
+
+            {this.renderTrending()}
+            
             <Row className="mt-4 div">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Trending Movies </h5>

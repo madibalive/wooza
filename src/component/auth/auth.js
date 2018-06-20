@@ -105,7 +105,7 @@ class AuthPage extends Component {
           md={{ size: 6, offset: 6 }}
           lg={{ size: 4, offset: 8 }}
           sm="12"
-          className="shadow-lg bdr4  banner-large"
+          className="shadow-lg bdr4 bgwhite"
         >
           <Row noGutters="true" className="">
             <Col sm="12" >
@@ -120,7 +120,7 @@ class AuthPage extends Component {
               xs="12"
               className="text-center  text-white w-100 "
             >
-              <div  className="shadow-lg py-4" style={{ margin: "5%" }}>
+              <div  className="shadow-lg py-4" style={{ margin: "5%",backgroundColor:"#ffffff08" }}>
                 <h2 class=" font-weight-bold  text-white     ">
                   Limited
                   <small class="text-muted">/ free</small>
@@ -147,7 +147,7 @@ class AuthPage extends Component {
             </Col>
            
             <Col sm="12" xs="12" className=" text-center text-white w-100 ">
-              <div className="shadow-lg  py-4  " style={{ margin: "5%",backgroundColor:"#00000031"}}>
+              <div className="shadow-lg  py-4  " style={{ margin: "5%",backgroundColor:"#ffffff07"}}>
                 <h2 className=" font-weight-bold  text-white ">
                   GH 14.99
                   <small class="text-muted">/ mo</small>
@@ -165,11 +165,8 @@ class AuthPage extends Component {
 
                 <button
                   onClick={() => this.props.history.push("/")}
-                  class="authbutton "
-                  style={{
-                    width: "90%",
-                    height: "38px",
-                    maxWidth: "160px"
+                  class="btn fadedbutton text-white font-weight-bold"
+                  style={{   width: "60%",                    height: "38px",                   
                   }}
                 >
                   Choose Plan
@@ -190,7 +187,7 @@ class AuthPage extends Component {
           md={{ size: 6, offset: 6 }}
           lg={{ size: 4, offset: 8 }}
           sm="12"
-          className="shadow-lg bdr4  banner-large p-3"
+          className="shadow-lg bdr4 bgwhite p-3"
         >
           <div className="d-flex flex-row justify-content-around w-100 ">
             <h5
@@ -331,7 +328,7 @@ class AuthPage extends Component {
                   }}
                   class="form-control"
                   id="exampleInputPhone"
-                  placeholder="Password"
+                  placeholder="+233 XXX XXXX"
                 />
               </div>
               <div class="form-group form-check">
@@ -367,8 +364,9 @@ class AuthPage extends Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: "/" } };
     const { redirectToReferrer } = this.state;
+  const url ="https://s22.postimg.cc/5rv0hicup/samplebg-compressor.jpg"
     return (
-      <div className="error_nosize d-flex align-items-center" style={{ minHeight: "100vh" }}>
+      <div className=" d-flex align-items-center" style={{ minHeight: "100vh",backgroundRepeat:"no-repeat", backgroundSize:"cover", backgroundImage: "url(" + url + ")"  }}>
         {/* <div className="banner-large d-flex flex-column justify-content-center ">
         <div className="" />
           <div className="container ">authbackground

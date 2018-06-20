@@ -18,6 +18,7 @@ import {
   Row,
   Col,
   Button,
+  Media,
   Jumbotron
 } from "reactstrap";
 import Hero from "../hero/Hero";
@@ -27,6 +28,7 @@ class HomePage extends Component {
     movies: [],
     tv: [],
     channels: [],
+    music: [],
     channles: [
       { name: "Music Stories", color: "#B58900" },
       { name: "Celebrity Interviews", color: "#6d2c84" },
@@ -39,7 +41,8 @@ class HomePage extends Component {
     ],
     isFetching: false,
     error: false,
-    index: 0
+    index: 0,
+    indexm: 0
   };
 
   componentDidMount() {
@@ -71,26 +74,94 @@ class HomePage extends Component {
       return <Row className="my-3 justified-content-around">{list}</Row>;
     }
   };
+
+
+  renderTrending = () => {
+    if (this.state.music.length > 0) {
+      const selectedItem = this.state.music[this.state.indexm];
+
+      const list = this.state.music.map((movie, i) => {
+        if (i > 5) return;
+        const color = this.state.indexm == i ? " black" : " white";
+
+        return (
+          <Media
+            style={{ backgroundColor: color }}
+            className={
+              this.state.indexm == i
+                ? "p-4 text-white shadow "
+                : "p-4 text-black"
+            }
+            onClick={event => this.toggleIndex(i)}
+          >
+            <Media style={{ backgroundColor: color }} body>
+              <Media
+                className={
+                  this.state.indexm == i ? " text-white" : " text-dark"
+                }
+                onClick={event => this.toggleIndex(i)}
+              >
+                {movie && movie.get("title")}
+              </Media>
+              <small>views {movie && movie.get("viewCount")}</small>
+            </Media>
+          </Media>
+        );
+      });
+      return (
+        <div className="d-none d-md-block">
+          <div md="12" className="pb-2">
+            <h4
+              style={{ borderBottom: "4px solid yellow", paddingBottom: "1rem" }}
+              className="text-white font-weight-bold"
+            >
+              SPANKING NEW MUSC VIDEOS
+            </h4>
+          </div>
+
+          <Row
+            className="shadow "
+            style={{ height: "600px", marginBottom: "3rem" }}
+            noGutters="true"
+          >
+            <Col md="8">
+              <div className="d-flex flex-column w-100 h-100">
+                <img
+                  style={{ objectFit: "cover" }}
+                  className="img w-100 h-100 shadow "
+                  object
+                  src={selectedItem.get("poster100")}
+                />
+                {/* <p>Top aligned medi</p> */}
+              </div>
+            </Col>
+            <Col style={{ overflow: "auto" }} md="4">
+              {list}
+            </Col>
+          </Row>
+        </div>
+      );
+    }
+  };
+
   renderepisode = () => {
     if (this.state.episodes) {
       const list = this.state.episodes.map(movie => {
         return (
-          <Col xs="6" sm="6" md="3">
-            <div className="tv-item block-m d-flex flex-column ">
-              <div className="himg-wrapper h-100 w-100 ">
-                <img
-                  style={{ objectFit: "cover" }}
-                  className="img w-100 h-100 img-fluid "
-                  src={movie.get("poster100")}
-                  alt=""
-                />
-              </div>
+          <Col xs="6" sm="6" md="3" className="h-100 p-2">
+            <div className=" h-100 w-100 ">
+              <img
+                style={{ objectFit: "cover" }}
+                className="img rounded shadow w-100 h-100 img-fluid "
+                src={movie.get("poster100")}
+                alt=""
+              />
             </div>
           </Col>
         );
       });
       return (
-        <Row noGutters="true" className=" justified-content-around">
+        <Row noGutters="true" className=" h-100 justified-content-around">
           {list}
         </Row>
       );
@@ -103,26 +174,41 @@ class HomePage extends Component {
         const color = this.state.channles[i].color;
         return (
           <div
-            style={{ backgroundColor: color }}
+            style={{ backgroundColor: color, padding: "2rem" }}
             className={
               this.state.index == i
-                ? "wcard active text-center"
-                : "wcard text-center"
+                ? "wcard active text-center d-flex align-items-center"
+                : "wcard text-center d-flex align-items-center"
             }
             onClick={event => this.toggleIndex(i)}
           >
-            <h6 className=" my-2 text-white">{movie.get("title")}</h6>
+            <div style={{ height: "48px", width: "48px", marginRight: "1rem" }}>
+              <img
+                src={movie.get("poster50")}
+                alt=""
+                style={{ objectFit: "cover" }}
+                className="rounded-circle shadow w-100 h-100"
+              />
+            </div>
+            <h6 className=" font-weight-bold my-2 text-white">
+              {movie.get("title")}
+            </h6>
           </div>
         );
       });
       return (
         <div style={{ marginBottom: "3rem", marginTop: "1rem" }}>
-          <div style={{ height: "75px", overflow: "hidden" }}>
+          <div
+            style={{
+              height: "85px",
+              overflow: "hidden"
+            }}
+          >
             <div className="scrolling-wrapper ">{list}</div>
           </div>
           <div
-            className="pt-2"
-            style={{ minHeight: "150px", backgroundColor: mainbg }}
+            className="pt-4"
+            style={{ height: "400px", backgroundColor: mainbg }}
             noGutters="true"
           >
             {this.renderepisode()}
@@ -132,9 +218,86 @@ class HomePage extends Component {
     }
   };
 
+  render4Tv = () => {
+    if (this.state.tv) {
+      const list = this.state.tv.map((movie, i) => {
+        if (i > 8) return;
+        return (
+          <div className="mcard mx-2">
+            <div
+              style={{ height: "600px", width: "400px" }}
+              className="d-flex flex-column h-100 "
+            >
+              <div style={{ height: "80%" }} className="w-100">
+                <img
+                  style={{ backgroundSize: "cover" }}
+                  className="img h-100 w-100 "
+                  src={movie.get("poster100")}
+                  alt=""
+                />
+              </div>
+              <div className="mheader p-2">
+                <h6 size="sm " className=" mt-1 text-white">
+                  {movie && movie.get("title")}
+                </h6>
+                <p className="" text-muted>
+                  {movie && movie.get("year")}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      });
+
+      return (
+        <div style={{ marginBottom: "3rem", marginTop: "1rem" }}>
+          <div className="scrolling-movies ">{list}</div>
+        </div>
+      );
+    }
+  };
+
+  render4Movie() {
+    if (this.state.movies) {
+      const list = this.state.movies.map((movie, i) => {
+        if (i > 6) return;
+        return (
+          <div className="mcard mx-2">
+            <div
+              style={{ height: "600px", width: "400px" }}
+              className="d-flex flex-column h-100 "
+            >
+              <div style={{ height: "80%" }} className="w-100">
+                <img
+                  style={{ backgroundSize: "cover" }}
+                  className="img h-100 w-100 "
+                  src={movie.get("poster100")}
+                  alt=""
+                />
+              </div>
+              <div className="mheader p-2">
+                <h6 size="sm " className=" mt-1 text-white">
+                  {movie && movie.get("title")}
+                </h6>
+                <p className="" text-muted>
+                  {movie && movie.get("year")}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      });
+      return (
+        <div style={{ marginBottom: "3rem", marginTop: "1rem" }}>
+          <div className="scrolling-movies ">{list}</div>
+        </div>
+      );
+    }
+  }
   renderMovies = () => {
     if (this.state.movies) {
-      const list = this.state.movies.map(movie => {
+      const list = this.state.movies.map((movie, i) => {
+        if (i > 5) return;
         return (
           <MovieItem
             video={movie}
@@ -160,15 +323,21 @@ class HomePage extends Component {
       const list = this.state.movies.map(movie => {
         return (
           <Row noGutters="true">
-            <Col xs="12" sm="12" md="8" lg="10" style={{ height: "520px" }}>
+            <Col
+              xs="12"
+              sm="12"
+              md="12"
+              lg="12"
+              style={{ height: "520px", width: "100%" }}
+            >
               <img
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "none", objectPosition: "50% 50%" }}
                 src={movie.get("poster100")}
                 className="img w-100 h-100"
                 alt=""
               />
             </Col>
-            <Col
+            {/* <Col
               xs="12"
               sm="12"
               md="4"
@@ -191,7 +360,7 @@ class HomePage extends Component {
               >
                 watch now
               </button>
-            </Col>
+            </Col> */}
           </Row>
         );
       });
@@ -238,12 +407,12 @@ class HomePage extends Component {
       );
 
       const list = this.state.tv.map((movie, i) => {
-        if (i > 3) return;
+        if (i > 6) return;
         return (
-          <Col xs="6" sm="6" className="">
+          <Col xs="6" sm="4" md="3" className="">
             <div
-              style={{ height: "200px" }}
-              className="d-flex m-1 flex-column banner-large-subtle  "
+              style={{ height: "400px" }}
+              className="d-flex m-1 flex-column card card-block  "
             >
               <div className="h-75 w-100 ">
                 <img
@@ -264,18 +433,20 @@ class HomePage extends Component {
       });
 
       return (
-        <Row noGutters="true" className="mb-3">
-          {top}
-          <Col className="d-none d-md-block" sm="12" md="6">
-            <Row noGutters="true" style={{ height: "400px" }}>
-              {list}
-            </Row>
-          </Col>
+        <Row
+          className=" flex-row flex-sm-nowrap pt-3"
+          style={{ height: "400px" }}
+        >
+          {list}
         </Row>
       );
     }
   }
-  render4Movie() {
+  // <Row noGutters="true" className="mb-3">
+  //   {top}
+  //   <Col className="d-none d-md-block" sm="12" md="6">
+
+  renderTrendingMovies() {
     if (this.state.movies) {
       const list = this.state.movies.map((movie, i) => {
         if (i > 3) return;
@@ -302,7 +473,17 @@ class HomePage extends Component {
           </Col>
         );
       });
-      return <Row className="largeMovieBar mb-3">{list}</Row>;
+      let data = <Row className="largeMovieBar mb-3">{list}</Row>;
+      return (
+        <Carousel
+          auto
+          loop
+          auto
+          axis="x"
+          widgets={[Dots, Buttons]}
+          frames={data}
+        />
+      );
     }
   }
 
@@ -330,7 +511,7 @@ class HomePage extends Component {
   };
 
   getEpisode = id => {
-    const equery = new Parse.Query("Episodes");
+    const equery = new Parse.Query("Episode");
     equery.equalTo(
       "parent",
       Parse.Object.extend("Channel").createWithoutData(id)
@@ -350,6 +531,7 @@ class HomePage extends Component {
     const mquery = new Parse.Query("Movies");
     const cquery = new Parse.Query("Channel");
     const tquery = new Parse.Query("Tvshows");
+    const equery = new Parse.Query("Music");
     tquery.limit(8);
     mquery.limit(12);
     let movies;
@@ -366,12 +548,17 @@ class HomePage extends Component {
         tvhows = data;
         return cquery.find();
       })
+      .then(data => {
+        channels = data;
+        return equery.find();
+      })
       .then(
         data => {
           this.setState({
             movies: movies,
             tv: tvhows,
-            channels: data,
+            channels: channels,
+            music: data,
             isFetching: false
           });
           this.getEpisode(this.state.channels[this.state.index].id);
@@ -385,7 +572,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="h-100">
+      <div className="h-100 p-4">
         {/* <Hero /> */}
         {this.state.error && (
           <Row className="h-100">
@@ -413,23 +600,25 @@ class HomePage extends Component {
 
         {this.state.movies.length > 0 && (
           <div>
-            <div style={{ height: "520px" }}>{this.renderBanner()}</div>
-            {this.renderchannels()}
+            {/* <div style={{ height: "520px" }}>{this.renderBanner()}</div>
+            
+            */}
 
+            {this.renderTrending()}
+            <Row className="mt-4 div">
+              <Col sm="12">
+                <h5 className="text-white addlftbrdr">Trending Channels </h5>
+                <p>lose your self in binge worthy drama</p>
+              </Col>
+            </Row>
+            {this.renderchannels()}
             <Row className="mt-4 div">
               <Col sm="12">
                 <h5 className="text-white addlftbrdr">Trending Movies </h5>
                 <p>lose your self in binge worthy drama</p>
               </Col>
             </Row>
-
             {this.render4Movie()}
-            <Row className="mt-4">
-              <Col sm="12" className="d-flex justify-content-between px-3">
-                <h5 className="text-white addlftbrdr">Top Movies</h5>
-              </Col>
-            </Row>
-            {this.renderMovies()}
 
             <Row className="mt-4 div">
               <Col sm="12">
@@ -438,12 +627,6 @@ class HomePage extends Component {
               </Col>
             </Row>
             {this.render4Tv()}
-            <Row className="mt-4">
-              <Col sm="12" className="d-flex justify-content-between mt-4 px-3">
-                <h5 className="text-white addlftbrdr">Top Tvshows</h5>
-              </Col>
-            </Row>
-            {this.renderTvshow()}
           </div>
         )}
 

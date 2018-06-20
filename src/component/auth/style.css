@@ -1,16 +1,12 @@
 .authbackground {
-  width: 100%;
-  opacity: 0.6;
-  height: 110%;
-  position: absolute;
-  top: 0;
-  background-image: url("https://images.unsplash.com/photo-1492462543947-040389c4a66c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93c013676fe7a55668861c6efbe1d19&auto=format&fit=crop&w=1050&q=80") ;
+  
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1492462543947-040389c4a66c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c93c013676fe7a55668861c6efbe1d19&auto=format&fit=crop&w=1050&q=80") no-repeat  ;
   /* background-image: linear-gradient(transparent 60%, #081118),
     linear-gradient(114deg, #8679f9, #71ff97);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000",endColorstr="#ff081118",GradientType=0);
 } */
 
-background-size: cover;
 
 }
 
@@ -30,6 +26,13 @@ background-size: cover;
   
 }
 
+halfwhite{
+  background-color: #ffffff07
+}
+
+.bgwhite{
+  background-color: black;
+}
 
 
 .authbutton {

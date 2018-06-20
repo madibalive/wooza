@@ -138,7 +138,7 @@ class MusicPage extends Component {
             <Media style={{ backgroundColor: color }} body>
               <Media
                 className={
-                  this.state.index == i ? " text-white" : " text-black"
+                  this.state.index == i ? " text-white" : " text-dark"
                 }
                 onClick={event => this.toggleIndex(i)}
               >

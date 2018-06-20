@@ -39,7 +39,7 @@ class App extends Component {
                 <PrivateRoute exact path="/" component={HomePage} />
                 <PrivateRoute path="/search" component={SearchPage} />
                 <PrivateRoute path="/account" component={AccountPag} />
-                <Route
+                <PrivateRoute
                   path="/movies"
                   component={({ match, location }) => (
                     <Switch>
@@ -73,7 +73,7 @@ class App extends Component {
                     </Switch>
                   )}
                 />
-                <Route path="/music" component={MusicPage} />
+                <PrivateRoute path="/music" component={MusicPage} />
                 <PrivateRoute
                   
                   path="/channel/:id"

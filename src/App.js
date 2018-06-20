@@ -36,7 +36,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/play" component={LandingPage} />
                 <Route path="/auth" component={AuthPage} />
-                <Route exact path="/" component={HomePage} />
+                <PrivateRoute exact path="/" component={HomePage} />
                 <PrivateRoute path="/search" component={SearchPage} />
                 <PrivateRoute path="/account" component={AccountPag} />
                 <PrivateRoute

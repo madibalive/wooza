@@ -8,7 +8,7 @@ const FooterPage = () => {
           <div class="col-md-12 col-sm-12 ">
             <div class="footerUpper">
               <div class="footerLogo text-center">
-                <h2 className="font-weight-bold">INKAYE</h2>
+                <h2 className="font-weight-bold">INKAYi</h2>
               </div>
               <div class="footerSocialNetwork d-flex flex-row justify-content-center align-items-center">
                 <a title="facebook" target="_blank">
@@ -17,7 +17,7 @@ const FooterPage = () => {
                 <a title="twitter" target="_blank" href="">
                   <i className=" fa fa-twitter fa-2x p-4" />
                 </a>
-                <a title="instagram" target="_blank">
+                <a title="instagram" target="_blank"
                   <i className=" fa fa-instagram fa-2x p-4" />
                 </a>
                 <a title="youtube" target="_blank">

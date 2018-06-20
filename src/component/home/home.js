@@ -49,12 +49,12 @@ class HomePage extends Component {
     this.getdata();
   }
   toggleIndex = position => {
-    this.setState({ indexm: position });
+    this.setState({ index: position });
     this.getEpisode(this.state.channels[position].id);
   };
 
   toggleIndexm = position => {
-    this.setState({ index: position });
+    this.setState({ indexm: position });
   };
   renderLoading = () => {
     if (this.state.isFetching) {

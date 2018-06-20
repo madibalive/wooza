@@ -1,53 +1,54 @@
 [
   {
     "kind": "youtube#channel",
-    "etag": "\"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/YqVfQxbsf6CgvmA17DG1SAXa-Ns\"",
-    "id": "UCJ5v_MCY6GNUBTO8-D3XoAg",
+    "etag": "\"DuHzAJ-eQIiCIp7p4ldoVcVAOeY/ARS9t0PLUxyoJ5dMpyRHMoaJL40\"",
+    "id": "UCpko_-a4wgz2u_DgDgd9fqA",
     "snippet": {
-      "title": "WWE",
+      "title": "BuzzFeedVideo",
       "description":
-        "WWE on YouTube is your number one spot to catch WWE original shows and exclusives!\n\nWatch videos from all of your favorite WWE Superstars, backstage fallout from live shows including Raw and SmackDown, and original shows such as Top 10, Game Night, Superstar Ink and much more! \n\nSubscribe - https://goo.gl/2YO0Is\nRSS - https://www.youtube.com/feeds/videos.xml?channel_id=UCJ5v_MCY6GNUBTO8-D3XoAg",
-      "customUrl": "WWEFanNation",
-      "publishedAt": "2007-05-11T01:20:02.000Z",
+        "BuzzFeed’s flagship channel. Sometimes funny, sometimes serious, always shareable. New videos posted daily!\nTo see behind-the-scenes & more, follow us on Instagram @buzzfeedvideo http://bit.ly/2JRRkKU\n\nLove BuzzFeed? Get the merch! BUY NOW: https://goo.gl/gQKF8m",
+      "customUrl": "buzzfeedvideo",
+      "publishedAt": "2011-08-10T21:27:29.000Z",
       "thumbnails": {
         "default": {
           "url":
-            "https://yt3.ggpht.com/-5PUl_QbabAQ/AAAAAAAAAAI/AAAAAAAAAAA/MbgCFPQeJrQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "https://yt3.ggpht.com/-iJJcDIkIjL0/AAAAAAAAAAI/AAAAAAAAAAA/Rf6VBJ2D-MA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg",
           "width": 88,
           "height": 88
         },
         "medium": {
           "url":
-            "https://yt3.ggpht.com/-5PUl_QbabAQ/AAAAAAAAAAI/AAAAAAAAAAA/MbgCFPQeJrQ/s240-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "https://yt3.ggpht.com/-iJJcDIkIjL0/AAAAAAAAAAI/AAAAAAAAAAA/Rf6VBJ2D-MA/s240-c-k-no-mo-rj-c0xffffff/photo.jpg",
           "width": 240,
           "height": 240
         },
         "high": {
           "url":
-            "https://yt3.ggpht.com/-5PUl_QbabAQ/AAAAAAAAAAI/AAAAAAAAAAA/MbgCFPQeJrQ/s800-c-k-no-mo-rj-c0xffffff/photo.jpg",
+            "https://yt3.ggpht.com/-iJJcDIkIjL0/AAAAAAAAAAI/AAAAAAAAAAA/Rf6VBJ2D-MA/s800-c-k-no-mo-rj-c0xffffff/photo.jpg",
           "width": 800,
           "height": 800
         }
       },
       "localized": {
-        "title": "WWE",
+        "title": "BuzzFeedVideo",
         "description":
-          "WWE on YouTube is your number one spot to catch WWE original shows and exclusives!\n\nWatch videos from all of your favorite WWE Superstars, backstage fallout from live shows including Raw and SmackDown, and original shows such as Top 10, Game Night, Superstar Ink and much more! \n\nSubscribe - https://goo.gl/2YO0Is\nRSS - https://www.youtube.com/feeds/videos.xml?channel_id=UCJ5v_MCY6GNUBTO8-D3XoAg"
+          "BuzzFeed’s flagship channel. Sometimes funny, sometimes serious, always shareable. New videos posted daily!\nTo see behind-the-scenes & more, follow us on Instagram @buzzfeedvideo http://bit.ly/2JRRkKU\n\nLove BuzzFeed? Get the merch! BUY NOW: https://goo.gl/gQKF8m"
       }
     },
     "contentDetails": {
       "relatedPlaylists": {
-        "uploads": "UUJ5v_MCY6GNUBTO8-D3XoAg",
+        "likes": "LLpko_-a4wgz2u_DgDgd9fqA",
+        "uploads": "UUpko_-a4wgz2u_DgDgd9fqA",
         "watchHistory": "HL",
         "watchLater": "WL"
       }
     },
     "statistics": {
-      "viewCount": "23506235341",
+      "viewCount": "13408296215",
       "commentCount": "0",
-      "subscriberCount": "27965113",
+      "subscriberCount": "16468457",
       "hiddenSubscriberCount": false,
-      "videoCount": "35406"
+      "videoCount": "5373"
     }
   }
 ]

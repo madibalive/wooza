@@ -34,7 +34,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 //   else tvshow.set("poster100", data.snippet.thumbnails.medium.url);
 //   tvshow.set(
 //     "parent",
-//     Parse.Object.extend("Channel").createWithoutData("NTMbPFVrGy")
+//     Parse.Object.extend("Channel").createWithoutData("htWnzfo07a")
 //   );
 //   // tvshow.set("viewCount", data.statistics.viewCount);
 //   // tvshow.set("videoCount", data.statistics.videoCount);

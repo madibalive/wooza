@@ -17,7 +17,7 @@ const FooterPage = () => {
                 <a title="twitter" target="_blank" href="">
                   <i className=" fa fa-twitter fa-2x p-4" />
                 </a>
-                <a title="instagram" target="_blank"
+                <a title="instagram" target="_blank">
                   <i className=" fa fa-instagram fa-2x p-4" />
                 </a>
                 <a title="youtube" target="_blank">
